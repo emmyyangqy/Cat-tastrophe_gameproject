@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://q0l2amvxnyt2"]
+
+[ext_resource type="Script" path="res://Samplesidescrollcharacter.gd" id="1_3s0m1"]
+
+[node name="Samplesidescrollcharacter" type="CharacterBody2D"]
+script = ExtResource("1_3s0m1")
