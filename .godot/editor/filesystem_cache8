@@ -1,13 +1,13 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1683317040
+::res://::1683319564
 Cat Sprite Sheet.png::CompressedTexture2D::6402315822507231678::1679011528::1683134119::1::::<><>::
-CharacterBody2D.gd::GDScript::-1::1683222906::0::1::::<>CharacterBody2D<>::
+CharacterBody2D.gd::GDScript::-1::1683319537::0::1::::CatCharacter<>RefCounted<>::
 icon.svg::CompressedTexture2D::7621369074570308941::1679009715::1683134119::1::::<><>::
 light-gray-color-solid-background-1920x1080.png::CompressedTexture2D::6720850916717236254::1679030538::1683134119::1::::<><>::
 README.md::TextFile::-1::1683133790::0::1::::<><>::
 Samplesidescrollcharacter.gd::GDScript::-1::1680035553::0::1::::<>CharacterBody2D<>::
 samplesidescrollcharacter.tscn::PackedScene::1175347064938947833::1680118185::0::1::::<><>::res://Samplesidescrollcharacter.gd
-scene_1.tscn::PackedScene::5340509698451347198::1683317033::0::1::::<><>::res://CharacterBody2D.gd<>uid://cxhlham0mnnjq<>uid://bwik5u3r0t7co<>uid://cntairgipbrry<>uid://c1m7nyq7ev5tf
+scene_1.tscn::PackedScene::5340509698451347198::1683319538::0::1::::<><>::res://CharacterBody2D.gd<>uid://cxhlham0mnnjq<>uid://bwik5u3r0t7co<>uid://cntairgipbrry<>uid://c1m7nyq7ev5tf<>uid://dnbm7h3fb6j0n<>uid://bddyf1gki50eq<>uid://c20swoigkkh5g
 ::res://catsprite/::1683150820
 ::res://catsprite/clean_1/::1683134119
 tile016.png::CompressedTexture2D::7587712946575711662::1679011608::1683134119::1::::<><>::
@@ -38,7 +38,7 @@ tile067.png::CompressedTexture2D::7474485973244716079::1679011608::1683134119::1
 tile068.png::CompressedTexture2D::8131222296143949506::1679011608::1683134119::1::::<><>::
 tile069.png::CompressedTexture2D::298075514502048013::1679011608::1683134119::1::::<><>::
 tile070.png::CompressedTexture2D::1348506374321914914::1679011608::1683134119::1::::<><>::
-::res://catsprite/jump_2/::1683316589
+::res://catsprite/jump_2/::1683317648
 1.png::CompressedTexture2D::3947752104035224218::1683315751::1683315872::1::::<><>::
 2.png::CompressedTexture2D::5724534700908364950::1683315775::1683315872::1::::<><>::
 3.png::CompressedTexture2D::6624491280850465643::1683315789::1683315872::1::::<><>::

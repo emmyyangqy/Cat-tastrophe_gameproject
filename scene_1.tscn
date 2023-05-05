@@ -1,13 +1,13 @@
-[gd_scene load_steps=69 format=3 uid="uid://cic8odeshi1be"]
+[gd_scene load_steps=72 format=3 uid="uid://cic8odeshi1be"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_md0bl"]
 [ext_resource type="Texture2D" uid="uid://cxhlham0mnnjq" path="res://Cat Sprite Sheet.png" id="2_c6yum"]
 [ext_resource type="Texture2D" uid="uid://bwik5u3r0t7co" path="res://catsprite/jump_2/1.png" id="3_egoy6"]
 [ext_resource type="Texture2D" uid="uid://cntairgipbrry" path="res://catsprite/jump_2/2.png" id="4_dtetk"]
 [ext_resource type="Texture2D" uid="uid://c1m7nyq7ev5tf" path="res://catsprite/jump_2/3.png" id="5_qw014"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgoxf"]
-size = Vector2(8.4, 8.19999)
+[ext_resource type="Texture2D" uid="uid://dnbm7h3fb6j0n" path="res://catsprite/jump_2/4.png" id="6_ewyo2"]
+[ext_resource type="Texture2D" uid="uid://bddyf1gki50eq" path="res://catsprite/jump_2/5.png" id="7_qxgv1"]
+[ext_resource type="Texture2D" uid="uid://c20swoigkkh5g" path="res://catsprite/jump_2/6.png" id="8_yhxc2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fvhhj"]
 atlas = ExtResource("2_c6yum")
@@ -341,17 +341,28 @@ animations = [{
 "texture": ExtResource("4_dtetk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_dtetk")
-}, {
-"duration": 1.0,
 "texture": ExtResource("5_qw014")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_qw014")
+"texture": ExtResource("6_ewyo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qxgv1")
 }],
-"loop": true,
-"name": &"jump_2",
+"loop": false,
+"name": &"jump_beginning",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_egoy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yhxc2")
+}],
+"loop": false,
+"name": &"jump_land",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -481,6 +492,9 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgoxf"]
+size = Vector2(8.4, 8.19999)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qs305"]
 size = Vector2(1248, 18)
 
@@ -499,24 +513,22 @@ size = Vector2(20, 954)
 position = Vector2(578, 324)
 scale = Vector2(5, 5)
 
-[node name="cat_character" type="Node2D" parent="."]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="cat_character"]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 texture_filter = 1
 scale = Vector2(5, 5)
 script = ExtResource("1_md0bl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="cat_character/CharacterBody2D"]
-position = Vector2(40, 85.7)
-shape = SubResource("RectangleShape2D_xgoxf")
-
-[node name="cat_animation" type="AnimatedSprite2D" parent="cat_character/CharacterBody2D"]
+[node name="cat_animation" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(40, 81)
+scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_s1sfb")
-animation = &"idle_2"
+animation = &"jump_land"
 speed_scale = 2.0
 
-[node name="Sprite2D" type="Sprite2D" parent="cat_character/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(40, 85.7)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_xgoxf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

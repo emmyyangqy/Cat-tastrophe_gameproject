@@ -1,281 +1,212 @@
-
-
 extends CharacterBody2D
 
 
-var speed = 200
-var speed_air = 200
-const jump_speed = -800
+enum State {IDLE, WALK_RIGHT, WALK_LEFT, RUN_RIGHT, RUN_LEFT, JUMP, PAW, SCARED, SLEEP, LAND}
+const MOVE_STATES = [State.WALK_RIGHT, State.WALK_LEFT, State.RUN_RIGHT, State.RUN_LEFT]
+
+#const MOVEMENT_VECTORS = {
+#	State.WALK_LEFT: [Vector2(1,0)],
+#	State.WALK_RIGHT: [Vector2(1,0)],
+#	State.RUN_LEFT: [Vector2(1.7,0)],
+#	State.RUN_RIGHT: [Vector2(1.7,0)],
+#}
+
+var lastvelocity = null
+var curstate = State.IDLE
+var state_time = 0 
+var death_time = 0
+var next = null
+var hitnum = 0
+var last_velocity = 0
+var jump_num = 0
 var gravity = 2000
-var lastvelocity=0
-var speed_run = 450
-var dbjump = 200
+var jump_force = 1000
+var run_speed = 100
+var walk_speed = 100
+var jump_done = 1
 
-#var score = 0
 
-var lastdir: Vector2 = Vector2.ZERO
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	print("ready")
-	$cat_animation.play("idle_1")
+	switch_to(State.IDLE)
 
+func switch_to(new_state: State):
+	
+#	if curstate == State.death and death_time > 3:
+#		new_state = State.revive
+	
+	
+#	if curstate == State.JUMP and new_state != State.JUMP:
+#		if jump_done == 1:
+#			#jump_done = 0
+#			print("hdjfskl")
+#			pass
+#		else:
+#			return
+#
+#	if curstate == State.death and death_time > 3:
+#		new_state = State.revive
+#
+		
+	curstate = new_state
+	state_time = 0.0
+	
 
-var numjump = 0
+	if new_state == State.IDLE:
+		if last_velocity < 0:
+			#$cat_animation.frame = 0
+			$cat_animation.play("idle_2")
+			$cat_animation.flip_h = true
+		if last_velocity > 0:
+			#$cat_animation.frame = 0
+			$cat_animation.play("idle_2")
+			$cat_animation.flip_h = false
+		else:
+			#$cat_animation.frame = 0
+			$cat_animation.play("idle_1")
+			
+	elif new_state == State.WALK_RIGHT:
+		#$cat_animation.frame = 0
+		$cat_animation.play("movement_1")
+		$cat_animation.flip_h = false
+		
+	
+	elif new_state == State.WALK_LEFT:
+		#$cat_animation.frame = 0
+		$cat_animation.play("movement_1")
+		$cat_animation.flip_h = true
+	elif new_state == State.RUN_RIGHT:
+		#$cat_animation.frame = 0
+		$cat_animation.play("movement_2")
+		$cat_animation.flip_h = false
+	elif new_state == State.RUN_LEFT:
+		#$cat_animation.frame = 0
+		$cat_animation.play("movement_2")
+		$cat_animation.flip_h = true
+		
+	elif new_state == State.JUMP:
+		if is_on_floor() or jump_num < 2:
+			jump_num += 1
+			#$cat_animation.frame = 0
+			velocity.y = -jump_force
+			$cat_animation.play("jump_beginning")
+			$cat_animation.flip_h = false
+			if is_on_floor():
+				$cat_animation.play("jump_land")
+				$cat_animation.flip_h = false
+				#jump_done = 1
+			
+			
+		else:
+			pass
+			
+
+			
+	elif new_state == State.PAW:
+		#$cat_animation.frame = 0
+		$cat_animation.play("paw")
+	elif new_state == State.SLEEP:
+		#$cat_animation.frame = 0
+		$cat_animation.play("sleep")
+	elif new_state == State.SCARED:
+		$cat_animation.play("scared")
+	
+		
+		
+#func hit():
+#	hitnum += 1
+#
+#	if hitnum > 3:
+#		switch_to(State.dying)
+#	else:
+#		switch_to(State.hit)
 
 
 func _physics_process(delta):
-
-	var action=0
-
-	#var velocity = Vector2(0,0)
-
-
-	#print(dir.y)
-
+	# Update the amount of time you spent in the current state
+	state_time += delta
+	#death_time += delta
+	
+#	if jump_done == 1:
+#		switch_to(State.IDLE)
 	# velocity.y += gravity * delta
 	#print(numjump)
 		# Add the gravity.
 	if not is_on_floor():
-		#dir.y = -1 
-		#print("jks")
 		velocity.y += gravity * delta
+	
+	if is_on_floor():
+		jump_num = 0
 
-
-	if not is_on_floor():
-		print("not floor")
-		$cat_animation.play("jump")
-		$cat_animation.flip_h = false
-		if is_on_floor():
-			pass
-
-#	if Input.is_action_pressed("jump") and is_on_floor():
-#		velocity.y = jump_speed
-#		numjump += 1
-#		if Input.is_action_pressed("jump") and numjump == 1:
-#			velocity.y = jump_speed
-#			numjump = 0
-
-	if is_on_floor() and numjump != 0:
-		numjump = 0
-
-	if numjump<2:
-		if Input.is_action_just_pressed("jump"):
-			velocity.y = jump_speed
-			numjump += 1
-
-	if Input.is_action_pressed("move_left"): 
-		#dir.x = -speed
-		if not is_on_floor():
-			velocity.x = -speed_air
-		else: 
-			if Input.is_action_pressed("shift"):
-				velocity.x = -speed_run
-			else: 
-				velocity.x = -speed
-	elif Input.is_action_pressed("move_right"):
-		#dir.x = speed
-		if not is_on_floor():
-			velocity.x = speed_air
-		else:
-			if Input.is_action_pressed("shift"):
-				velocity.x = speed_run
-			else: 
-				velocity.x = speed
-
+	if Input.is_action_pressed("walk_left"):
+		switch_to(State.WALK_LEFT)
+		
+	elif Input.is_action_pressed("walk_right"):
+		switch_to(State.WALK_RIGHT)
+		
+	elif Input.is_action_pressed("run_left"):
+		switch_to(State.RUN_LEFT)
+		
+	elif Input.is_action_pressed("run_right"):
+		switch_to(State.RUN_RIGHT)
+		
+	elif Input.is_action_just_pressed("jump"):
+		jump_done = 0
+		switch_to(State.JUMP)
+		
 	elif Input.is_action_pressed("paw"):
-		action = 2
+		switch_to(State.PAW)
+		
 	elif Input.is_action_pressed("sleep"):
-		action = 1
+		switch_to(State.SLEEP)
+	
+#	if curstate == State.death and death_time > 3:
+#		switch_to(State.revive)
 
+	
+		#next = move_and_collide(Vector2(-1,0))
+		
+#	elif not is_on_floor():
+#		velocity.y += 100 * delta
+
+		#next = move_and_collide(Vector2(0,10))
+		
 	else:
 		#velocity.x = velocity.x * .9
-		velocity.x = move_toward(velocity.x, 0, 3000)
+		switch_to(State.IDLE)
+		#velocity.x = move_toward(velocity.x, 0, 3000)
 
-
+	if curstate == State.WALK_RIGHT:
+		velocity.x = walk_speed
+	elif curstate == State.WALK_LEFT:
+		velocity.x = -walk_speed
+	elif curstate == State.RUN_RIGHT:
+		velocity.x = run_speed
+	elif curstate == State.RUN_LEFT:
+		velocity.x = -run_speed
+	else:
+		velocity.x = 0
+		
+	move_and_slide()
+		
+	print(curstate)
+	
+	lastvelocity = velocity.x
 	#print(velocity.x)
 
-	if velocity.x != 0:
-		if velocity.x > 0:
-			if not is_on_floor():
-				print("jump")
-				$cat_animation.play("jump")
-				$cat_animation.flip_h = false
-			if Input.is_action_pressed("shift"):
-				$cat_animation.play("movement_2")
-				$cat_animation.flip_h = false
-			else: 
-				$cat_animation.play("movement_1")
-				$cat_animation.flip_h = false
-		elif velocity.x < 0:
-			if not is_on_floor():
-				$cat_animation.play("jump")
-				$cat_animation.flip_h = true
-			if Input.is_action_pressed("shift"):
-				$cat_animation.play("movement_2")
-				$cat_animation.flip_h = true
-			else:
-				$cat_animation.play("movement_1")
-				$cat_animation.flip_h = true
+func _on_animated_sprite_2d_animation_finished():
+	
+#	if curstate == State.dying:
+#		switch_to(State.death)
+#		death_time = 0 
+		
+	if curstate == State.PAW:
+		switch_to(State.IDLE)
+		
+	if curstate == State.JUMP:
+		switch_to(State.IDLE)
+		
+#	elif curstate == State.revive:
+#		switch_to(MOVE_STATES.pick_random())
+#		hitnum = 0
+		
 
-#	elif not is_on_floor():
-#			$cat_animation.play("jump")
-#			$cat_animation.flip_h = false
-
-	#print(lastvelocity)
-	if velocity.x == 0:
-		if lastvelocity > 0:
-			$cat_animation.play("idle_2")
-			$cat_animation.flip_h = false
-		elif lastvelocity < 0:
-			$cat_animation.play("idle_2")
-			$cat_animation.flip_h = true
-		elif action == 1:
-			#$cat_animation.play("sleep")
-			$cat_animation.play("paw")
-			$cat_animation.flip_h = false
-		elif action == 2:
-			#$cat_animation.play("sleep")
-			$cat_animation.play("sleep")
-			$cat_animation.flip_h = false
-		else:
-			$cat_animation.play("idle_2")
-
-
-#		elif not is_on_floor():
-#			$cat_animation.play("jump")
-#			$cat_animation.flip_h = false
-
-
-#
-	print(velocity.x, " ", lastvelocity)
-
-	#print(is_on_floor())
-
-	move_and_slide()
-	lastvelocity = velocity.x
-#####################################################
-
-#
-#
-#extends CharacterBody2D
-#
-#
-#var speed = 350
-#var speed_air = 350
-#const jump_speed = -800
-#var gravity = 2000
-#var lastvelocity=0
-#var speed_run = 300
-#var dbjump = 200
-#
-##var score = 0
-#
-#var lastdir: Vector2 = Vector2.ZERO
-#
-## Called when the node enters the scene tree for the first time.
-#func _ready():
-#	print("ready")
-#	$cat_animation.play("idle_1")
-#
-#
-#var numjump = 0
-#
-#
-#func _physics_process(delta):
-#
-#	var action=0
-#
-#	#var velocity = Vector2(0,0)
-#
-#
-#	#print(dir.y)
-#
-#	# velocity.y += gravity * delta
-#	#print(numjump)
-#		# Add the gravity.
-#	if not is_on_floor():
-#		#dir.y = -1 
-#		#print("jks")
-#		velocity.y += gravity * delta
-#
-#	if is_on_floor() and numjump != 0:
-#		numjump = 0
-#
-#	if numjump<2:
-#		if Input.is_action_just_pressed("jump"):
-#			velocity.y = jump_speed
-#			numjump += 1
-#
-#	if Input.is_action_pressed("run_left"): 
-#		if not is_on_floor():
-#			velocity.x = -speed_air
-#		else: 
-#			if Input.is_action_pressed("shift"):
-#				velocity.x = -speed_run
-#			else: 
-#				velocity.x = -speed
-#	elif Input.is_action_pressed("run_right"):
-#		#dir.x = speed
-#		if not is_on_floor():
-#			velocity.x = speed_air
-#		else:
-#			if Input.is_action_pressed("shift"):
-#				velocity.x = speed_run
-#			else: 
-#				velocity.x = speed
-#
-#	elif Input.is_action_pressed("sleep"):
-#		action = 2
-#	elif Input.is_action_pressed("paw"):
-#		action = 1
-#
-#	else:
-#		velocity.x = move_toward(velocity.x, 0, 3000)
-#
-#	if velocity.x != 0:
-#		if velocity.x > 0:
-#			if not is_on_floor():
-#				$cat_animation.play("jump_2")
-#				$cat_animation.flip_h = false
-#			if Input.is_action_pressed("shift"):
-#				$cat_animation.play("movement_2")
-#				$cat_animation.flip_h = false
-#			else: 
-#				$cat_animation.play("movement_1")
-#				$cat_animation.flip_h = false
-#		elif velocity.x < 0:
-#			if not is_on_floor():
-#				$cat_animation.play("jump_2")
-#				$cat_animation.flip_h = true
-#			if Input.is_action_pressed("shift"):
-#				$cat_animation.play("movement_2")
-#				$cat_animation.flip_h = true
-#			else:
-#				$cat_animation.play("movement_1")
-#				$cat_animation.flip_h = true
-#
-#
-#	if velocity.x == 0:
-#		if lastvelocity > 0:
-#			$cat_animation.play("idle_2")
-#			$cat_animation.flip_h = false
-#		elif lastvelocity < 0:
-#			$cat_animation.play("idle_2")
-#			$cat_animation.flip_h = true
-#		elif action == 1:
-#			$cat_animation.play("paw")
-#			$cat_animation.flip_h = false
-#		elif action == 2:
-#			$cat_animation.play("sleep")
-#			$cat_animation.flip_h = false
-#		else:
-#			$cat_animation.play("idle_2")
-#
-##
-#	print(velocity.x, " ", lastvelocity)
-#
-#	move_and_slide()
-#	lastvelocity = velocity.x
-######################################################
-#
