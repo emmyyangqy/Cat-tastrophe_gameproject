@@ -21,9 +21,9 @@ var last_velocity = 0
 var jump_num = 0
 var gravity = 2000
 var jump_force = 1000
-var run_speed = 100
-var walk_speed = 100
-var jump_done = 1
+var run_speed = 400
+var walk_speed = 150
+var jump_done = 0
 
 
 func _ready():
@@ -35,13 +35,16 @@ func switch_to(new_state: State):
 #		new_state = State.revive
 	
 	
-#	if curstate == State.JUMP and new_state != State.JUMP:
-#		if jump_done == 1:
-#			#jump_done = 0
-#			print("hdjfskl")
-#			pass
-#		else:
-#			return
+	if curstate == State.JUMP and new_state != State.JUMP:
+		if jump_num != 0 and is_on_floor():
+			#jump_done = 0
+			print("hdjfskl")
+			pass
+		else:
+			print("------")
+			return
+			
+	
 #
 #	if curstate == State.death and death_time > 3:
 #		new_state = State.revive
@@ -68,18 +71,20 @@ func switch_to(new_state: State):
 		#$cat_animation.frame = 0
 		$cat_animation.play("movement_1")
 		$cat_animation.flip_h = false
-		
-	
+
+			
 	elif new_state == State.WALK_LEFT:
 		#$cat_animation.frame = 0
 		$cat_animation.play("movement_1")
 		$cat_animation.flip_h = true
+
+		
 	elif new_state == State.RUN_RIGHT:
 		#$cat_animation.frame = 0
 		$cat_animation.play("movement_2")
 		$cat_animation.flip_h = false
+		
 	elif new_state == State.RUN_LEFT:
-		#$cat_animation.frame = 0
 		$cat_animation.play("movement_2")
 		$cat_animation.flip_h = true
 		
@@ -93,7 +98,7 @@ func switch_to(new_state: State):
 			if is_on_floor():
 				$cat_animation.play("jump_land")
 				$cat_animation.flip_h = false
-				#jump_done = 1
+				jump_done = 1
 			
 			
 		else:
@@ -131,23 +136,39 @@ func _physics_process(delta):
 	# velocity.y += gravity * delta
 	#print(numjump)
 		# Add the gravity.
+		
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
 	if is_on_floor():
 		jump_num = 0
+		jump_done = 0
+
+#	if Input.is_action_pressed("walk_left"):
+#		switch_to(State.WALK_LEFT)
+#
+#	elif Input.is_action_pressed("walk_right"):
+#		switch_to(State.WALK_RIGHT)
+#
+#	elif Input.is_action_pressed("run_left"):
+#		switch_to(State.RUN_LEFT)
+#
+#	elif Input.is_action_pressed("run_right"):
+#		switch_to(State.RUN_RIGHT)
+
 
 	if Input.is_action_pressed("walk_left"):
-		switch_to(State.WALK_LEFT)
+		if Input.is_action_pressed("shift"):
+			switch_to(State.RUN_LEFT)
+		else: switch_to(State.WALK_LEFT)
+		
 		
 	elif Input.is_action_pressed("walk_right"):
-		switch_to(State.WALK_RIGHT)
+		if Input.is_action_pressed("shift"):
+			switch_to(State.RUN_RIGHT)
+		else: switch_to(State.WALK_RIGHT)
+
 		
-	elif Input.is_action_pressed("run_left"):
-		switch_to(State.RUN_LEFT)
-		
-	elif Input.is_action_pressed("run_right"):
-		switch_to(State.RUN_RIGHT)
 		
 	elif Input.is_action_just_pressed("jump"):
 		jump_done = 0
@@ -188,7 +209,7 @@ func _physics_process(delta):
 		
 	move_and_slide()
 		
-	print(curstate)
+	#print(curstate)
 	
 	lastvelocity = velocity.x
 	#print(velocity.x)
