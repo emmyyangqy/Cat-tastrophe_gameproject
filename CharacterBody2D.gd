@@ -20,7 +20,7 @@ var hitnum = 0
 var last_velocity = 0
 var jump_num = 0
 var gravity = 2000
-var jump_force = 1000
+var jump_force = 700
 var run_speed = 400
 var walk_speed = 150
 var jump_done = 0
@@ -35,13 +35,28 @@ func switch_to(new_state: State):
 #		new_state = State.revive
 	
 	
-	if curstate == State.JUMP and new_state != State.JUMP:
-		if jump_num != 0 and is_on_floor():
-			#jump_done = 0
-			print("hdjfskl")
+	if curstate == State.JUMP:
+		
+
+		if Input.is_action_pressed("ui_left"):
+			$cat_animation.flip_h = true
+			velocity.x = last_velocity 
+				
+		if Input.is_action_pressed("ui_right"):
+			$cat_animation.flip_h = true
+			velocity.x = last_velocity 
+		
+		if is_on_floor():
+			$cat_animation.play("jump_land")
+			$cat_animation.flip_h = false
+			#wait(1)
+			await get_tree().create_timer(.1).timeout
 			pass
+			
+	
+
+
 		else:
-			print("------")
 			return
 			
 	
@@ -89,18 +104,33 @@ func switch_to(new_state: State):
 		$cat_animation.flip_h = true
 		
 	elif new_state == State.JUMP:
-		if is_on_floor() or jump_num < 2:
+		if is_on_floor() or jump_num < 3:
 			jump_num += 1
-			#$cat_animation.frame = 0
-			velocity.y = -jump_force
+			
 			$cat_animation.play("jump_beginning")
-			$cat_animation.flip_h = false
-			if is_on_floor():
-				$cat_animation.play("jump_land")
-				$cat_animation.flip_h = false
-				jump_done = 1
+			$cat_animation.flip_h = true
+			velocity.y = -jump_force
 			
-			
+#			if last_velocity < 0:
+#			#$cat_animation.frame = 0
+#				$cat_animation.play("jump_beginning")
+#				$cat_animation.flip_h = true
+#				velocity.y = -jump_force
+#				if Input.is_action_pressed("ui_left"):
+#					velocity.x = last_velocity 
+#			if last_velocity > 0:
+#			#$cat_animation.frame = 0
+#				$cat_animation.play("jump_beginning")
+#				$cat_animation.flip_h = false
+#				velocity.y = -jump_force
+#				if Input.is_action_pressed("ui_right"):
+#					velocity.x = last_velocity 
+
+#			if is_on_floor():
+#				$cat_animation.play("jump_land")
+#				$cat_animation.flip_h = false
+#				jump_done = 1
+		
 		else:
 			pass
 			
@@ -140,9 +170,6 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
-	if is_on_floor():
-		jump_num = 0
-		jump_done = 0
 
 #	if Input.is_action_pressed("walk_left"):
 #		switch_to(State.WALK_LEFT)
@@ -156,8 +183,11 @@ func _physics_process(delta):
 #	elif Input.is_action_pressed("run_right"):
 #		switch_to(State.RUN_RIGHT)
 
+	if Input.is_action_just_pressed("jump"):
+		jump_done = 0
+		switch_to(State.JUMP)
 
-	if Input.is_action_pressed("walk_left"):
+	elif Input.is_action_pressed("walk_left"):
 		if Input.is_action_pressed("shift"):
 			switch_to(State.RUN_LEFT)
 		else: switch_to(State.WALK_LEFT)
@@ -167,12 +197,7 @@ func _physics_process(delta):
 		if Input.is_action_pressed("shift"):
 			switch_to(State.RUN_RIGHT)
 		else: switch_to(State.WALK_RIGHT)
-
 		
-		
-	elif Input.is_action_just_pressed("jump"):
-		jump_done = 0
-		switch_to(State.JUMP)
 		
 	elif Input.is_action_pressed("paw"):
 		switch_to(State.PAW)
@@ -209,9 +234,17 @@ func _physics_process(delta):
 		
 	move_and_slide()
 		
-	#print(curstate)
+	print(curstate, " ", lastvelocity, " ", jump_num)
 	
-	lastvelocity = velocity.x
+	if is_on_floor():
+		jump_num = 0
+		jump_done = 0
+	
+	if velocity.x == 0:
+		lastvelocity = lastvelocity
+		
+	else:
+		lastvelocity = velocity.x
 	#print(velocity.x)
 
 func _on_animated_sprite_2d_animation_finished():
@@ -223,7 +256,7 @@ func _on_animated_sprite_2d_animation_finished():
 	if curstate == State.PAW:
 		switch_to(State.IDLE)
 		
-	if curstate == State.JUMP:
+	if curstate == State.JUMP:  #switch to elif
 		switch_to(State.IDLE)
 		
 #	elif curstate == State.revive:

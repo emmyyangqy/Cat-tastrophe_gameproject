@@ -1,13 +1,12 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1683319564
+::res://::1683665312
 Cat Sprite Sheet.png::CompressedTexture2D::6402315822507231678::1679011528::1683134119::1::::<><>::
-CharacterBody2D.gd::GDScript::-1::1683319537::0::1::::CatCharacter<>RefCounted<>::
+CharacterBody2D.gd::GDScript::-1::1683664978::0::1::::<>CharacterBody2D<>::
 icon.svg::CompressedTexture2D::7621369074570308941::1679009715::1683134119::1::::<><>::
 light-gray-color-solid-background-1920x1080.png::CompressedTexture2D::6720850916717236254::1679030538::1683134119::1::::<><>::
 README.md::TextFile::-1::1683133790::0::1::::<><>::
-Samplesidescrollcharacter.gd::GDScript::-1::1680035553::0::1::::<>CharacterBody2D<>::
-samplesidescrollcharacter.tscn::PackedScene::1175347064938947833::1680118185::0::1::::<><>::res://Samplesidescrollcharacter.gd
-scene_1.tscn::PackedScene::5340509698451347198::1683319538::0::1::::<><>::res://CharacterBody2D.gd<>uid://cxhlham0mnnjq<>uid://bwik5u3r0t7co<>uid://cntairgipbrry<>uid://c1m7nyq7ev5tf<>uid://dnbm7h3fb6j0n<>uid://bddyf1gki50eq<>uid://c20swoigkkh5g
+cattree_merge.png::CompressedTexture2D::7771372881638549440::1683664907::1683664907::1::::<><>::
+scene_1.tscn::PackedScene::5340509698451347198::1683665312::0::1::::<><>::res://CharacterBody2D.gd<>uid://cxhlham0mnnjq<>uid://bwik5u3r0t7co<>uid://cntairgipbrry<>uid://c1m7nyq7ev5tf<>uid://dnbm7h3fb6j0n<>uid://bddyf1gki50eq<>uid://c20swoigkkh5g<>uid://w48ak7niqgtf<>uid://cavyb7c7u0q4e<>uid://cr5x50g4ytiel<>uid://da3joskchmkla<>uid://crk24hn52jfea<>uid://dx3h1cnyn3w7d<>uid://csml20rinqh0h<>uid://dfcasvd32vvtv<>uid://cjgyxr7bp62ug<>uid://blkm1vxcwax6l<>uid://dpvpx7ummyaa4<>uid://b4fab1y6c1p5p<>uid://tfsrt8a0exlg<>uid://udj8ol5c78pk
 ::res://catsprite/::1683150820
 ::res://catsprite/clean_1/::1683134119
 tile016.png::CompressedTexture2D::7587712946575711662::1679011608::1683134119::1::::<><>::
@@ -84,3 +83,19 @@ tile076.png::CompressedTexture2D::6721973493078818020::1679011608::1683134119::1
 tile077.png::CompressedTexture2D::5837320659840086141::1679011608::1683134119::1::::<><>::
 tile078.png::CompressedTexture2D::4745504980069452926::1679011608::1683134119::1::::<><>::
 tile079.png::CompressedTexture2D::3845832138099885342::1679011608::1683134119::1::::<><>::
+::res://cups/::1683665786
+cattree_1.png::CompressedTexture2D::8831879607696721547::1683656036::1683657182::1::::<><>::
+cattree_2.png::CompressedTexture2D::6061730529002287877::1683656056::1683657182::1::::<><>::
+cattree_3.png::CompressedTexture2D::5418426450136484514::1683657233::1683657285::1::::<><>::
+cattree_4.png::CompressedTexture2D::3067509793798204545::1683665787::1683665790::1::::<><>::
+chair.png::CompressedTexture2D::5988387022746698772::1683655918::1683657182::1::::<><>::
+floor.png::CompressedTexture2D::7217637043211599150::1683664250::1683664250::1::::<><>::
+light.png::CompressedTexture2D::7514368278001762311::1683657252::1683657285::1::::<><>::
+table1.png::CompressedTexture2D::3179917914447932389::1683655937::1683657182::1::::<><>::
+table2.png::CompressedTexture2D::8256400178841851165::1683655963::1683657182::1::::<><>::
+teacup_1.png::CompressedTexture2D::4432222227854864791::1683654236::1683655329::1::::<><>::
+teacup_1_break1.png::CompressedTexture2D::1345034231214884808::1683654332::1683655329::1::::<><>::
+teacup_1_break2.png::CompressedTexture2D::1410576143843369132::1683654347::1683655329::1::::<><>::
+teacup_2.png::CompressedTexture2D::1606025750934969667::1683654264::1683655329::1::::<><>::
+teacup_2_break1.png::CompressedTexture2D::4817653979160233254::1683654304::1683655329::1::::<><>::
+teacup_2_break2.png::CompressedTexture2D::6029434430208357099::1683654318::1683655329::1::::<><>::
