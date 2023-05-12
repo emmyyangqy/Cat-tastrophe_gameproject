@@ -11,7 +11,7 @@ const MOVE_STATES = [State.WALK_RIGHT, State.WALK_LEFT, State.RUN_RIGHT, State.R
 #	State.RUN_RIGHT: [Vector2(1.7,0)],
 #}
 
-var lastvelocity = null
+var lastvelocity = 0
 var curstate = State.IDLE
 var state_time = 0 
 var death_time = 0
@@ -20,18 +20,22 @@ var hitnum = 0
 var last_velocity = 0
 var jump_num = 0
 var gravity = 2000
-var jump_force = 700
+var jump_force = 650
 var run_speed = 400
 var walk_speed = 150
 var jump_done = 0
 var isInLight = false
+var laststate = State.IDLE
+var previousstate = State.IDLE
+#var raycast = get_parent().get_node("LightArea/RayCast2D")
 
 #
 func _ready():
 	var raycast = get_parent().get_node("LightArea/RayCast2D")
 		# Set the "Cast To" property to the position of the player node
 	var player = get_node(".") # Change this to match the path of your player node
-	raycast.cast_to = player.global_position
+	print(player.global_position)
+	#raycast.cast_to = player.global_position #gtehridjosesrgouhifjsdk
 
 	switch_to(State.IDLE)
 	
@@ -48,8 +52,20 @@ func switch_to(new_state: State):
 	if curstate == State.JUMP:
 		
 		if is_on_floor():
-			$cat_animation.play("jump_land")
-			$cat_animation.flip_h = false
+#			$cat_animation.play("jump_land")
+#			$cat_animation.flip_h = false
+			if lastvelocity < 0:
+				#$cat_animation.frame = 0
+				$cat_animation.play("jump_land")
+				$cat_animation.flip_h = true
+			elif lastvelocity > 0:
+				#$cat_animation.frame = 0
+				$cat_animation.play("jump_land")
+				$cat_animation.flip_h = false
+			else:
+				#$cat_animation.frame = 0
+				print("error")
+				#$cat_animation.play("jump_land")
 			#wait(1)
 			await get_tree().create_timer(.1).timeout
 			pass
@@ -71,16 +87,19 @@ func switch_to(new_state: State):
 	
 
 	if new_state == State.IDLE:
-		if last_velocity < 0:
+		#$cat_animation.play("idle_2")
+		
+		if lastvelocity < 0:
 			#$cat_animation.frame = 0
 			$cat_animation.play("idle_2")
 			$cat_animation.flip_h = true
-		if last_velocity > 0:
+		elif lastvelocity > 0:
 			#$cat_animation.frame = 0
 			$cat_animation.play("idle_2")
 			$cat_animation.flip_h = false
 		else:
 			#$cat_animation.frame = 0
+			print("error")
 			$cat_animation.play("idle_1")
 			
 	elif new_state == State.WALK_RIGHT:
@@ -106,12 +125,17 @@ func switch_to(new_state: State):
 		
 	elif new_state == State.JUMP:
 		#if is_on_floor() or jump_num < 3:
-		if is_on_floor():
+		if is_on_floor() and jump_num < 1:
 			jump_num += 1
-			
-			$cat_animation.play("jump_beginning")
-			$cat_animation.flip_h = true
 			velocity.y = -jump_force
+			$cat_animation.play("jump_beginning")
+			if lastvelocity < 0:
+				$cat_animation.flip_h = true
+				
+			elif lastvelocity > 0:
+				$cat_animation.flip_h = false
+				
+			#velocity.y = -jump_force
 			
 #			if last_velocity < 0:
 #			#$cat_animation.frame = 0
@@ -161,47 +185,17 @@ func switch_to(new_state: State):
 func _physics_process(delta):
 	# Update the amount of time you spent in the current state
 	state_time += delta
+	print(curstate)
 	
-	
-	#death_time += delta
-	
-#	if jump_done == 1:
-#		switch_to(State.IDLE)
-	# velocity.y += gravity * delta
-	#print(numjump)
-		# Add the gravity.
-		
+
+
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
-	if curstate == State.JUMP:
-		
-		if Input.is_action_pressed("ui_left"):
-			$cat_animation.flip_h = true
-			velocity.x = last_velocity 
-			
-			print("jumpingleft")
-				
-		if Input.is_action_pressed("ui_right"):
-			$cat_animation.flip_h = true
-			velocity.x = last_velocity 
-
-#	if Input.is_action_pressed("walk_left"):
-#		switch_to(State.WALK_LEFT)
-#
-#	elif Input.is_action_pressed("walk_right"):
-#		switch_to(State.WALK_RIGHT)
-#
-#	elif Input.is_action_pressed("run_left"):
-#		switch_to(State.RUN_LEFT)
-#
-#	elif Input.is_action_pressed("run_right"):
-#		switch_to(State.RUN_RIGHT)
 
 	if Input.is_action_just_pressed("jump"):
 		jump_done = 0
 		switch_to(State.JUMP)
-		
 		
 
 	elif Input.is_action_pressed("walk_left"):
@@ -222,23 +216,42 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("sleep"):
 		switch_to(State.SLEEP)
 	
-#	if curstate == State.death and death_time > 3:
-#		switch_to(State.revive)
 
-	
-		#next = move_and_collide(Vector2(-1,0))
-		
-#	elif not is_on_floor():
-#		velocity.y += 100 * delta
-
-		#next = move_and_collide(Vector2(0,10))
-		
 	else:
-		#velocity.x = velocity.x * .9
 		switch_to(State.IDLE)
-		#velocity.x = move_toward(velocity.x, 0, 3000)
-
-	if curstate == State.WALK_RIGHT:
+		
+	if curstate == State.JUMP:
+		if Input.is_action_pressed("ui_left"):
+			$cat_animation.flip_h = true
+			
+			if laststate == 1:
+				velocity.x = -walk_speed
+				print("kjhghf")
+			elif laststate == 3:
+				velocity.x = -run_speed
+				print("ghjrebksldaGDSJHK")
+			else:
+				velocity.x = -walk_speed
+#
+			
+#			if laststate == 3:
+#				velocity.x = -run_speed
+#			else:
+#				velocity.x = -walk_speed
+#				#velocity.x = -airjump_speed
+				
+		if Input.is_action_pressed("ui_right"):
+			$cat_animation.flip_h = false
+			if laststate == 2:
+				velocity.x = walk_speed
+			elif laststate == 4:
+				velocity.x = run_speed
+			else:
+				velocity.x = walk_speed
+				#velocity.x = airjump_speed
+			
+			
+	elif curstate == State.WALK_RIGHT:
 		velocity.x = walk_speed
 	elif curstate == State.WALK_LEFT:
 		velocity.x = -walk_speed
@@ -252,17 +265,26 @@ func _physics_process(delta):
 	move_and_slide()
 		
 	#print(curstate, " ", lastvelocity, " ", jump_num)
+	print(last_velocity, " ", lastvelocity)
 	
 	if is_on_floor():
 		jump_num = 0
 		jump_done = 0
 	
 	if velocity.x == 0:
-		lastvelocity = lastvelocity
 		
+		lastvelocity = lastvelocity
 	else:
 		lastvelocity = velocity.x
-	#print(velocity.x)
+		
+	if previousstate == curstate:
+		previousstate = curstate
+		laststate = laststate
+	else:
+		if curstate != State.JUMP:
+			laststate = curstate
+
+	print(laststate)
 
 func _on_animated_sprite_2d_animation_finished():
 	

@@ -719,7 +719,7 @@ script = ExtResource("1_md0bl")
 [node name="cat_animation" type="AnimatedSprite2D" parent="Cat_character"]
 position = Vector2(40, 81)
 sprite_frames = SubResource("SpriteFrames_s1sfb")
-animation = &"jump_land"
+animation = &"idle_2"
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cat_character"]
