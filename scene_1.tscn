@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://cic8odeshi1be"]
+[gd_scene load_steps=112 format=3 uid="uid://cic8odeshi1be"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_md0bl"]
 [ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_pl27u"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://b4fab1y6c1p5p" path="res://cups/teacup_1.png" id="17_6c0ay"]
 [ext_resource type="Texture2D" uid="uid://tfsrt8a0exlg" path="res://cups/teacup_1_break1.png" id="18_rt2s2"]
 [ext_resource type="Texture2D" uid="uid://udj8ol5c78pk" path="res://cups/teacup_1_break2.png" id="19_n6mql"]
+[ext_resource type="Texture2D" uid="uid://esn438eggd6" path="res://camera_light_1.png" id="25_y2ksj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fvhhj"]
 atlas = ExtResource("2_c6yum")
@@ -556,46 +557,65 @@ texture_region_size = Vector2i(24, 24)
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qkbf7"]
+polygon = PackedVector2Array(-5, 3, 5, 3, 5, 5, -5, 5)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l4c5t"]
 texture = ExtResource("12_fwodb")
 texture_region_size = Vector2i(10, 10)
 0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_qkbf7")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(5, 1, 5, 5, -5, 5, -5, 1, -3.01562, 1, -3, 3, 3, 3, 3.01562, 1)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, 3, 5, 3, 5, 5, -5, 5)
 0:0/0/physics_layer_0/polygon_0/one_way = true
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5pb0c"]
+polygon = PackedVector2Array(-5, -5, 5, -5, 5, -3, -5, -3)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wtcx"]
 texture = ExtResource("13_677pf")
 texture_region_size = Vector2i(10, 10)
 0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_5pb0c")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(5, -5, 5, -3, -5, -3, -5, -5)
 0:0/0/physics_layer_0/polygon_0/one_way = true
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nciwd"]
+polygon = PackedVector2Array(-5, -5, 5, -5, 5, -3, -5, -3)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x14qf"]
 texture = ExtResource("14_s06uf")
 texture_region_size = Vector2i(10, 10)
 0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_nciwd")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(5, -5, 5, -3, -5, -3, -5, -5)
 0:0/0/physics_layer_0/polygon_0/one_way = true
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tx4vs"]
+polygon = PackedVector2Array(-5, 1, -3, 1, -3, 3, 3, 3, 3, 1, 5, 1, 5, 5, -5, 5)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u07ch"]
 texture = ExtResource("15_4u78x")
 texture_region_size = Vector2i(10, 10)
 0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_tx4vs")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(5, 1, 5, 5, -5, 5, -5, 1, -3.01562, 1, -3, 3, 3, 3, 3.01562, 1)
 0:0/0/physics_layer_0/polygon_0/one_way = true
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rp5g1"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8rxf2"]
 texture = ExtResource("16_5eafi")
 texture_region_size = Vector2i(10, 10)
 0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_rp5g1")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
@@ -613,19 +633,27 @@ texture_region_size = Vector2i(10, 10)
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hoera"]
+polygon = PackedVector2Array(-12, -5, 11, -5, 11, -3, -12, -3)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e3k00"]
 texture = ExtResource("15_mipss")
 texture_region_size = Vector2i(25, 25)
 0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_hoera")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.5, -5.5, 10.5, -5.5, 10.5, -3.5, -12.5, -3.5)
 0:0/0/physics_layer_0/polygon_0/one_way = true
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_q85jo"]
+polygon = PackedVector2Array(-10, -5, 13, -5, 13, -3, -10, -3)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nw2j2"]
 texture = ExtResource("16_nqggd")
 texture_region_size = Vector2i(25, 25)
 0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_q85jo")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.5, -5.5, 12.5, -5.5, 12.5, -3.5, -10.5, -3.5)
@@ -654,6 +682,7 @@ texture_region_size = Vector2i(24, 24)
 
 [sub_resource type="TileSet" id="TileSet_uln4q"]
 tile_size = Vector2i(8, 8)
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_o8k5h")
 sources/4 = SubResource("TileSetAtlasSource_mam05")
@@ -682,18 +711,18 @@ texture = ExtResource("1_pl27u")
 position = Vector2(578, 324)
 scale = Vector2(5, 5)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Cat_character" type="CharacterBody2D" parent="."]
 texture_filter = 1
 scale = Vector2(5, 5)
 script = ExtResource("1_md0bl")
 
-[node name="cat_animation" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="cat_animation" type="AnimatedSprite2D" parent="Cat_character"]
 position = Vector2(40, 81)
 sprite_frames = SubResource("SpriteFrames_s1sfb")
 animation = &"jump_land"
 speed_scale = 2.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cat_character"]
 position = Vector2(40, 85.7)
 shape = SubResource("RectangleShape2D_xgoxf")
 
@@ -722,14 +751,13 @@ position = Vector2(1160, 280)
 shape = SubResource("RectangleShape2D_3cjnt")
 
 [node name="TileMap" type="TileMap" parent="."]
+light_mask = 0
 texture_filter = 1
 scale = Vector2(9, 9)
 tile_set = SubResource("TileSet_uln4q")
-cell_quadrant_size = 13
-collision_animatable = true
 format = 2
 layer_0/name = "furniture_1"
-layer_0/tile_data = PackedInt32Array(458763, 15, 0, 458764, 16, 0, 458765, 15, 0, 393229, 15, 0, 393228, 15, 0, 393227, 18, 0, 262155, 17, 0, 327691, 15, 0, 327693, 18, 0, 262157, 18, 0, 196621, 15, 0, 131085, 17, 0, 12, 4, 0, 3, 4, 0)
+layer_0/tile_data = PackedInt32Array(458763, 15, 0, 458764, 16, 0, 458765, 15, 0, 393229, 15, 0, 393228, 15, 0, 393227, 18, 0, 262155, 17, 0, 327691, 15, 0, 327693, 18, 0, 262157, 18, 0, 196621, 15, 0, 131085, 17, 0, 12, 4, 0, 3, 4, 0, 393221, 6, 0)
 layer_1/name = "ground"
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)
@@ -737,3 +765,36 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(458752, 13, 0, 458753, 13, 0, 458754, 13, 0, 458755, 13, 0, 458756, 13, 0, 458757, 13, 0, 458758, 13, 0, 458760, 13, 0, 458761, 13, 0, 458762, 13, 0, 458763, 13, 0, 458764, 13, 0, 458765, 13, 0, 458766, 13, 0, 458767, 13, 0, 458759, 13, 0, 393222, 5, 0, 393221, 6, 0)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node"]
+scale = Vector2(9, 9)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Node/Sprite2D"]
+
+[node name="LightArea" type="Area2D" parent="."]
+position = Vector2(1040, 397)
+rotation = -1.5708
+scale = Vector2(2.8916, 2.33789)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LightArea"]
+polygon = PackedVector2Array(35.9662, 35.0744, -47.7244, -75.2815, -21.7872, -94.1019, 10.029, -103.94, 40.8078, -108.645, 70.895, -103.94, 89.9156, -96.2406, 111.357, -82.9808)
+
+[node name="RayCast2D" type="RayCast2D" parent="LightArea"]
+position = Vector2(36.3121, 33.3634)
+rotation = 1.5708
+scale = Vector2(0.427736, 0.345829)
+
+[node name="PointLight2D" type="PointLight2D" parent="LightArea"]
+color = Color(0.890196, 0.235294, 0.215686, 1)
+energy = 2.0
+blend_mode = 2
+shadow_enabled = true
+shadow_color = Color(1, 1, 1, 0)
+texture = ExtResource("25_y2ksj")
+texture_scale = 0.3
+
+[connection signal="body_entered" from="LightArea" to="Cat_character" method="_on_light_area_body_entered"]
