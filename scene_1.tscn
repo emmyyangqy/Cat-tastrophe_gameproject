@@ -791,9 +791,8 @@ offset = Vector2(-36.3016, -35.2878)
 texture_scale = 0.3
 
 [node name="RayCast2D" type="RayCast2D" parent="Camera/LightArea"]
-rotation = 1.5708
-scale = Vector2(1.4, 1)
-skew = 0.0872665
+rotation = 1.58825
+scale = Vector2(1.3, 1)
 collide_with_areas = true
 
 [connection signal="body_entered" from="Camera/LightArea" to="Player" method="_on_light_area_body_entered"]
