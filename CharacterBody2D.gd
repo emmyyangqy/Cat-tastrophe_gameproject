@@ -34,7 +34,7 @@ func _ready():
 	var raycast = get_parent().get_node("LightArea/RayCast2D")
 		# Set the "Cast To" property to the position of the player node
 	var player = get_node(".") # Change this to match the path of your player node
-	print(player.global_position)
+	#print(player.global_position)
 	#raycast.cast_to = player.global_position #gtehridjosesrgouhifjsdk
 
 	switch_to(State.IDLE)
@@ -64,7 +64,8 @@ func switch_to(new_state: State):
 				$cat_animation.flip_h = false
 			else:
 				#$cat_animation.frame = 0
-				print("error")
+				#print("error")
+				pass
 				#$cat_animation.play("jump_land")
 			#wait(1)
 			await get_tree().create_timer(.1).timeout
@@ -99,7 +100,7 @@ func switch_to(new_state: State):
 			$cat_animation.flip_h = false
 		else:
 			#$cat_animation.frame = 0
-			print("error")
+			#print("error")
 			$cat_animation.play("idle_1")
 			
 	elif new_state == State.WALK_RIGHT:
@@ -127,7 +128,7 @@ func switch_to(new_state: State):
 		#if is_on_floor() or jump_num < 3:
 		if is_on_floor() and jump_num < 1:
 			jump_num += 1
-			velocity.y = -jump_force
+			
 			$cat_animation.play("jump_beginning")
 			if lastvelocity < 0:
 				$cat_animation.flip_h = true
@@ -135,7 +136,7 @@ func switch_to(new_state: State):
 			elif lastvelocity > 0:
 				$cat_animation.flip_h = false
 				
-			#velocity.y = -jump_force
+			velocity.y = -jump_force
 			
 #			if last_velocity < 0:
 #			#$cat_animation.frame = 0
@@ -185,7 +186,17 @@ func switch_to(new_state: State):
 func _physics_process(delta):
 	# Update the amount of time you spent in the current state
 	state_time += delta
-	print(curstate)
+	
+	#var player = get_node(".")
+	
+	
+#	var raycast = get_parent().get_node("LightArea/RayCast2D")
+#		# Set the "Cast To" property to the position of the player node
+#	var player = get_node(".") # Change this to match the path of your player node
+#	#print(player.global_position)
+#	raycast.target_position = player.global_position #gtehridjosesrgouhifjsdk
+	#print(curstate)
+	#print(player.global_position)
 	
 
 
@@ -226,10 +237,10 @@ func _physics_process(delta):
 			
 			if laststate == 1:
 				velocity.x = -walk_speed
-				print("kjhghf")
+				#print("kjhghf")
 			elif laststate == 3:
 				velocity.x = -run_speed
-				print("ghjrebksldaGDSJHK")
+				#print("ghjrebksldaGDSJHK")
 			else:
 				velocity.x = -walk_speed
 #
@@ -265,7 +276,7 @@ func _physics_process(delta):
 	move_and_slide()
 		
 	#print(curstate, " ", lastvelocity, " ", jump_num)
-	print(last_velocity, " ", lastvelocity)
+	#print(last_velocity, " ", lastvelocity)
 	
 	if is_on_floor():
 		jump_num = 0
@@ -284,7 +295,7 @@ func _physics_process(delta):
 		if curstate != State.JUMP:
 			laststate = curstate
 
-	print(laststate)
+	
 
 func _on_animated_sprite_2d_animation_finished():
 	
@@ -318,19 +329,31 @@ func _on_animated_sprite_2d_animation_finished():
 
 func _on_light_area_body_entered(body):
 	print("test1")
-	if body.name == "Area2D":
-		print("test")
+	#var raycast = get_parent().get_node("LightArea/RayCast2D")
+	
+	#if body.name == "Area2D":
+	#	print("test")
 		#var light_shape = body.get_node("CollisionShape2D") as CollisionShape2D
 		#var light = body.get_parent().get_node("PointLight2D")
-		var raycast = body.get_node("RayCast2D")
-		if raycast.is_colliding() and raycast.get_collider().name == "CharacterBody2D":
-			print("bhjrksnd") # Restart the game or level
-			get_tree().reload_current_scene()	
+	#var raycast = body.get_node("RayCast2D")
+	var raycast = get_parent().get_node("LightArea/RayCast2D")
+	var player = get_node(".") # Change this to match the path of your player node
+	#print(player.global_position)
+	raycast.target_position = player.global_position
+	
+	if raycast.is_colliding():
+		#draw_line(raycast.global_position, raycast.target_position * 300, Color.white, 8.0)
+		#draw_line(Vector2(raycast.global_position), Vector2(raycast.target_position), Color.WHITE)
+		
+		print(raycast.get_collider().name)
+		print(Vector2(raycast.global_position), ' ', Vector2(raycast.target_position))
+#	if raycast.is_colliding() and raycast.get_collider().name == ".":
+#		print("bhjrksnd") # Restart the game or level
+#		get_tree().reload_current_scene()	
 			
 		#if light.is_raycast_enabled():
 			#get_tree().reload_current_scene()
 			
-
 
 			
 			#if light_shape.test_point(global_transform.origin):
@@ -344,3 +367,9 @@ func _on_light_area_body_entered(body):
 #            # Restart the game or level
 #            get_tree().reload_current_scene()
 
+func _draw() -> void:
+	#draw_line(Vector.ZERO, Vector2.RIGHT * 300, Color.white, 8.0
+	var raycast = get_parent().get_node("LightArea/RayCast2D")
+	var player = get_node(".") # Change this to match the path of your player node
+	#print(player.global_position)
+	draw_line(Vector2(raycast.global_position), Vector2(player.global_position), Color.WHITE)
