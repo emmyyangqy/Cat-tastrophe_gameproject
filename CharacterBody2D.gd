@@ -33,6 +33,7 @@ var LightArea
 
 var player
 var caught = false
+var dangerzone = false
 	
 #
 func _ready():
@@ -303,11 +304,12 @@ func _physics_process(delta):
 	
 	raycast.target_position = position-LightArea.position
 	if raycast.is_colliding():
-		if raycast.get_collider().name == "Player":
-			caught = true
+		if raycast.get_collider().name == "Player" and dangerzone == true:
+			get_tree().reload_current_scene()# caught = true
 		else: 
-			caught = false
-		print(raycast.get_collider().name, ' ', caught)
+			pass
+			#caught = false
+		print(raycast.get_collider().name, ' ', caught, ' ', dangerzone)
 	
 			
 
@@ -333,8 +335,10 @@ func _on_animated_sprite_2d_animation_finished():
 
 
 func _on_light_area_body_entered(body):
-	if caught == true:
-		get_tree().reload_current_scene()
+	if body.get_name() == "Player":
+		dangerzone = true
+#	if caught == true:
+#		get_tree().reload_current_scene()
 	#var raycast = get_parent().get_node("LightArea/RayCast2D")
 	
 	#if body.name == "Area2D":
@@ -374,3 +378,7 @@ func _draw():
 	
 	#draw_line(player.position, player.position+raycast.position, Color.WHITE)
 	pass
+
+
+func _on_light_area_body_exited(body):
+	dangerzone = false  # Replace with function body.
