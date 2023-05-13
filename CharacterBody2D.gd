@@ -274,10 +274,7 @@ func _physics_process(delta):
 		velocity.x = 0
 		
 	move_and_slide()
-		
-	#print(curstate, " ", lastvelocity, " ", jump_num)
-	#print(last_velocity, " ", lastvelocity)
-	
+
 	if is_on_floor():
 		jump_num = 0
 		jump_done = 0
@@ -314,16 +311,6 @@ func _on_animated_sprite_2d_animation_finished():
 #		hitnum = 0
 		
 
-#
-#func _on_Player_body_entered(body: Node) -> void:
-#	print("ehrjbsdkn")
-#	if body.name == "PointLight2D":
-#		print("ehrjbsdkn")
-#		var light_shape = body.get_node("CollisionShape2D") as CollisionShape2D
-#		if light_shape.test_point(global_transform.origin):
-#			# Restart the game or level
-#			get_tree().reload_current_scene()
-
 
 
 
@@ -341,12 +328,11 @@ func _on_light_area_body_entered(body):
 	#print(player.global_position)
 	raycast.target_position = player.global_position
 	
+	
 	if raycast.is_colliding():
-		#draw_line(raycast.global_position, raycast.target_position * 300, Color.white, 8.0)
-		#draw_line(Vector2(raycast.global_position), Vector2(raycast.target_position), Color.WHITE)
 		
 		print(raycast.get_collider().name)
-		print(Vector2(raycast.global_position), ' ', Vector2(raycast.target_position))
+		print(Vector2(raycast.global_transform.origin), ' ', Vector2(raycast.target_position))
 #	if raycast.is_colliding() and raycast.get_collider().name == ".":
 #		print("bhjrksnd") # Restart the game or level
 #		get_tree().reload_current_scene()	
@@ -360,12 +346,7 @@ func _on_light_area_body_entered(body):
 				# Restart the game or level
 				#get_tree().reload_current_scene()
 			
-#func _on_Player_body_entered(body: Node) -> void:
-#    if body.name == "LightArea":
-#        var light = body.get_parent().get_node("Light2D")
-#        if light.is_raycast_enabled():
-#            # Restart the game or level
-#            get_tree().reload_current_scene()
+
 
 func _draw() -> void:
 	#draw_line(Vector.ZERO, Vector2.RIGHT * 300, Color.white, 8.0

@@ -712,6 +712,7 @@ position = Vector2(578, 324)
 scale = Vector2(5, 5)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
 position = Vector2(-16, 16)
@@ -753,17 +754,17 @@ layer_1/tile_data = PackedInt32Array(458752, 13, 0, 458753, 13, 0, 458754, 13, 0
 
 [node name="Cat_character" type="CharacterBody2D" parent="."]
 texture_filter = 1
-scale = Vector2(5, 5)
+position = Vector2(100, 400)
+scale = Vector2(4, 4)
 script = ExtResource("1_md0bl")
 
 [node name="cat_animation" type="AnimatedSprite2D" parent="Cat_character"]
-position = Vector2(40, 81)
 sprite_frames = SubResource("SpriteFrames_s1sfb")
 animation = &"idle_2"
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cat_character"]
-position = Vector2(40, 85.7)
+position = Vector2(-0.25, 4.75)
 shape = SubResource("RectangleShape2D_xgoxf")
 
 [node name="Node" type="Node" parent="."]
@@ -776,25 +777,29 @@ scale = Vector2(9, 9)
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Node/Sprite2D"]
 
 [node name="LightArea" type="Area2D" parent="."]
-position = Vector2(1040, 397)
-rotation = -1.5708
+position = Vector2(1007, 346)
+rotation = -1.60313
 scale = Vector2(2.8916, 2.33789)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LightArea"]
+position = Vector2(-35.9672, -34.7189)
 polygon = PackedVector2Array(35.9662, 35.0744, -47.7244, -75.2815, -21.7872, -94.1019, 10.029, -103.94, 40.8078, -108.645, 70.895, -103.94, 89.9156, -96.2406, 111.357, -82.9808)
 
 [node name="PointLight2D" type="PointLight2D" parent="LightArea"]
+position = Vector2(-0.384735, 2.13055)
 color = Color(0.890196, 0.235294, 0.215686, 1)
 energy = 2.0
 blend_mode = 2
 shadow_enabled = true
 shadow_color = Color(1, 1, 1, 0)
 texture = ExtResource("25_y2ksj")
+offset = Vector2(-36.3016, -35.2878)
 texture_scale = 0.3
 
 [node name="RayCast2D" type="RayCast2D" parent="LightArea"]
-position = Vector2(36.3121, 33.3634)
+position = Vector2(-0.0445709, 0.0359192)
 rotation = 1.5708
-scale = Vector2(0.428, 0.346)
+scale = Vector2(9.896, 8)
+target_position = Vector2(-17.4993, -5.62567)
 
 [connection signal="body_entered" from="LightArea" to="Cat_character" method="_on_light_area_body_entered"]

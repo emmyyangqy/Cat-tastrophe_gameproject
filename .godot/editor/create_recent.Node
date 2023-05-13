@@ -1,8 +1,8 @@
+Sprite2D
+Node
 RayCast2D
 CollisionPolygon2D
 Area2D
-Sprite2D
-Node
 LightOccluder2D
 PointLight2D
 DirectionalLight2D
