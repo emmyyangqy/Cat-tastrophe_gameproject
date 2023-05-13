@@ -1,11 +1,12 @@
+RayCast2D
+Marker2D
+CharacterBody2D
 Sprite2D
 Node
-RayCast2D
 CollisionPolygon2D
 Area2D
 LightOccluder2D
 PointLight2D
 DirectionalLight2D
 TileMap
-CharacterBody2D
 AnimatedSprite2D

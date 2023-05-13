@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://cic8odeshi1be"]
+[gd_scene load_steps=113 format=3 uid="uid://cic8odeshi1be"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_md0bl"]
 [ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_pl27u"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://b4fab1y6c1p5p" path="res://cups/teacup_1.png" id="17_6c0ay"]
 [ext_resource type="Texture2D" uid="uid://tfsrt8a0exlg" path="res://cups/teacup_1_break1.png" id="18_rt2s2"]
 [ext_resource type="Texture2D" uid="uid://udj8ol5c78pk" path="res://cups/teacup_1_break2.png" id="19_n6mql"]
+[ext_resource type="Script" path="res://Camera.gd" id="25_pkgu4"]
 [ext_resource type="Texture2D" uid="uid://esn438eggd6" path="res://camera_light_1.png" id="25_y2ksj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qs305"]
@@ -752,41 +753,34 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(458752, 13, 0, 458753, 13, 0, 458754, 13, 0, 458755, 13, 0, 458756, 13, 0, 458757, 13, 0, 458758, 13, 0, 458760, 13, 0, 458761, 13, 0, 458762, 13, 0, 458763, 13, 0, 458764, 13, 0, 458765, 13, 0, 458766, 13, 0, 458767, 13, 0, 458759, 13, 0, 393222, 5, 0, 393221, 6, 0)
 
-[node name="Cat_character" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
 texture_filter = 1
-position = Vector2(100, 400)
+position = Vector2(200, 400)
 scale = Vector2(4, 4)
 script = ExtResource("1_md0bl")
 
-[node name="cat_animation" type="AnimatedSprite2D" parent="Cat_character"]
+[node name="cat_animation" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(0.25, -4.75)
 sprite_frames = SubResource("SpriteFrames_s1sfb")
 animation = &"idle_2"
 speed_scale = 2.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cat_character"]
-position = Vector2(-0.25, 4.75)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_xgoxf")
 
-[node name="Node" type="Node" parent="."]
+[node name="Camera" type="CharacterBody2D" parent="."]
 
-[node name="Sprite2D2" type="Sprite2D" parent="Node"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Node"]
-scale = Vector2(9, 9)
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Node/Sprite2D"]
-
-[node name="LightArea" type="Area2D" parent="."]
+[node name="LightArea" type="Area2D" parent="Camera"]
 position = Vector2(1007, 346)
 rotation = -1.60313
 scale = Vector2(2.8916, 2.33789)
+script = ExtResource("25_pkgu4")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LightArea"]
-position = Vector2(-35.9672, -34.7189)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Camera/LightArea"]
+position = Vector2(-36.0008, -33.4364)
 polygon = PackedVector2Array(35.9662, 35.0744, -47.7244, -75.2815, -21.7872, -94.1019, 10.029, -103.94, 40.8078, -108.645, 70.895, -103.94, 89.9156, -96.2406, 111.357, -82.9808)
 
-[node name="PointLight2D" type="PointLight2D" parent="LightArea"]
-position = Vector2(-0.384735, 2.13055)
+[node name="PointLight2D" type="PointLight2D" parent="Camera/LightArea"]
 color = Color(0.890196, 0.235294, 0.215686, 1)
 energy = 2.0
 blend_mode = 2
@@ -796,10 +790,10 @@ texture = ExtResource("25_y2ksj")
 offset = Vector2(-36.3016, -35.2878)
 texture_scale = 0.3
 
-[node name="RayCast2D" type="RayCast2D" parent="LightArea"]
-position = Vector2(-0.0445709, 0.0359192)
+[node name="RayCast2D" type="RayCast2D" parent="Camera/LightArea"]
 rotation = 1.5708
-scale = Vector2(9.896, 8)
-target_position = Vector2(-17.4993, -5.62567)
+scale = Vector2(1.4, 1)
+skew = 0.0872665
+collide_with_areas = true
 
-[connection signal="body_entered" from="LightArea" to="Cat_character" method="_on_light_area_body_entered"]
+[connection signal="body_entered" from="Camera/LightArea" to="Player" method="_on_light_area_body_entered"]
