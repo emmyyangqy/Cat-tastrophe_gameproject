@@ -770,13 +770,11 @@ speed_scale = 2.0
 shape = SubResource("RectangleShape2D_xgoxf")
 
 [node name="Camera" type="CharacterBody2D" parent="."]
+position = Vector2(135, -109)
 script = ExtResource("25_pkgu4")
 
 [node name="RayCast2D" type="RayCast2D" parent="Camera"]
 position = Vector2(1007, 346)
-rotation = -0.0107479
-scale = Vector2(3.0395, 2.89145)
-skew = -0.00747418
 collide_with_areas = true
 
 [node name="LightArea" type="Area2D" parent="Camera"]

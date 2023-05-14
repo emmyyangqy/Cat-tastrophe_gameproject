@@ -34,6 +34,7 @@ var LightArea
 var player
 var caught = false
 var dangerzone = false
+var camera
 	
 #
 func _ready():
@@ -286,7 +287,6 @@ func _physics_process(delta):
 		jump_done = 0
 	
 	if velocity.x == 0:
-		
 		lastvelocity = lastvelocity
 	else:
 		lastvelocity = velocity.x
@@ -300,9 +300,11 @@ func _physics_process(delta):
 			
 	raycast = get_parent().get_node("Camera/RayCast2D")
 	LightArea = get_parent().get_node("Camera/LightArea")
+	camera = get_parent().get_node("Camera")
 	player = get_node(".")
 	
-	raycast.target_position = position-LightArea.position
+	raycast.target_position = position-LightArea.position-camera.position
+	
 	if raycast.is_colliding():
 		if raycast.get_collider().name == "Player" and dangerzone == true:
 			get_tree().reload_current_scene()
