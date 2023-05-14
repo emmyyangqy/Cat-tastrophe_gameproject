@@ -1,2 +1,4 @@
 res://scene_1.tscn
 res://CharacterBody2D.gd
+res://Camera.gd
+res://LightArea.gd

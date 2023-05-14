@@ -1,7 +1,7 @@
+Sprite2D
 RayCast2D
 Marker2D
 CharacterBody2D
-Sprite2D
 Node
 CollisionPolygon2D
 Area2D

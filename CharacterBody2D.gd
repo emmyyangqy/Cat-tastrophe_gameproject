@@ -298,20 +298,17 @@ func _physics_process(delta):
 		if curstate != State.JUMP:
 			laststate = curstate
 			
-	raycast = get_parent().get_node("Camera/LightArea/RayCast2D")
+	raycast = get_parent().get_node("Camera/RayCast2D")
 	LightArea = get_parent().get_node("Camera/LightArea")
 	player = get_node(".")
 	
 	raycast.target_position = position-LightArea.position
 	if raycast.is_colliding():
 		if raycast.get_collider().name == "Player" and dangerzone == true:
-			get_tree().reload_current_scene()# caught = true
+			get_tree().reload_current_scene()
 		else: 
 			pass
-			#caught = false
-		print(raycast.get_collider().name, ' ', caught, ' ', dangerzone)
-	
-			
+
 
 
 	
