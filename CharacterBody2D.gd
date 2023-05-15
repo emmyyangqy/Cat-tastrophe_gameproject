@@ -25,6 +25,7 @@ var jump_done = 0
 var laststate = State.IDLE
 var previousstate = State.IDLE
 var state_time = 0
+var canpush = false
 
 #var raycast = get_parent().get_node("LightArea/RayCast2D")
 var raycast 
@@ -59,6 +60,12 @@ func switch_to(new_state: State):
 		else:
 			return
 			
+	if curstate == State.PAW:
+		if state_time > .75:
+			pass
+		else:
+			return
+			
 
 	curstate = new_state
 
@@ -66,6 +73,7 @@ func switch_to(new_state: State):
 	state_time = 0
 
 	if new_state == State.IDLE:
+		$paw_area.monitoring = false
 		#$cat_animation.play("idle_2")
 		
 		if lastvelocity < 0:
@@ -141,10 +149,12 @@ func switch_to(new_state: State):
 	elif new_state == State.LAND:
 		$cat_animation.play("jump_land")
 
-			
 	elif new_state == State.PAW:
 		#$cat_animation.frame = 0
 		$cat_animation.play("paw")
+		$paw_area.monitoring = true
+		#print("paw")
+		
 	elif new_state == State.SLEEP:
 		#$cat_animation.frame = 0
 		$cat_animation.play("sleep")
@@ -228,7 +238,7 @@ func _physics_process(delta):
 		velocity.x = 0
 		
 	move_and_slide()
-	print(curstate, ' ', state_time)
+	#print(curstate, ' ', state_time)
 
 	if is_on_floor():
 		jump_num = 0
@@ -270,6 +280,13 @@ func _physics_process(delta):
 			
 			
 	state_time += delta
+	if state_time > 0.2:
+		canpush = true
+	else:
+		canpush = false
+		
+	print(state_time)
+	
 
 
 func _on_animated_sprite_2d_animation_finished():
@@ -296,13 +313,21 @@ func _on_light_area_body_exited(body):
 
 
 func _on_paw_area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	if curstate == State.PAW and body != self:
-		var struck = false
+	#print("0")
+	#print(body)
+	
+	if curstate == State.PAW: # and body != self:
+
+		var struck_toright = false
+		var struck_toleft = false
 		
 		if lastvelocity > 0 and local_shape_index == 1:
-			struck = true
+			struck_toright = true
 		elif lastvelocity < 0 and local_shape_index == 0:
-			struck = true
+			struck_toleft = true
 
-		if struck and body is pushableobject:
-			body.push()
+		if struck_toright and body is pushableobject:
+			body.pushright()
+			
+		if struck_toleft and body is pushableobject:
+			body.pushleft()

@@ -649,7 +649,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4ap3h")
 }],
-"loop": true,
+"loop": false,
 "name": &"paw",
 "speed": 3.0
 }, {
@@ -793,7 +793,7 @@ script = ExtResource("1_md0bl")
 [node name="cat_animation" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(0.25, -4.75)
 sprite_frames = SubResource("SpriteFrames_s1sfb")
-animation = &"jump_land"
+animation = &"paw"
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
