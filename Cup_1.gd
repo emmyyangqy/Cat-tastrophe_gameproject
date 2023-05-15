@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name pushableobject
+#class_name pushableobject
 
 var gravity = 2000
 

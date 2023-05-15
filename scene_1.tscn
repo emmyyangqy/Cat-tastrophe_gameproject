@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://cic8odeshi1be"]
+[gd_scene load_steps=120 format=3 uid="uid://cic8odeshi1be"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_md0bl"]
 [ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_pl27u"]
@@ -563,10 +563,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_egoy6")
+"texture": ExtResource("8_yhxc2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_yhxc2")
+"texture": ExtResource("3_egoy6")
 }],
 "loop": false,
 "name": &"jump_land",
@@ -703,6 +703,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgoxf"]
 size = Vector2(8.4, 8.19999)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1qcd8"]
+radius = 3.5
+height = 11.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4mvv"]
 size = Vector2(19, 19)
 
@@ -789,7 +793,7 @@ script = ExtResource("1_md0bl")
 [node name="cat_animation" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(0.25, -4.75)
 sprite_frames = SubResource("SpriteFrames_s1sfb")
-animation = &"idle_2"
+animation = &"jump_land"
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -806,9 +810,22 @@ offset_right = 24.5
 offset_bottom = 1.5
 
 [node name="Label" type="Label" parent="Player/UI/Control"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("25_givfe")
+
+[node name="paw_area" type="Area2D" parent="Player"]
+
+[node name="hit_left" type="CollisionShape2D" parent="Player/paw_area"]
+position = Vector2(-5.5, 0.75)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_1qcd8")
+
+[node name="hit_right" type="CollisionShape2D" parent="Player/paw_area"]
+position = Vector2(5.5, 0.75)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_1qcd8")
 
 [node name="Camera" type="CharacterBody2D" parent="."]
 position = Vector2(135, -109)
@@ -855,5 +872,6 @@ position = Vector2(347, 326)
 scale = Vector2(1.75, 1.75)
 sprite_frames = SubResource("SpriteFrames_ifaw3")
 
+[connection signal="body_shape_entered" from="Player/paw_area" to="Player" method="_on_paw_area_body_shape_entered"]
 [connection signal="body_entered" from="Camera/LightArea" to="Player" method="_on_light_area_body_entered"]
 [connection signal="body_exited" from="Camera/LightArea" to="Player" method="_on_light_area_body_exited"]

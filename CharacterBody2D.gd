@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 
-enum State {IDLE, WALK_RIGHT, WALK_LEFT, RUN_RIGHT, RUN_LEFT, JUMP, PAW, SCARED, SLEEP, LAND}
+#add catnip speed boost, get the cup physics to work
+
+enum State {IDLE, WALK_RIGHT, WALK_LEFT, RUN_RIGHT, RUN_LEFT, JUMP, PAW, SCARED, SLEEP, LAND, CAUGHT}
 const MOVE_STATES = [State.WALK_RIGHT, State.WALK_LEFT, State.RUN_RIGHT, State.RUN_LEFT]
 
 #const MOVEMENT_VECTORS = {
@@ -22,6 +24,7 @@ var walk_speed = 150
 var jump_done = 0
 var laststate = State.IDLE
 var previousstate = State.IDLE
+var state_time = 0
 
 #var raycast = get_parent().get_node("LightArea/RayCast2D")
 var raycast 
@@ -40,36 +43,27 @@ func _ready():
 
 func switch_to(new_state: State):
 	
+
+	
+	
 #
 	if curstate == State.JUMP:
-		
-		if is_on_floor():
-
-			if lastvelocity < 0:
-				#$cat_animation.frame = 0
-				$cat_animation.play("jump_land")
-				$cat_animation.flip_h = true
-			elif lastvelocity >= 0:
-				#$cat_animation.frame = 0
-				$cat_animation.play("jump_land")
-				$cat_animation.flip_h = false
-			else:
-				#$cat_animation.frame = 0
-				#print("error")
-				pass
-
-			await get_tree().create_timer(.1).timeout
+		if new_state == State.LAND and is_on_floor():
 			pass
+		else:
+			return
 			
-	
-
-
+	if curstate == State.LAND:
+		if state_time > .2:
+			pass
 		else:
 			return
 			
 
 	curstate = new_state
 
+
+	state_time = 0
 
 	if new_state == State.IDLE:
 		#$cat_animation.play("idle_2")
@@ -143,6 +137,9 @@ func switch_to(new_state: State):
 		else:
 			pass
 			
+			
+	elif new_state == State.LAND:
+		$cat_animation.play("jump_land")
 
 			
 	elif new_state == State.PAW:
@@ -159,7 +156,6 @@ func switch_to(new_state: State):
 
 
 func _physics_process(delta):
-
 
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -186,6 +182,9 @@ func _physics_process(delta):
 	
 	else:
 		switch_to(State.IDLE)
+		
+	if curstate == State.JUMP and state_time > 0.1:
+		switch_to(State.LAND)
 		
 	if curstate == State.JUMP:
 		if Input.is_action_pressed("ui_left"):
@@ -229,6 +228,7 @@ func _physics_process(delta):
 		velocity.x = 0
 		
 	move_and_slide()
+	print(curstate, ' ', state_time)
 
 	if is_on_floor():
 		jump_num = 0
@@ -240,10 +240,12 @@ func _physics_process(delta):
 		lastvelocity = velocity.x
 		
 	if previousstate == curstate:
+		#state_time=0
 		previousstate = curstate
 		laststate = laststate
 	else:
 		if curstate != State.JUMP:
+			
 			laststate = curstate
 			
 	#Global.state_num = curstate
@@ -266,6 +268,8 @@ func _physics_process(delta):
 		if collision.get_collider is pushableobject:
 			collision.get_collider.slide(-collision.normal*(run_speed/2))
 			
+			
+	state_time += delta
 
 
 func _on_animated_sprite_2d_animation_finished():
@@ -283,3 +287,22 @@ func _on_light_area_body_entered(body):
 
 func _on_light_area_body_exited(body):
 	dangerzone = false  # Replace with function body.
+
+
+
+#func _on_sword_area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	# Figure out which collision shape to use for our sword, and hit an enemy with it
+	
+
+
+func _on_paw_area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if curstate == State.PAW and body != self:
+		var struck = false
+		
+		if lastvelocity > 0 and local_shape_index == 1:
+			struck = true
+		elif lastvelocity < 0 and local_shape_index == 0:
+			struck = true
+
+		if struck and body is pushableobject:
+			body.push()
