@@ -859,7 +859,7 @@ offset = Vector2(-36.3016, -35.2878)
 texture_scale = 0.3
 
 [node name="Cup_1" parent="." instance=ExtResource("28_tjone")]
-position = Vector2(151, -114)
+position = Vector2(147, 74)
 
 [node name="Cup_RB" type="RigidBody2D" parent="."]
 position = Vector2(273, -111)
