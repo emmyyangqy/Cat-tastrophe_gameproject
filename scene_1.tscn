@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=3 uid="uid://cic8odeshi1be"]
+[gd_scene load_steps=119 format=3 uid="uid://cic8odeshi1be"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_md0bl"]
 [ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_pl27u"]
@@ -24,9 +24,12 @@
 [ext_resource type="Texture2D" uid="uid://b4fab1y6c1p5p" path="res://cups/teacup_1.png" id="17_6c0ay"]
 [ext_resource type="Texture2D" uid="uid://tfsrt8a0exlg" path="res://cups/teacup_1_break1.png" id="18_rt2s2"]
 [ext_resource type="Texture2D" uid="uid://udj8ol5c78pk" path="res://cups/teacup_1_break2.png" id="19_n6mql"]
+[ext_resource type="Script" path="res://Label.gd" id="25_givfe"]
 [ext_resource type="Script" path="res://Camera.gd" id="25_pkgu4"]
 [ext_resource type="Texture2D" uid="uid://esn438eggd6" path="res://camera_light_1.png" id="25_y2ksj"]
 [ext_resource type="Script" path="res://LightArea.gd" id="26_vqi4e"]
+[ext_resource type="PackedScene" uid="uid://c3ujgtpf518w7" path="res://Cup_1.tscn" id="28_tjone"]
+[ext_resource type="Script" path="res://Cup_RB.gd" id="29_0i6k4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qs305"]
 size = Vector2(1248, 18)
@@ -147,8 +150,7 @@ texture_region_size = Vector2i(25, 25)
 0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_hoera")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.5, -5.5, 10.5, -5.5, 10.5, -3.5, -12.5, -3.5)
-0:0/0/physics_layer_0/polygon_0/one_way = true
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -5, 11, -5, 11, -3, -12, -3)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_q85jo"]
 polygon = PackedVector2Array(-10, -5, 13, -5, 13, -3, -10, -3)
@@ -160,8 +162,7 @@ texture_region_size = Vector2i(25, 25)
 0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_q85jo")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.5, -5.5, 12.5, -5.5, 12.5, -3.5, -10.5, -3.5)
-0:0/0/physics_layer_0/polygon_0/one_way = true
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -5, 13.5, -5, 13.5, -3, -10, -3)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i13lk"]
 texture = ExtResource("17_6c0ay")
@@ -702,6 +703,31 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgoxf"]
 size = Vector2(8.4, 8.19999)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4mvv"]
+size = Vector2(19, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ifaw3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_qulvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dse3f")
+}],
+"loop": false,
+"name": &"break",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_4jp4l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Scene_1" type="Node2D"]
 
 [node name="Light-gray-color-solid-background-1920x1080" type="Sprite2D" parent="."]
@@ -714,7 +740,6 @@ position = Vector2(578, 324)
 scale = Vector2(5, 5)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
 position = Vector2(-16, 16)
@@ -741,18 +766,19 @@ shape = SubResource("RectangleShape2D_3cjnt")
 [node name="TileMap" type="TileMap" parent="."]
 light_mask = 0
 texture_filter = 1
+position = Vector2(0, -1)
 scale = Vector2(9, 9)
 tile_set = SubResource("TileSet_uln4q")
 format = 2
 layer_0/name = "furniture_1"
-layer_0/tile_data = PackedInt32Array(458763, 15, 0, 458764, 16, 0, 458765, 15, 0, 393229, 15, 0, 393228, 15, 0, 393227, 18, 0, 262155, 17, 0, 327691, 15, 0, 327693, 18, 0, 262157, 18, 0, 196621, 15, 0, 131085, 17, 0, 12, 4, 0, 3, 4, 0, 393221, 6, 0)
+layer_0/tile_data = PackedInt32Array(458763, 15, 0, 458764, 16, 0, 458765, 15, 0, 393229, 15, 0, 393228, 15, 0, 393227, 18, 0, 262155, 17, 0, 327691, 15, 0, 327693, 18, 0, 262157, 18, 0, 196621, 15, 0, 131085, 17, 0, 12, 4, 0, 3, 4, 0, 393224, 5, 0)
 layer_1/name = "ground"
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(458752, 13, 0, 458753, 13, 0, 458754, 13, 0, 458755, 13, 0, 458756, 13, 0, 458757, 13, 0, 458758, 13, 0, 458760, 13, 0, 458761, 13, 0, 458762, 13, 0, 458763, 13, 0, 458764, 13, 0, 458765, 13, 0, 458766, 13, 0, 458767, 13, 0, 458759, 13, 0, 393222, 5, 0, 393221, 6, 0)
+layer_1/tile_data = PackedInt32Array(458752, 13, 0, 458753, 13, 0, 458754, 13, 0, 458755, 13, 0, 458757, 13, 0, 458758, 13, 0, 458760, 13, 0, 458761, 13, 0, 458762, 13, 0, 458763, 13, 0, 458764, 13, 0, 458765, 13, 0, 458766, 13, 0, 458767, 13, 0, 458756, 13, 0, 458759, 13, 0, 393223, 6, 0)
 
 [node name="Player" type="CharacterBody2D" parent="."]
 texture_filter = 1
@@ -768,6 +794,21 @@ speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_xgoxf")
+
+[node name="UI" type="Node2D" parent="Player"]
+
+[node name="Control" type="Control" parent="Player/UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.5
+offset_top = -38.5
+offset_right = 24.5
+offset_bottom = 1.5
+
+[node name="Label" type="Label" parent="Player/UI/Control"]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("25_givfe")
 
 [node name="Camera" type="CharacterBody2D" parent="."]
 position = Vector2(135, -109)
@@ -797,7 +838,22 @@ texture = ExtResource("25_y2ksj")
 offset = Vector2(-36.3016, -35.2878)
 texture_scale = 0.3
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Cup_1" parent="." instance=ExtResource("28_tjone")]
+position = Vector2(151, -114)
+
+[node name="Cup_RB" type="RigidBody2D" parent="."]
+position = Vector2(273, -111)
+script = ExtResource("29_0i6k4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cup_RB"]
+position = Vector2(345.5, 337.5)
+shape = SubResource("RectangleShape2D_a4mvv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cup_RB"]
+texture_filter = 1
+position = Vector2(347, 326)
+scale = Vector2(1.75, 1.75)
+sprite_frames = SubResource("SpriteFrames_ifaw3")
 
 [connection signal="body_entered" from="Camera/LightArea" to="Player" method="_on_light_area_body_entered"]
 [connection signal="body_exited" from="Camera/LightArea" to="Player" method="_on_light_area_body_exited"]

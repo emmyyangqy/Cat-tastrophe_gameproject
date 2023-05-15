@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3ujgtpf518w7"]
+
+[ext_resource type="Script" path="res://Cup_1.gd" id="1_7d0yu"]
+[ext_resource type="Texture2D" uid="uid://cavyb7c7u0q4e" path="res://cups/teacup_2_break1.png" id="2_othxn"]
+[ext_resource type="Texture2D" uid="uid://cr5x50g4ytiel" path="res://cups/teacup_2_break2.png" id="3_32nar"]
+[ext_resource type="Texture2D" uid="uid://w48ak7niqgtf" path="res://cups/teacup_2.png" id="4_nlrpw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rbbe"]
+size = Vector2(19, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ey3kw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_othxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_32nar")
+}],
+"loop": false,
+"name": &"break",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nlrpw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cup_1" type="CharacterBody2D"]
+position = Vector2(138, -2)
+script = ExtResource("1_7d0yu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(345.5, 337.5)
+shape = SubResource("RectangleShape2D_0rbbe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(347, 326)
+scale = Vector2(1.75, 1.75)
+sprite_frames = SubResource("SpriteFrames_ey3kw")
