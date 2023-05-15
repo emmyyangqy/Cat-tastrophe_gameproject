@@ -275,7 +275,7 @@ func _physics_process(delta):
 			
 	for index in get_slide_collision_count():
 		var collision = get_slide_collision(index)
-		if collision.get_collider is pushableobject:
+		if collision.get_collider is pushableobjectrigid:
 			collision.get_collider.slide(-collision.normal*(run_speed/2))
 			
 			
@@ -326,8 +326,14 @@ func _on_paw_area_body_shape_entered(body_rid, body, body_shape_index, local_sha
 		elif lastvelocity < 0 and local_shape_index == 0:
 			struck_toleft = true
 
-		if struck_toright and body is pushableobject:
+		if struck_toright and body is pushableobjectrigid:
 			body.pushright()
 			
-		if struck_toleft and body is pushableobject:
+		if struck_toleft and body is pushableobjectrigid:
 			body.pushleft()
+		
+		if struck_toright and body is pushableobject:
+			body.pushrightkinematic()
+			
+		if struck_toleft and body is pushableobject:
+			body.pushleftkinematic()

@@ -1,4 +1,4 @@
-extends pushableobject
+extends pushableobjectrigid
 
 enum State {DEFAULT, BREAK}
 
@@ -25,7 +25,6 @@ func switch_to(new_state: State):
 
 func _process(delta):
 	
-
 	if contact == false:
 		fallingtime += delta
 		if fallingtime > .2 and contact == true:
@@ -34,7 +33,7 @@ func _process(delta):
 	elif contact == true:
 		fallingtime = 0
 	
-	print(curstate, ' ', fallingtime)
+	#print(curstate, ' ', fallingtime)
 
 	
 func pushright():
@@ -44,8 +43,6 @@ func pushleft():
 	apply_central_impulse(Vector2(-200,0))
 	
 	
-
-
 func _on_aroundcuparea_body_entered(body):
 	if body.get_name() != "Player":
 		contact = true
