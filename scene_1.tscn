@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=3 uid="uid://cic8odeshi1be"]
+[gd_scene load_steps=121 format=3 uid="uid://cic8odeshi1be"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_md0bl"]
 [ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_pl27u"]
@@ -710,6 +710,9 @@ height = 11.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4mvv"]
 size = Vector2(19, 19)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0lfx"]
+size = Vector2(29, 31)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ifaw3"]
 animations = [{
 "frames": [{
@@ -860,11 +863,22 @@ position = Vector2(151, -114)
 
 [node name="Cup_RB" type="RigidBody2D" parent="."]
 position = Vector2(273, -111)
+inertia = 1000.0
+lock_rotation = true
 script = ExtResource("29_0i6k4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cup_RB"]
 position = Vector2(345.5, 337.5)
 shape = SubResource("RectangleShape2D_a4mvv")
+
+[node name="aroundcuparea" type="Area2D" parent="Cup_RB"]
+position = Vector2(347, 326)
+scale = Vector2(1.75, 1.75)
+
+[node name="checkifonfloor" type="CollisionShape2D" parent="Cup_RB/aroundcuparea"]
+position = Vector2(1.42856, 9.42857)
+scale = Vector2(0.571428, 0.571428)
+shape = SubResource("RectangleShape2D_a0lfx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cup_RB"]
 texture_filter = 1
@@ -875,3 +889,5 @@ sprite_frames = SubResource("SpriteFrames_ifaw3")
 [connection signal="body_shape_entered" from="Player/paw_area" to="Player" method="_on_paw_area_body_shape_entered"]
 [connection signal="body_entered" from="Camera/LightArea" to="Player" method="_on_light_area_body_entered"]
 [connection signal="body_exited" from="Camera/LightArea" to="Player" method="_on_light_area_body_exited"]
+[connection signal="body_entered" from="Cup_RB/aroundcuparea" to="Cup_RB" method="_on_aroundcuparea_body_entered"]
+[connection signal="body_exited" from="Cup_RB/aroundcuparea" to="Cup_RB" method="_on_aroundcuparea_body_exited"]

@@ -285,7 +285,7 @@ func _physics_process(delta):
 	else:
 		canpush = false
 		
-	print(state_time)
+	#print(state_time)
 	
 
 
