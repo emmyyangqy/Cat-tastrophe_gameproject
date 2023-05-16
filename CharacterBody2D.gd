@@ -242,7 +242,6 @@ func _physics_process(delta):
 	raycast.target_position = position-LightArea.position-camera.position
 	
 	if raycast.is_colliding():
-		
 		if raycast.get_collider().name == "Player" and dangerzone == true:
 			get_tree().reload_current_scene()
 		else: 
@@ -254,7 +253,7 @@ func _physics_process(delta):
 	else:
 		canpush = false
 		
-	#print(laststate)
+	
 		
 	
 	

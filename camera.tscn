@@ -10,7 +10,6 @@ script = ExtResource("1_d3vd0")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(1007, 346)
-collide_with_areas = true
 
 [node name="LightArea" type="Area2D" parent="."]
 position = Vector2(1007, 346)
