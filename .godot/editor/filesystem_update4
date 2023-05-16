@@ -1,7 +1,7 @@
-res://scene_1.tscn
-res://Cup_RB.gd
-res://CharacterBody2D.gd
 res://Cup_1.tscn
-res://pushableobject.gd
-res://Cup_1.gd
-res://pushableobjectkinematic.gd
+res://scene_1.tscn
+res://Player.tscn
+res://camera.tscn
+res://CharacterBody2D.gd
+res://Camera.gd
+res://LightArea.gd

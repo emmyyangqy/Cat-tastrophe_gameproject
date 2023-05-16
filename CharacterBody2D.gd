@@ -38,7 +38,9 @@ var camera
 	
 #
 func _ready():
-	
+#	var cameranode = get_tree().get_root().find_node("camera",true,false)
+#	cameranode.connect("playerinLightArea",self,"handleplayerinLightArea")
+#	cameranode.connect("playeroutLightArea",self,"handleplayeroutLightArea")
 	switch_to(State.IDLE)
 	
 
@@ -268,6 +270,7 @@ func _physics_process(delta):
 	raycast.target_position = position-LightArea.position-camera.position
 	
 	if raycast.is_colliding():
+		print(raycast.get_collider().name, ' ', dangerzone)
 		if raycast.get_collider().name == "Player" and dangerzone == true:
 			get_tree().reload_current_scene()
 		else: 
@@ -285,7 +288,7 @@ func _physics_process(delta):
 	else:
 		canpush = false
 		
-	#print(state_time)
+	
 	
 
 
@@ -298,12 +301,14 @@ func _on_animated_sprite_2d_animation_finished():
 		switch_to(State.IDLE)
 
 
-func _on_light_area_body_entered(body):
-	if body.get_name() == "Player":
-		dangerzone = true
 
-func _on_light_area_body_exited(body):
-	dangerzone = false  # Replace with function body.
+#func handleplayerinLightArea():
+#	print("1")
+#	dangerzone = true
+
+#func handleplayeroutLightArea():
+#	#func _on_light_area_body_exited(body):
+#	dangerzone = false  # Replace with function body.
 
 
 
@@ -337,3 +342,11 @@ func _on_paw_area_body_shape_entered(body_rid, body, body_shape_index, local_sha
 			
 		if struck_toleft and body is pushableobject:
 			body.pushleftkinematic()
+
+
+func _on_camera_playerin_light_area():
+	dangerzone = true
+
+
+func _on_camera_playerout_light_area():
+	dangerzone = false 

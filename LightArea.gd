@@ -1,5 +1,6 @@
 extends Area2D
 
+
 var camera_global_time
 const camera_cycle_time = 6.0
 
@@ -17,4 +18,5 @@ func _process(delta):
 		rotation += .002
 	else:
 		rotation -= .002
+
 

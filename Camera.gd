@@ -1,5 +1,6 @@
 extends CharacterBody2D
-
+signal playerinLightArea
+signal playeroutLightArea
 
 var rotationSpeed = 2
 
@@ -12,3 +13,16 @@ func _ready():
 func _process(delta):
 	#$Camera.rotate(rotationSpeed)
 	pass
+
+
+
+
+func _on_light_area_body_entered(body):
+	if body.get_name() == "Player":
+		print("hfisdjk")
+		emit_signal("playerinLightArea")
+
+
+func _on_light_area_body_exited(body):
+	if body.get_name() == "Player":
+		emit_signal("playeroutLightArea")
