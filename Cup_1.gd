@@ -7,7 +7,7 @@ var gravity = 100
 var friction = 0.5
 var fallingtime = 0
 var curstate = State.DEFAULT
-var score = $Global
+
 #var velocity 
 
 func _ready():
@@ -58,5 +58,5 @@ func pushleftkinematic():
 
 func _on_animated_sprite_2d_animation_finished():
 	if curstate == State.BREAK:
-		score += 1
+		Global.score += 1
 		switch_to(State.BROKEN)

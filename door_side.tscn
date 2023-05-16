@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://dfcxuh1rjly3u"]
+
+[ext_resource type="Texture2D" uid="uid://c0qchn2dxqmhb" path="res://objects/door_side_1.png" id="1_03v7q"]
+[ext_resource type="Script" path="res://door_side.gd" id="1_uoeas"]
+[ext_resource type="Texture2D" uid="uid://d2bfmr003c6qq" path="res://objects/door_side_open_1.png" id="2_dg4nb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nykju"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_03v7q")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dg4nb")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v185i"]
+size = Vector2(1.96722, 25.9836)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdkkm"]
+size = Vector2(12, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6xcd"]
+size = Vector2(1.06557, 2.02869)
+
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_uoeas")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.709804, 0.584314, 0.505882, 1)
+texture_filter = 1
+scale = Vector2(12.2, 12.2)
+sprite_frames = SubResource("SpriteFrames_nykju")
+animation = &"open"
+
+[node name="doorshape" type="CollisionShape2D" parent="."]
+position = Vector2(171, -24.5)
+scale = Vector2(12.2, 12.2)
+shape = SubResource("RectangleShape2D_v185i")
+
+[node name="doorknob2" type="CollisionShape2D" parent="."]
+position = Vector2(153, -12)
+shape = SubResource("RectangleShape2D_pdkkm")
+
+[node name="doorknob" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="doorknob"]
+position = Vector2(152, -20)
+scale = Vector2(12.2, 12.2)
+shape = SubResource("RectangleShape2D_d6xcd")
+
+[connection signal="body_entered" from="doorknob" to="." method="_on_doorknob_body_entered"]
+[connection signal="body_exited" from="doorknob" to="." method="_on_doorknob_body_exited"]

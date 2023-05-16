@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dnbm7h3fb6j0n" path="res://catsprite/jump_2/4.png" id="6_dxyj4"]
 [ext_resource type="Texture2D" uid="uid://bddyf1gki50eq" path="res://catsprite/jump_2/5.png" id="7_0mjca"]
 [ext_resource type="Texture2D" uid="uid://c20swoigkkh5g" path="res://catsprite/jump_2/6.png" id="8_au48s"]
-[ext_resource type="Script" path="res://Label.gd" id="9_lpkip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fvhhj"]
 atlas = ExtResource("2_qurjq")
@@ -515,6 +514,10 @@ size = Vector2(8.4, 8.19999)
 radius = 3.5
 height = 11.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xrshh"]
+radius = 6.25
+height = 12.5
+
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
 position = Vector2(200, 400)
@@ -530,24 +533,6 @@ speed_scale = 2.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_g0odg")
 
-[node name="UI" type="Node2D" parent="."]
-
-[node name="Control" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -15.5
-offset_top = -38.5
-offset_right = 24.5
-offset_bottom = 1.5
-
-[node name="Label" type="Label" parent="UI/Control"]
-layout_mode = 0
-offset_left = -2.25
-offset_top = 5.75
-offset_right = 37.75
-offset_bottom = 28.75
-script = ExtResource("9_lpkip")
-
 [node name="paw_area" type="Area2D" parent="."]
 
 [node name="hit_left" type="CollisionShape2D" parent="paw_area"]
@@ -559,5 +544,9 @@ shape = SubResource("CapsuleShape2D_xgujm")
 position = Vector2(5.5, 0.5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xgujm")
+
+[node name="hit_down" type="CollisionShape2D" parent="paw_area"]
+position = Vector2(0, 4.25)
+shape = SubResource("CapsuleShape2D_xrshh")
 
 [connection signal="body_shape_entered" from="paw_area" to="." method="_on_paw_area_body_shape_entered"]

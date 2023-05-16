@@ -19,7 +19,6 @@ func _process(delta):
 
 func _on_light_area_body_entered(body):
 	if body.get_name() == "Player":
-		print("hfisdjk")
 		emit_signal("playerinLightArea")
 
 

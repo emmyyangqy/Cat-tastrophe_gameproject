@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://cppy8umk55imv"]
+
+[ext_resource type="Script" path="res://Label.gd" id="1_gjsfb"]
+
+[node name="UI" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.5
+offset_top = -38.5
+offset_right = 24.5
+offset_bottom = 1.5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.86875
+anchor_top = 0.89375
+anchor_right = 1.86875
+anchor_bottom = 0.89375
+offset_left = -2.25
+offset_top = 5.75
+offset_right = 37.75
+offset_bottom = 28.75
+script = ExtResource("1_gjsfb")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 20.5
+offset_top = 41.5
+offset_right = 63.5
+offset_bottom = 67.5
+text = "Score: "

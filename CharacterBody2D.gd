@@ -26,6 +26,7 @@ var laststate = State.IDLE
 var previousstate = State.IDLE
 var state_time = 0
 var canpush = false
+var on_doorknob = false
 
 #var raycast = get_parent().get_node("LightArea/RayCast2D")
 var raycast 
@@ -277,11 +278,14 @@ func _on_paw_area_body_shape_entered(body_rid, body, body_shape_index, local_sha
 
 		var struck_toright = false
 		var struck_toleft = false
+		var hit_doorknob = false
 		
 		if lastvelocity > 0 and local_shape_index == 1:
 			struck_toright = true
 		elif lastvelocity < 0 and local_shape_index == 0:
 			struck_toleft = true
+		elif on_doorknob == true and local_shape_index == 2:
+			hit_doorknob = true
 			
 		if struck_toright and body is pushableobjectrigid:
 			body.pushright()
@@ -294,9 +298,22 @@ func _on_paw_area_body_shape_entered(body_rid, body, body_shape_index, local_sha
 			
 		if struck_toleft and body is pushableobject:
 			body.pushleftkinematic()
+			
+		if hit_doorknob and body is doorknob:
+			body.opendoor()
 
 
 func _on_camera_playerin_light_area():
 	dangerzone = true
 func _on_camera_playerout_light_area():
 	dangerzone = false 
+	
+
+
+
+func _on_door_side_1_off_doorknob():
+	on_doorknob = false
+
+
+func _on_door_side_1_on_doorknob():
+	on_doorknob = true
