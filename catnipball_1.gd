@@ -1,4 +1,4 @@
-extends Label
+extends pushableobjectrigid
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,5 +8,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	self.text = str($Global.score)
 	pass
+
+func pushright():
+	apply_central_impulse(Vector2(200,0))
+
+func pushleft():
+	apply_central_impulse(Vector2(-200,0))
+	

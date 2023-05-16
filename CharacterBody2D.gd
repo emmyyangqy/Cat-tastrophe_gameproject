@@ -38,18 +38,11 @@ var camera
 	
 #
 func _ready():
-#	var cameranode = get_tree().get_root().find_node("camera",true,false)
-#	cameranode.connect("playerinLightArea",self,"handleplayerinLightArea")
-#	cameranode.connect("playeroutLightArea",self,"handleplayeroutLightArea")
 	switch_to(State.IDLE)
 	
 
 func switch_to(new_state: State):
-	
 
-	
-	
-#
 	if curstate == State.JUMP:
 		if new_state == State.LAND and is_on_floor():
 			pass
@@ -57,7 +50,7 @@ func switch_to(new_state: State):
 			return
 			
 	if curstate == State.LAND:
-		if state_time > .2:
+		if state_time > .08:
 			pass
 		else:
 			return
@@ -124,25 +117,6 @@ func switch_to(new_state: State):
 				$cat_animation.flip_h = false
 				
 			velocity.y = -jump_force
-			
-#			if last_velocity < 0:
-#			#$cat_animation.frame = 0
-#				$cat_animation.play("jump_beginning")
-#				$cat_animation.flip_h = true
-#				velocity.y = -jump_force
-#				if Input.is_action_pressed("ui_left"):
-#					velocity.x = last_velocity 
-#			if last_velocity > 0:
-#			#$cat_animation.frame = 0
-#				$cat_animation.play("jump_beginning")
-#				$cat_animation.flip_h = false
-#				velocity.y = -jump_force
-#				if Input.is_action_pressed("ui_right"):
-#					velocity.x = last_velocity 
-#			if is_on_floor():
-#				$cat_animation.play("jump_land")
-#				$cat_animation.flip_h = false
-#				jump_done = 1
 		
 		else:
 			pass
@@ -163,8 +137,6 @@ func switch_to(new_state: State):
 	elif new_state == State.SCARED:
 		$cat_animation.play("scared")
 		
-	
-	
 
 
 func _physics_process(delta):
@@ -202,10 +174,10 @@ func _physics_process(delta):
 		if Input.is_action_pressed("ui_left"):
 			$cat_animation.flip_h = true
 			
-			if laststate == 1:
+			if laststate == 2:
 				velocity.x = -walk_speed
 				#print("kjhghf")
-			elif laststate == 3:
+			elif laststate == 4:
 				velocity.x = -run_speed
 				#print("ghjrebksldaGDSJHK")
 			else:
@@ -219,9 +191,9 @@ func _physics_process(delta):
 				
 		if Input.is_action_pressed("ui_right"):
 			$cat_animation.flip_h = false
-			if laststate == 2:
+			if laststate == 1:
 				velocity.x = walk_speed
-			elif laststate == 4:
+			elif laststate == 3:
 				velocity.x = run_speed
 			else:
 				velocity.x = walk_speed
@@ -270,23 +242,19 @@ func _physics_process(delta):
 	raycast.target_position = position-LightArea.position-camera.position
 	
 	if raycast.is_colliding():
-		print(raycast.get_collider().name, ' ', dangerzone)
+		
 		if raycast.get_collider().name == "Player" and dangerzone == true:
 			get_tree().reload_current_scene()
 		else: 
 			pass
-			
-	for index in get_slide_collision_count():
-		var collision = get_slide_collision(index)
-		if collision.get_collider is pushableobjectrigid:
-			collision.get_collider.slide(-collision.normal*(run_speed/2))
-			
 			
 	state_time += delta
 	if state_time > 0.2:
 		canpush = true
 	else:
 		canpush = false
+		
+	#print(laststate)
 		
 	
 	
@@ -302,24 +270,9 @@ func _on_animated_sprite_2d_animation_finished():
 
 
 
-#func handleplayerinLightArea():
-#	print("1")
-#	dangerzone = true
-
-#func handleplayeroutLightArea():
-#	#func _on_light_area_body_exited(body):
-#	dangerzone = false  # Replace with function body.
-
-
-
-#func _on_sword_area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	# Figure out which collision shape to use for our sword, and hit an enemy with it
-	
-
 
 func _on_paw_area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	#print("0")
-	#print(body)
+
 	
 	if curstate == State.PAW: # and body != self:
 
@@ -330,13 +283,13 @@ func _on_paw_area_body_shape_entered(body_rid, body, body_shape_index, local_sha
 			struck_toright = true
 		elif lastvelocity < 0 and local_shape_index == 0:
 			struck_toleft = true
-
+			
 		if struck_toright and body is pushableobjectrigid:
 			body.pushright()
 			
 		if struck_toleft and body is pushableobjectrigid:
 			body.pushleft()
-		
+
 		if struck_toright and body is pushableobject:
 			body.pushrightkinematic()
 			
@@ -346,7 +299,5 @@ func _on_paw_area_body_shape_entered(body_rid, body, body_shape_index, local_sha
 
 func _on_camera_playerin_light_area():
 	dangerzone = true
-
-
 func _on_camera_playerout_light_area():
 	dangerzone = false 

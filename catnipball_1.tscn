@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://ypjlv3imx5vc"]
+
+[ext_resource type="Script" path="res://catnipball_1.gd" id="1_0hlra"]
+[ext_resource type="Texture2D" uid="uid://g3lbnyfnpgg7" path="res://objects/catnipball_1.png" id="1_8xr6b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_msvpp"]
+radius = 299.09
+
+[node name="catnipball" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource("1_0hlra")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+modulate = Color(0.603922, 0.360784, 0.262745, 1)
+self_modulate = Color(0.854902, 0.890196, 1, 1)
+texture_filter = 1
+position = Vector2(516.75, 268.75)
+scale = Vector2(0.0191667, 0.0191667)
+texture = ExtResource("1_8xr6b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(516.75, 268.75)
+scale = Vector2(0.0191667, 0.0191667)
+shape = SubResource("CircleShape2D_msvpp")

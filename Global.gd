@@ -1,3 +1,3 @@
 extends Node
 
-var state_num = 0
+var score = 0

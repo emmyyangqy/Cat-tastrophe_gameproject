@@ -5,3 +5,9 @@ res://camera.tscn
 res://CharacterBody2D.gd
 res://Camera.gd
 res://LightArea.gd
+res://cup_2.tscn
+res://catnipball_1.gd
+res://catnipball_1.tscn
+res://Cup_1.gd
+res://Global.gd
+res://Label.gd

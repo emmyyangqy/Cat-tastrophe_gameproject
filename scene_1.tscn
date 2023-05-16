@@ -1,6 +1,7 @@
-[gd_scene load_steps=47 format=3 uid="uid://cic8odeshi1be"]
+[gd_scene load_steps=48 format=3 uid="uid://cic8odeshi1be"]
 
 [ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_pl27u"]
+[ext_resource type="PackedScene" uid="uid://ypjlv3imx5vc" path="res://catnipball_1.tscn" id="2_qq66r"]
 [ext_resource type="Texture2D" uid="uid://w48ak7niqgtf" path="res://cups/teacup_2.png" id="9_4jp4l"]
 [ext_resource type="Texture2D" uid="uid://cavyb7c7u0q4e" path="res://cups/teacup_2_break1.png" id="10_qulvs"]
 [ext_resource type="Texture2D" uid="uid://cr5x50g4ytiel" path="res://cups/teacup_2_break2.png" id="11_dse3f"]
@@ -204,6 +205,9 @@ texture = ExtResource("1_pl27u")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(578, 324)
 scale = Vector2(5, 5)
+
+[node name="catnipball" parent="." instance=ExtResource("2_qq66r")]
+position = Vector2(-114, 233)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

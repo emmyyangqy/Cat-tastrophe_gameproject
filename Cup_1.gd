@@ -57,4 +57,5 @@ func pushleftkinematic():
 
 func _on_animated_sprite_2d_animation_finished():
 	if curstate == State.BREAK:
+		$Global.score += 1
 		switch_to(State.BROKEN)

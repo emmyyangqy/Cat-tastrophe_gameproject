@@ -372,10 +372,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_ovtun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ovtun")
 }],
 "loop": false,
 "name": &"jump_land",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -521,7 +524,7 @@ script = ExtResource("1_klcib")
 [node name="cat_animation" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.25, -4.75)
 sprite_frames = SubResource("SpriteFrames_utre5")
-animation = &"paw"
+animation = &"jump_land"
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -539,19 +542,21 @@ offset_bottom = 1.5
 
 [node name="Label" type="Label" parent="UI/Control"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -2.25
+offset_top = 5.75
+offset_right = 37.75
+offset_bottom = 28.75
 script = ExtResource("9_lpkip")
 
 [node name="paw_area" type="Area2D" parent="."]
 
 [node name="hit_left" type="CollisionShape2D" parent="paw_area"]
-position = Vector2(-5.5, 0.75)
+position = Vector2(-5.5, 0.5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xgujm")
 
 [node name="hit_right" type="CollisionShape2D" parent="paw_area"]
-position = Vector2(5.5, 0.75)
+position = Vector2(5.5, 0.5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xgujm")
 
