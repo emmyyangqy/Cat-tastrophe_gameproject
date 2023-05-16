@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cic8odeshi1be"]
+[gd_scene load_steps=47 format=3 uid="uid://cic8odeshi1be"]
 
 [ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_pl27u"]
 [ext_resource type="PackedScene" uid="uid://ypjlv3imx5vc" path="res://catnipball_1.tscn" id="2_qq66r"]
@@ -22,21 +22,35 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3favf"]
 size = Vector2(2217.52, 83.8451)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_110cl"]
+polygon = PackedVector2Array(-8, -1, 5, -1, 5, -12.5, 9, -12.5, 9, 3, -9, 3, -9, 0)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gvdu2"]
+polygon = PackedVector2Array(-4, -12, -4, -1, 9, -1, 10, -0.5, 10, 3, -8, 3, -8, -12)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82183"]
 texture = ExtResource("3_tgr2s")
 texture_region_size = Vector2i(25, 25)
 0:0/next_alternative_id = 2
 0:0/0 = 0
 0:0/0/modulate = Color(0.854902, 0.886275, 1, 1)
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_110cl")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(5, -12, 9, -12, 9, 3, -9, 3, -9, 0, -8.5, -1, 5, -1)
 0:0/1 = 1
 0:0/1/flip_h = true
 0:0/1/modulate = Color(0.854902, 0.886275, 1, 1)
+0:0/1/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_gvdu2")
 0:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/1/physics_layer_0/angular_velocity = 0.0
 0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(9.5, -1, 10, 0.5, 10, 3, -8, 3, -8, -12, -4, -12, -4, -1)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3perg"]
+polygon = PackedVector2Array(5, 11, 9, 11, 9, 13.5, 5, 13.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nppms"]
+polygon = PackedVector2Array(-8, 11, -4, 11, -4, 13.5, -8, 13.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aswqx"]
 texture = ExtResource("4_utryg")
@@ -44,15 +58,23 @@ texture_region_size = Vector2i(25, 25)
 0:0/next_alternative_id = 2
 0:0/0 = 0
 0:0/0/modulate = Color(0.854902, 0.886275, 1, 1)
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_3perg")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(5, 11, 9, 11, 9, 13.5, 5, 13.5)
 0:0/1 = 1
 0:0/1/flip_h = true
 0:0/1/modulate = Color(0.854902, 0.886275, 1, 1)
+0:0/1/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_nppms")
 0:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/1/physics_layer_0/angular_velocity = 0.0
 0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 11, -4, 11, -4, 13.5, -8, 13.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yxwmy"]
+polygon = PackedVector2Array(-12, -9, 12, -9, 12, -5, -12, -5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5a802"]
+polygon = PackedVector2Array(-11, -9, 13, -9, 13, -5, -11, -5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7tvn0"]
 texture = ExtResource("5_vhhwb")
@@ -60,18 +82,21 @@ texture_region_size = Vector2i(25, 25)
 0:0/next_alternative_id = 2
 0:0/0 = 0
 0:0/0/modulate = Color(0.72549, 0.796078, 1, 1)
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_yxwmy")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -9, 12, -9, 12, -5, -12, -5)
 0:0/1 = 1
 0:0/1/flip_h = true
 0:0/1/modulate = Color(0.72549, 0.796078, 1, 1)
+0:0/1/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_5a802")
 0:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/1/physics_layer_0/angular_velocity = 0.0
 0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-11, -9, 13, -9, 13, -5, -11, -5)
 
 [sub_resource type="TileSet" id="TileSet_0ipj2"]
 tile_size = Vector2i(25, 25)
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_82183")
 sources/1 = SubResource("TileSetAtlasSource_aswqx")
@@ -265,15 +290,9 @@ layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(458757, 5, 0, 393216, 5, 0, 393217, 5, 0, 393218, 5, 0, 393219, 5, 0, 393220, 5, 0, 393221, 5, 0, 393222, 5, 0, 393223, 5, 0, 393224, 5, 0, 393225, 5, 0, 393226, 5, 0, 393227, 5, 0, 393228, 5, 0, 393229, 5, 0, 393230, 5, 0)
+layer_1/tile_data = PackedInt32Array(393216, 5, 0, 393217, 5, 0, 393218, 5, 0, 393219, 5, 0, 393220, 5, 0, 393221, 5, 0, 393222, 5, 0, 393223, 5, 0, 393224, 5, 0, 393225, 5, 0, 393226, 5, 0, 393227, 5, 0, 393228, 5, 0, 393229, 5, 0, 393230, 5, 0)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
-position = Vector2(-16, 16)
-scale = Vector2(1.02759, 1)
-color = Color(0.247059, 0.356863, 0.278431, 1)
-polygon = PackedVector2Array(0, 576, 1160, 576, 1160, 656, 0, 656)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(545, -10)
@@ -292,7 +311,7 @@ position = Vector2(1160, 280)
 shape = SubResource("RectangleShape2D_3cjnt")
 
 [node name="Camera" parent="." instance=ExtResource("17_lgxw8")]
-position = Vector2(141, -209)
+position = Vector2(117, -209)
 
 [node name="Cup_1" parent="." instance=ExtResource("28_tjone")]
 position = Vector2(-67, -22)

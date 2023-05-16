@@ -1,16 +1,6 @@
 res://scene_1.tscn
 res://Cup_1.tscn
 res://Player.tscn
+res://door_side.tscn
 res://camera.tscn
 res://cup_2.tscn
-res://catnipball_1.tscn
-res://homescreen.tscn
-res://CharacterBody2D.gd
-res://Cup_1.gd
-res://global.gd
-res://Label.gd
-res://scorecounter.tscn
-res://door_side.tscn
-res://door_side.gd
-res://Camera.gd
-res://doorknob.gd
