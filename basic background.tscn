@@ -1,0 +1,138 @@
+[gd_scene load_steps=18 format=3 uid="uid://dq1vsy1xqxo43"]
+
+[ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_82brt"]
+[ext_resource type="Texture2D" uid="uid://bcnmxylav2f2t" path="res://objects/window_1.png" id="2_rvxyl"]
+[ext_resource type="Texture2D" uid="uid://ba1ruvk5fjo3d" path="res://objects/door_1.png" id="3_yoo0b"]
+[ext_resource type="Texture2D" uid="uid://b0oo736qi5j1x" path="res://objects/cattree_1.png" id="4_4of4l"]
+[ext_resource type="Texture2D" uid="uid://duv35ayta52x" path="res://objects/cattree_2.png" id="5_v5mvj"]
+[ext_resource type="Texture2D" uid="uid://o4l0pggppy5t" path="res://objects/cattree_3.png" id="6_2ppu5"]
+[ext_resource type="Texture2D" uid="uid://ddse8jgwl6msq" path="res://objects/cattree_4.png" id="7_bif1d"]
+[ext_resource type="Texture2D" uid="uid://cgp8gv6qdb88f" path="res://objects/cattree_5.png" id="8_5vetx"]
+[ext_resource type="Texture2D" uid="uid://cqjl0qm4aex3i" path="res://objects/floor_1.png" id="9_46h6b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtq75"]
+size = Vector2(2217.52, 83.8451)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d8vrf"]
+texture = ExtResource("4_4of4l")
+texture_region_size = Vector2i(20, 20)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gi8s4"]
+texture = ExtResource("5_v5mvj")
+texture_region_size = Vector2i(20, 20)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_juran"]
+texture = ExtResource("6_2ppu5")
+texture_region_size = Vector2i(20, 20)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rs8j"]
+texture = ExtResource("7_bif1d")
+texture_region_size = Vector2i(20, 20)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/1/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r1ng6"]
+texture = ExtResource("8_5vetx")
+texture_region_size = Vector2i(20, 20)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wh0g1"]
+texture = ExtResource("9_46h6b")
+texture_region_size = Vector2i(20, 20)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_1gn8o"]
+tile_size = Vector2i(20, 20)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 7
+sources/0 = SubResource("TileSetAtlasSource_d8vrf")
+sources/1 = SubResource("TileSetAtlasSource_gi8s4")
+sources/2 = SubResource("TileSetAtlasSource_juran")
+sources/3 = SubResource("TileSetAtlasSource_3rs8j")
+sources/4 = SubResource("TileSetAtlasSource_r1ng6")
+sources/5 = SubResource("TileSetAtlasSource_wh0g1")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Wallpaper" type="Sprite2D" parent="."]
+modulate = Color(0.870588, 0.756863, 0.831373, 0.827451)
+position = Vector2(632, 305)
+texture = ExtResource("1_82brt")
+
+[node name="floortrimshadow" type="Sprite2D" parent="."]
+modulate = Color(0.4, 0.360784, 0.439216, 1)
+position = Vector2(944, 532)
+scale = Vector2(1, 0.0296296)
+texture = ExtResource("1_82brt")
+
+[node name="floortrim" type="Sprite2D" parent="."]
+position = Vector2(946, 536)
+scale = Vector2(1, 0.0296296)
+texture = ExtResource("1_82brt")
+
+[node name="outsidewindow" type="Sprite2D" parent="."]
+position = Vector2(479.5, 249)
+scale = Vector2(0.0880209, 0.216667)
+texture = ExtResource("1_82brt")
+
+[node name="window" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(474, 235)
+scale = Vector2(9.3, 9.3)
+texture = ExtResource("2_rvxyl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="window"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="window/StaticBody2D"]
+position = Vector2(0.473751, 13.9695)
+scale = Vector2(0.00946461, 0.0232975)
+shape = SubResource("RectangleShape2D_jtq75")
+one_way_collision = true
+
+[node name="outsidedoor" type="Sprite2D" parent="."]
+position = Vector2(147, 387)
+scale = Vector2(0.0880209, 0.216667)
+texture = ExtResource("1_82brt")
+
+[node name="door" type="Sprite2D" parent="."]
+modulate = Color(0.709804, 0.584314, 0.505882, 1)
+texture_filter = 1
+position = Vector2(142.25, 412.833)
+scale = Vector2(12.3167, 12.0917)
+texture = ExtResource("3_yoo0b")
+
+[node name="floor and cattree" type="TileMap" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_1gn8o")
+cell_quadrant_size = 20
+format = 2
+layer_0/name = "cattree"
+layer_0/modulate = Color(0.909804, 0.898039, 0.921569, 1)
+layer_1/name = "floor"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(393216, 5, 0, 393217, 5, 0, 393218, 5, 0, 393219, 5, 0, 393220, 5, 0, 393221, 5, 0, 393222, 5, 0, 393223, 5, 0, 393224, 5, 0, 393225, 5, 0, 393226, 5, 0, 393227, 5, 0, 393228, 5, 0, 393229, 5, 0, 393230, 5, 0)
