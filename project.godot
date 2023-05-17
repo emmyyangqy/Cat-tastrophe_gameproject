@@ -69,6 +69,14 @@ shift={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="RigidBody2D"
+2d_physics/layer_2="RigidBody2D3"
+2d_physics/layer_3="RigidBody2D4"
+2d_physics/layer_4="RigidBody2D5"
+2d_physics/layer_5="RigidBody2D6"
+
 [physics]
 
 2d/default_gravity=2000.0
