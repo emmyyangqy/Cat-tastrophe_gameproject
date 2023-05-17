@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dajh4mkrf0eyo"]
+[gd_scene load_steps=57 format=3 uid="uid://dajh4mkrf0eyo"]
 
 [ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_33t7y"]
 [ext_resource type="Texture2D" uid="uid://bcnmxylav2f2t" path="res://objects/window_1.png" id="2_nbdx0"]
@@ -167,11 +167,17 @@ sources/3 = SubResource("TileSetAtlasSource_mlb7n")
 sources/4 = SubResource("TileSetAtlasSource_4yvf8")
 sources/5 = SubResource("TileSetAtlasSource_ig5il")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kjna"]
-size = Vector2(1296, 140)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yr5fd"]
+size = Vector2(35, 292.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37tjb"]
-size = Vector2(47, 641)
+size = Vector2(47, 255.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jxx5"]
+size = Vector2(20, 324)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kjna"]
+size = Vector2(1296, 140)
 
 [node name="Scene_2" type="Node2D"]
 
@@ -404,11 +410,6 @@ layer_0/tile_data = PackedInt32Array(393216, 5, 0, 393217, 5, 0, 393218, 5, 0, 3
 [node name="Camera" parent="." instance=ExtResource("12_yomg4")]
 position = Vector2(700, 292)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(601, 615)
-shape = SubResource("RectangleShape2D_2kjna")
-
 [node name="Node2D2" parent="." instance=ExtResource("21_otjh8")]
 position = Vector2(991, 169)
 
@@ -418,22 +419,38 @@ position = Vector2(971, 412)
 [node name="UI" parent="." instance=ExtResource("22_nvkth")]
 position = Vector2(20, 11)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1181, 303)
-shape = SubResource("RectangleShape2D_37tjb")
-
 [node name="Player" parent="." instance=ExtResource("10_0insk")]
+position = Vector2(45, 518)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="exit 2to1" type="Area2D" parent="."]
 position = Vector2(-1201, 14)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(1181, 303)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit 2to1"]
+position = Vector2(1181.5, 378)
+shape = SubResource("RectangleShape2D_yr5fd")
+debug_color = Color(0, 0.333333, 0.701961, 0.419608)
+
+[node name="boundaries" type="StaticBody2D" parent="."]
+position = Vector2(-1201, 14)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="boundaries"]
+position = Vector2(2382, 95.25)
+shape = SubResource("RectangleShape2D_37tjb")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="boundaries"]
+position = Vector2(1150, 374)
+shape = SubResource("RectangleShape2D_4jxx5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="boundaries"]
+position = Vector2(1802, 601)
+shape = SubResource("RectangleShape2D_2kjna")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries"]
+position = Vector2(1181, 106.75)
 shape = SubResource("RectangleShape2D_37tjb")
 
 [connection signal="playerinLightArea" from="Camera" to="Player" method="_on_camera_playerin_light_area"]
 [connection signal="playeroutLightArea" from="Camera" to="Player" method="_on_camera_playerout_light_area"]
 [connection signal="off_doorknob" from="door_side_1" to="Player" method="_on_door_side_1_off_doorknob"]
 [connection signal="on_doorknob" from="door_side_1" to="Player" method="_on_door_side_1_on_doorknob"]
+[connection signal="body_entered" from="exit 2to1" to="Player" method="_on_exit_2_to_1_body_entered"]

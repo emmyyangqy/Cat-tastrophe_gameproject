@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cic8odeshi1be"]
+[gd_scene load_steps=49 format=3 uid="uid://cic8odeshi1be"]
 
 [ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_pl27u"]
 [ext_resource type="PackedScene" uid="uid://ypjlv3imx5vc" path="res://catnipball_1.tscn" id="2_qq66r"]
@@ -207,9 +207,17 @@ size = Vector2(1178, 64)
 size = Vector2(20, 784)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cjnt"]
-size = Vector2(20, 954)
+size = Vector2(130, 278)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpyjq"]
+size = Vector2(91.5, 354)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kum46"]
+size = Vector2(24, 303)
 
 [node name="Scene_1" type="Node2D"]
+
+[node name="Node" type="Node" parent="."]
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(610, 303)
@@ -308,8 +316,12 @@ position = Vector2(-8, 328)
 shape = SubResource("RectangleShape2D_cgiy2")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1160, 280)
+position = Vector2(1215, 96)
 shape = SubResource("RectangleShape2D_3cjnt")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1234, 401)
+shape = SubResource("RectangleShape2D_hpyjq")
 
 [node name="Camera" parent="." instance=ExtResource("17_lgxw8")]
 position = Vector2(1146, 200)
@@ -326,7 +338,15 @@ position = Vector2(972, 410)
 
 [node name="Player" parent="." instance=ExtResource("22_cuwlj")]
 
+[node name="exit 1to2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit 1to2"]
+position = Vector2(1173, 389.5)
+shape = SubResource("RectangleShape2D_kum46")
+debug_color = Color(0, 0.192157, 0.701961, 0.419608)
+
 [connection signal="playerinLightArea" from="Camera" to="Player" method="_on_camera_playerin_light_area"]
 [connection signal="playeroutLightArea" from="Camera" to="Player" method="_on_camera_playerout_light_area"]
 [connection signal="off_doorknob" from="door_side_1" to="Player" method="_on_door_side_1_off_doorknob"]
 [connection signal="on_doorknob" from="door_side_1" to="Player" method="_on_door_side_1_on_doorknob"]
+[connection signal="body_entered" from="exit 1to2" to="Player" method="_on_exit_1_to_2_body_entered"]

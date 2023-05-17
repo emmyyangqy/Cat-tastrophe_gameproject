@@ -1,6 +1,7 @@
-Node2D
+Node
 CollisionShape2D
 Area2D
+Node2D
 Timer
 TextureProgressBar
 ProgressBar
@@ -23,6 +24,5 @@ TileMap
 Control
 RayCast2D
 Marker2D
-Node
 PointLight2D
 DirectionalLight2D
