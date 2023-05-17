@@ -48,10 +48,10 @@ func _physics_process(delta):
 	
 
 func pushrightkinematic():
-	velocity.x += 100
+	velocity.x += 80
 
 func pushleftkinematic():
-	velocity.x += -100
+	velocity.x += -80
 	
 	
 

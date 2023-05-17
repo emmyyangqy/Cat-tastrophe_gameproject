@@ -12,15 +12,15 @@ script = ExtResource("1_d3vd0")
 
 [node name="mount" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1014, 355)
+position = Vector2(-18, -17)
 scale = Vector2(5, 5)
 texture = ExtResource("2_nk684")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(977, 358)
+position = Vector2(-55.0001, -14)
 
 [node name="LightArea" type="Area2D" parent="."]
-position = Vector2(1007, 346)
+position = Vector2(-25.0002, -26)
 rotation = -1.96953
 scale = Vector2(2.8916, 2.33789)
 script = ExtResource("2_5w5qn")

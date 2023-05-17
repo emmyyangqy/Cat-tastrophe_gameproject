@@ -9,3 +9,7 @@ res://vase.tscn
 res://Cup_1.gd
 res://door_side.gd
 res://CharacterBody2D.gd
+res://energybar.gd
+res://energybar.tscn
+res://Rooms/Room_1.tscn
+res://Rooms/Room_2.tscn
