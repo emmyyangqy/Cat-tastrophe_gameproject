@@ -1,10 +1,11 @@
-[gd_scene load_steps=29 format=3 uid="uid://dajh4mkrf0eyo"]
+[gd_scene load_steps=32 format=3 uid="uid://dajh4mkrf0eyo"]
 
 [ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_33t7y"]
 [ext_resource type="Texture2D" uid="uid://bcnmxylav2f2t" path="res://objects/window_1.png" id="2_nbdx0"]
 [ext_resource type="Texture2D" uid="uid://ba1ruvk5fjo3d" path="res://objects/door_1.png" id="3_mvahq"]
 [ext_resource type="Texture2D" uid="uid://b0oo736qi5j1x" path="res://objects/cattree_1.png" id="4_04dt6"]
 [ext_resource type="Texture2D" uid="uid://teuhpwgy4rgx" path="res://objects/pixil-frame-0 (1).png" id="4_a2xvi"]
+[ext_resource type="Texture2D" uid="uid://d1h1e2omkbas1" path="res://objects/pixil-frame-0 (2) copy.png" id="5_ohqvp"]
 [ext_resource type="Texture2D" uid="uid://duv35ayta52x" path="res://objects/cattree_2.png" id="5_xmkw4"]
 [ext_resource type="Texture2D" uid="uid://o4l0pggppy5t" path="res://objects/cattree_3.png" id="6_mhu15"]
 [ext_resource type="Texture2D" uid="uid://ddse8jgwl6msq" path="res://objects/cattree_4.png" id="7_7t2ab"]
@@ -21,6 +22,9 @@ radius = 2.7
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qbyec"]
 radius = 2.7
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpdkx"]
+size = Vector2(56, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nb8wv"]
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, -6, -10, -6)
@@ -116,6 +120,9 @@ sources/3 = SubResource("TileSetAtlasSource_3rs8j")
 sources/4 = SubResource("TileSetAtlasSource_r1ng6")
 sources/5 = SubResource("TileSetAtlasSource_wh0g1")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kjna"]
+size = Vector2(1296, 140)
+
 [node name="Scene_2" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -167,35 +174,57 @@ position = Vector2(-489.75, 107.833)
 scale = Vector2(12.3167, 12.0917)
 texture = ExtResource("3_mvahq")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+[node name="sofa" type="StaticBody2D" parent="Node2D"]
 position = Vector2(62, 200)
 scale = Vector2(10, 10)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/sofa"]
 modulate = Color(0.941176, 0.717647, 0.882353, 1)
 texture_filter = 1
 scale = Vector2(1, 1)
 texture = ExtResource("4_a2xvi")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/StaticBody2D"]
-polygon = PackedVector2Array(-21, -5.9, -20, -7, -16, -7, -14, -4.9, -14, -4, 5, -4, 5, -5, 7, -7, 11, -7, 12.1, -5.9, 11.2, -4.8, 7.9, -2.8, 1, -2.4, -11.4, -2.4, -15.2, -2.4, -19.3, -5.2)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/sofa"]
+polygon = PackedVector2Array(-21, -5.9, -20, -7, -16, -7, -14, -4.9, -14, -4, 5, -4, 5, -5, 7, -7, 11, -7, 12.1, -5.9, 11.2, -4.8, 7.6, -4.5, 1, -2.4, -11.4, -2.4, -15.3, -3.9, -19.3, -5.2)
 one_way_collision = true
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Node2D/StaticBody2D"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Node2D/sofa"]
 polygon = PackedVector2Array(-17, -9.9, -16, -10.9, 6.9, -10.9, 8, -9.9, -4.3, -9.1)
 one_way_collision = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/sofa"]
 position = Vector2(-16.7, -4.3)
 rotation = 0.825541
 shape = SubResource("CircleShape2D_y6ag2")
 one_way_collision = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/sofa"]
 position = Vector2(7.7, -4.3)
 rotation = -0.888373
 shape = SubResource("CircleShape2D_qbyec")
 one_way_collision = true
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Node2D"]
+position = Vector2(218, 207)
+collision_layer = 0
+mass = 2.0
+center_of_mass_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/RigidBody2D"]
+modulate = Color(1, 0.929412, 0.972549, 1)
+texture_filter = 1
+position = Vector2(44, -49)
+scale = Vector2(8, 8)
+texture = ExtResource("5_ohqvp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/RigidBody2D"]
+position = Vector2(44, -49)
+scale = Vector2(8, 8)
+polygon = PackedVector2Array(-9, -13, -2, -13, -1, -12, -1, -6, -10, -6, -10, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/RigidBody2D"]
+position = Vector2(0, 27)
+shape = SubResource("RectangleShape2D_wpdkx")
 
 [node name="floor and cattree" type="TileMap" parent="."]
 texture_filter = 1
@@ -210,3 +239,7 @@ layer_0/tile_data = PackedInt32Array(393216, 5, 0, 393217, 5, 0, 393218, 5, 0, 3
 [node name="Player" parent="." instance=ExtResource("10_0insk")]
 
 [node name="Camera" parent="." instance=ExtResource("12_yomg4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(601, 615)
+shape = SubResource("RectangleShape2D_2kjna")

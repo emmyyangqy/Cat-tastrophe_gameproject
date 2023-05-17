@@ -1,8 +1,9 @@
-Camera2D
+Sprite2D
 CollisionShape2D
 CollisionPolygon2D
+RigidBody2D
+Camera2D
 StaticBody2D
-Sprite2D
 Node2D
 CharacterBody2D
 Area2D
@@ -10,7 +11,6 @@ AnimatedSprite2D
 AnimatableBody2D
 Label
 TileMap
-RigidBody2D
 Control
 RayCast2D
 Marker2D
