@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dajh4mkrf0eyo"]
+[gd_scene load_steps=51 format=3 uid="uid://dajh4mkrf0eyo"]
 
 [ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_33t7y"]
 [ext_resource type="Texture2D" uid="uid://bcnmxylav2f2t" path="res://objects/window_1.png" id="2_nbdx0"]
@@ -20,6 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://viakl7wkd2md" path="res://objects/book/pixil-frame-0 (10).png" id="11_d4x5x"]
 [ext_resource type="Texture2D" uid="uid://7ry5ytvp7p8i" path="res://objects/book/pixil-frame-0 (11).png" id="12_cmo61"]
 [ext_resource type="PackedScene" uid="uid://cbr8rw5tjolhe" path="res://camera.tscn" id="12_yomg4"]
+[ext_resource type="PackedScene" uid="uid://d286afde7fok0" path="res://vase.tscn" id="21_otjh8"]
+[ext_resource type="PackedScene" uid="uid://cppy8umk55imv" path="res://scorecounter.tscn" id="22_nvkth"]
+[ext_resource type="PackedScene" uid="uid://dfcxuh1rjly3u" path="res://door_side.tscn" id="23_em7h4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovtyx"]
 size = Vector2(2217.52, 83.8451)
@@ -57,102 +60,106 @@ size = Vector2(12, 28)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g638q"]
 size = Vector2(4, 36)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_q558a"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_t4wgp"]
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, -6, -10, -6)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d8vrf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8no3v"]
 texture = ExtResource("4_04dt6")
 texture_region_size = Vector2i(20, 20)
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_q558a")
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_t4wgp")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -10, 10, -10, 10, -6, -10, -6)
 0:0/0/physics_layer_0/polygon_0/one_way = true
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gi8s4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vmvem"]
 texture = ExtResource("5_xmkw4")
 texture_region_size = Vector2i(20, 20)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_swfv6"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wctmx"]
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, -6, -10, -6)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_juran"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yjloj"]
 texture = ExtResource("6_mhu15")
 texture_region_size = Vector2i(20, 20)
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_swfv6")
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_wctmx")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -10, 10, -10, 10, -6, -10, -6)
 0:0/0/physics_layer_0/polygon_0/one_way = true
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xxm1a"]
-polygon = PackedVector2Array(-4.5, -10, 10, -10, 10, -6, -4, -6)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_k0dud"]
+polygon = PackedVector2Array(-4, -10, 10, -10, 10, -6, -4, -6)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_b0mcs"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_snmsg"]
 polygon = PackedVector2Array(-10, -10, 4, -10, 4, -6, -10, -6)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rs8j"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mlb7n"]
 texture = ExtResource("7_7t2ab")
 texture_region_size = Vector2i(20, 20)
 0:0/next_alternative_id = 2
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_xxm1a")
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_k0dud")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -10, 10, -10, 10, -6, -4, -6)
 0:0/0/physics_layer_0/polygon_0/one_way = true
 0:0/1 = 1
 0:0/1/flip_h = true
-0:0/1/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_b0mcs")
+0:0/1/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_snmsg")
 0:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/1/physics_layer_0/angular_velocity = 0.0
-0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -10, 4, -10, 4.5, -6, -10, -6)
+0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -10, 4, -10, 4, -6, -10, -6)
 0:0/1/physics_layer_0/polygon_0/one_way = true
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ts715"]
-polygon = PackedVector2Array(-10, 3, -6.15625, 3, -6, 6, 6, 6, 5.96875, 3, 10, 3, 10, 10, -10, 10)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8fvsn"]
+polygon = PackedVector2Array(-10, 3, -6.0546, 3, -6, 6, 6, 6, 6.40815, 3, 10, 3, 10, 10, -10, 10)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r1ng6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4yvf8"]
 texture = ExtResource("8_c6usd")
 texture_region_size = Vector2i(20, 20)
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ts715")
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_8fvsn")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, 3, -8, 3, -6, 6, 6, 6, 8, 3, 10, 3, 10, 10, -10, 10)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(10, 6, 10, 10, -10, 10, -10, 3, -6, 3, -6, 6, 6, 6, 6, 3, 10, 3)
 0:0/0/physics_layer_0/polygon_0/one_way = true
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l30np"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1331k"]
 polygon = PackedVector2Array(-10, 6, 10, 6, 10, 10, -10, 10)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wh0g1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ig5il"]
 texture = ExtResource("9_ma1y1")
 texture_region_size = Vector2i(20, 20)
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_l30np")
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_1331k")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, 6, 10, 6, 10, 10, -10, 10)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(10, 6, 10, 10, -10, 10, -10, 6)
+0:0/0/physics_layer_0/polygon_0/one_way = true
 
-[sub_resource type="TileSet" id="TileSet_w24he"]
+[sub_resource type="TileSet" id="TileSet_k7473"]
 tile_size = Vector2i(20, 20)
 occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 7
-sources/0 = SubResource("TileSetAtlasSource_d8vrf")
-sources/1 = SubResource("TileSetAtlasSource_gi8s4")
-sources/2 = SubResource("TileSetAtlasSource_juran")
-sources/3 = SubResource("TileSetAtlasSource_3rs8j")
-sources/4 = SubResource("TileSetAtlasSource_r1ng6")
-sources/5 = SubResource("TileSetAtlasSource_wh0g1")
+sources/0 = SubResource("TileSetAtlasSource_8no3v")
+sources/1 = SubResource("TileSetAtlasSource_vmvem")
+sources/2 = SubResource("TileSetAtlasSource_yjloj")
+sources/3 = SubResource("TileSetAtlasSource_mlb7n")
+sources/4 = SubResource("TileSetAtlasSource_4yvf8")
+sources/5 = SubResource("TileSetAtlasSource_ig5il")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kjna"]
 size = Vector2(1296, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37tjb"]
+size = Vector2(47, 641)
 
 [node name="Scene_2" type="Node2D"]
 
@@ -212,7 +219,6 @@ scale = Vector2(10, 10)
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/sofa"]
 modulate = Color(0.941176, 0.717647, 0.882353, 1)
 texture_filter = 1
-scale = Vector2(1, 1)
 texture = ExtResource("4_a2xvi")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/sofa"]
@@ -365,20 +371,42 @@ texture = ExtResource("12_cmo61")
 position = Vector2(-2, 2)
 shape = SubResource("RectangleShape2D_g638q")
 
-[node name="floor and cattree" type="TileMap" parent="."]
+[node name="floor and cattree2" type="TileMap" parent="."]
 texture_filter = 1
-position = Vector2(-8, -2)
+position = Vector2(0, -1)
 scale = Vector2(4, 4)
-tile_set = SubResource("TileSet_w24he")
+tile_set = SubResource("TileSet_k7473")
 cell_quadrant_size = 20
 format = 2
 layer_0/name = "floor"
 layer_0/tile_data = PackedInt32Array(393216, 5, 0, 393217, 5, 0, 393218, 5, 0, 393219, 5, 0, 393220, 5, 0, 393221, 5, 0, 393222, 5, 0, 393223, 5, 0, 393224, 5, 0, 393225, 5, 0, 393226, 5, 0, 393227, 5, 0, 393228, 5, 0, 393229, 5, 0, 393230, 5, 0)
 
-[node name="Player" parent="." instance=ExtResource("10_0insk")]
-
 [node name="Camera" parent="." instance=ExtResource("12_yomg4")]
+position = Vector2(117, -162)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(601, 615)
 shape = SubResource("RectangleShape2D_2kjna")
+
+[node name="Node2D2" parent="." instance=ExtResource("21_otjh8")]
+position = Vector2(991, 169)
+
+[node name="door_side_1" parent="." instance=ExtResource("23_em7h4")]
+position = Vector2(971, 412)
+
+[node name="UI" parent="." instance=ExtResource("22_nvkth")]
+position = Vector2(20, 11)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1181, 303)
+shape = SubResource("RectangleShape2D_37tjb")
+
+[node name="Player" parent="." instance=ExtResource("10_0insk")]
+
+[connection signal="playerinLightArea" from="Camera" to="Player" method="_on_camera_playerin_light_area"]
+[connection signal="playeroutLightArea" from="Camera" to="Player" method="_on_camera_playerout_light_area"]
+[connection signal="off_doorknob" from="door_side_1" to="Player" method="_on_door_side_1_off_doorknob"]
+[connection signal="on_doorknob" from="door_side_1" to="Player" method="_on_door_side_1_on_doorknob"]

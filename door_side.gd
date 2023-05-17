@@ -6,6 +6,7 @@ signal on_doorknob
 signal off_doorknob
 
 func _ready():
+	print("ready")
 	switch_to(State.CLOSE)
 	
 func switch_to(new_state: State):
@@ -28,6 +29,7 @@ func opendoor():
 
 func _on_doorknob_body_entered(body):
 	if body.get_name() == "Player":
+		print("doorknob")
 		emit_signal("on_doorknob")
 
 func _on_doorknob_body_exited(body):

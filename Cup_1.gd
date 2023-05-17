@@ -23,7 +23,7 @@ func switch_to(new_state: State):
 		
 	elif new_state == State.BROKEN:
 		$AnimatedSprite2D.play("broken")
-		$CollisionShape2D.queue_free()
+		$CollisionPolygon2D.queue_free()
 
 func _physics_process(delta):
 	

@@ -102,99 +102,100 @@ sources/0 = SubResource("TileSetAtlasSource_82183")
 sources/1 = SubResource("TileSetAtlasSource_aswqx")
 sources/2 = SubResource("TileSetAtlasSource_7tvn0")
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_q558a"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_t4wgp"]
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, -6, -10, -6)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d8vrf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8no3v"]
 texture = ExtResource("3_yggcr")
 texture_region_size = Vector2i(20, 20)
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_q558a")
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_t4wgp")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -10, 10, -10, 10, -6, -10, -6)
 0:0/0/physics_layer_0/polygon_0/one_way = true
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gi8s4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vmvem"]
 texture = ExtResource("4_ppx7l")
 texture_region_size = Vector2i(20, 20)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_swfv6"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wctmx"]
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, -6, -10, -6)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_juran"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yjloj"]
 texture = ExtResource("5_xxvow")
 texture_region_size = Vector2i(20, 20)
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_swfv6")
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_wctmx")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -10, 10, -10, 10, -6, -10, -6)
 0:0/0/physics_layer_0/polygon_0/one_way = true
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xxm1a"]
-polygon = PackedVector2Array(-4.5, -10, 10, -10, 10, -6, -4, -6)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_k0dud"]
+polygon = PackedVector2Array(-4, -10, 10, -10, 10, -6, -4, -6)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_b0mcs"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_snmsg"]
 polygon = PackedVector2Array(-10, -10, 4, -10, 4, -6, -10, -6)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rs8j"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mlb7n"]
 texture = ExtResource("6_qtegk")
 texture_region_size = Vector2i(20, 20)
 0:0/next_alternative_id = 2
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_xxm1a")
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_k0dud")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -10, 10, -10, 10, -6, -4, -6)
 0:0/0/physics_layer_0/polygon_0/one_way = true
 0:0/1 = 1
 0:0/1/flip_h = true
-0:0/1/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_b0mcs")
+0:0/1/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_snmsg")
 0:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/1/physics_layer_0/angular_velocity = 0.0
-0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -10, 4, -10, 4.5, -6, -10, -6)
+0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -10, 4, -10, 4, -6, -10, -6)
 0:0/1/physics_layer_0/polygon_0/one_way = true
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ts715"]
-polygon = PackedVector2Array(-10, 3, -6.15625, 3, -6, 6, 6, 6, 5.96875, 3, 10, 3, 10, 10, -10, 10)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8fvsn"]
+polygon = PackedVector2Array(-10, 3, -6.0546, 3, -6, 6, 6, 6, 6.40815, 3, 10, 3, 10, 10, -10, 10)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r1ng6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4yvf8"]
 texture = ExtResource("7_qa1qa")
 texture_region_size = Vector2i(20, 20)
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ts715")
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_8fvsn")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, 3, -8, 3, -6, 6, 6, 6, 8, 3, 10, 3, 10, 10, -10, 10)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(10, 6, 10, 10, -10, 10, -10, 3, -6, 3, -6, 6, 6, 6, 6, 3, 10, 3)
 0:0/0/physics_layer_0/polygon_0/one_way = true
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l30np"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1331k"]
 polygon = PackedVector2Array(-10, 6, 10, 6, 10, 10, -10, 10)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wh0g1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ig5il"]
 texture = ExtResource("8_32uxn")
 texture_region_size = Vector2i(20, 20)
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_l30np")
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_1331k")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, 6, 10, 6, 10, 10, -10, 10)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(10, 6, 10, 10, -10, 10, -10, 6)
+0:0/0/physics_layer_0/polygon_0/one_way = true
 
 [sub_resource type="TileSet" id="TileSet_wglva"]
 tile_size = Vector2i(20, 20)
 occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 7
-sources/0 = SubResource("TileSetAtlasSource_d8vrf")
-sources/1 = SubResource("TileSetAtlasSource_gi8s4")
-sources/2 = SubResource("TileSetAtlasSource_juran")
-sources/3 = SubResource("TileSetAtlasSource_3rs8j")
-sources/4 = SubResource("TileSetAtlasSource_r1ng6")
-sources/5 = SubResource("TileSetAtlasSource_wh0g1")
+sources/0 = SubResource("TileSetAtlasSource_8no3v")
+sources/1 = SubResource("TileSetAtlasSource_vmvem")
+sources/2 = SubResource("TileSetAtlasSource_yjloj")
+sources/3 = SubResource("TileSetAtlasSource_mlb7n")
+sources/4 = SubResource("TileSetAtlasSource_4yvf8")
+sources/5 = SubResource("TileSetAtlasSource_ig5il")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qs305"]
 size = Vector2(1248, 18)
