@@ -5,3 +5,5 @@ res://scene_1.tscn
 res://scene_2.tscn
 res://CharacterBody2D.gd
 res://signaler.gd
+res://house.tscn
+res://camera.tscn

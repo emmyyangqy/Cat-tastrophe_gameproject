@@ -41,7 +41,6 @@ var camera
 func _ready():
 	switch_to(State.IDLE)
 	
-	
 
 func switch_to(new_state: State):
 
@@ -318,14 +317,4 @@ func _on_door_side_1_on_doorknob():
 
 
 func _on_exit_1_to_2_body_entered(body):
-	if body.get_name() == "Player":
-		get_tree().change_scene_to_file("res://scene_2.tscn")
-
-func _on_exit_2_to_1_body_entered(body):
-	if body.get_name() == "Player":
-		get_tree().change_scene_to_file("res://scene_1.tscn") #change_scene
-		set_position(Vector2(100, 100))
-		#position = Vector2(100,20000)
-		
-		#var scene in lecture 14 code
-		
+	get_tree().change_scene_to_file("res://Rooms/Room_2.tscn")
