@@ -5,3 +5,4 @@ res://Player.tscn
 res://scene_2.tscn
 res://camera.tscn
 res://global.gd
+res://door_side.gd

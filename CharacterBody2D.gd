@@ -41,8 +41,12 @@ var camera
 func _ready():
 	switch_to(State.IDLE)
 	if Global.entered_room_2_left == true:
-		position = Vector2(100,200)
-		Global.entered_room_2_left=false
+		position = Vector2(33,518)
+		Global.entered_room_2_left = false
+		
+	if Global.entered_room_1_right == true:
+		position = Vector2(1128,524)
+		Global.entered_room_1_right=false
 	
 
 func switch_to(new_state: State):
@@ -323,4 +327,19 @@ func _on_exit_1_to_2_body_entered(body):
 	if body.get_name() == "Player":
 		get_tree().change_scene_to_file("res://scene_2.tscn")
 		Global.entered_room_2_left = true
+		Global.dooropen_1 = true
 
+
+
+func _on_exit_2_to_1_body_entered(body):
+	if body.get_name() == "Player":
+		get_tree().change_scene_to_file("res://scene_1.tscn")
+		Global.entered_room_1_right = true
+	#pass # Replace with function body.
+
+
+func _on_exit_2_to_3_body_entered(body):
+	if body.get_name() == "Player":
+		get_tree().change_scene_to_file("res://scene_2.tscn")
+		Global.entered_room_3_left = true
+	pass # Replace with function body.
