@@ -1,7 +1,7 @@
 extends pushableobject
 #class_name pushableobject
 
-enum State {DEFAULT, BREAK, BROKEN}
+enum State {DEFAULT, BREAK, BROKEN, ALRBROKE}
 
 var gravity = 100
 var friction = 0.5
@@ -12,6 +12,12 @@ var curstate = State.DEFAULT
 
 func _ready():
 	switch_to(State.DEFAULT)
+	if Global.cupbroken_1 == true and get_tree().change_scene_to_file("res://scene_1.tscn") and get_node(".").name == "Cup_1":
+			#switch_to(State.ALRBROKE)
+			position = Global.cupposition_1
+			switch_to(State.ALRBROKE)
+			print(position)
+		
 	
 func switch_to(new_state: State):
 	curstate = new_state
@@ -24,8 +30,17 @@ func switch_to(new_state: State):
 	elif new_state == State.BROKEN:
 		$AnimatedSprite2D.play("broken")
 		$CollisionPolygon2D.queue_free()
+		if get_node(".").name == "Cup_1":
+			print("hdbfjsn")
+			Global.cupbroken_1 = true
+			Global.cupposition_1 = position
+			
+	elif new_state == State.ALRBROKE:
+		$AnimatedSprite2D.play("broken")
+		$CollisionPolygon2D.queue_free()
 
 func _physics_process(delta):
+	
 	
 	if !is_on_floor() and curstate != State.BROKEN:
 		velocity.y += gravity
@@ -45,6 +60,8 @@ func _physics_process(delta):
 	move_and_slide()
 	velocity.x = velocity.x* 0.93
 	#velocity = Vector2.ZERO
+	
+	
 	
 
 func pushrightkinematic():
