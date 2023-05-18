@@ -335,6 +335,7 @@ position = Vector2(20, 11)
 position = Vector2(972, 410)
 
 [node name="Player" parent="." instance=ExtResource("22_cuwlj")]
+position = Vector2(250, 500)
 
 [node name="exit1to2" type="Area2D" parent="."]
 

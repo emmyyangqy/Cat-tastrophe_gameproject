@@ -36,17 +36,24 @@ var player
 var caught = false
 var dangerzone = false
 var camera
+var reset_position = Vector2(250,500) 
 	
 #
 func _ready():
 	switch_to(State.IDLE)
 	if Global.entered_room_2_left == true:
 		position = Vector2(33,518)
+		reset_position = Vector2(33,518)
+		print(reset_position)
 		Global.entered_room_2_left = false
 		
 	if Global.entered_room_1_right == true:
 		position = Vector2(1128,524)
+		reset_position = Vector2(1128,524)
 		Global.entered_room_1_right=false
+	
+	
+	
 	
 
 func switch_to(new_state: State):
@@ -134,13 +141,11 @@ func switch_to(new_state: State):
 		$cat_animation.play("jump_land")
 
 	elif new_state == State.PAW:
-		#$cat_animation.frame = 0
 		$cat_animation.play("paw")
 		$paw_area.monitoring = true
 		#print("paw")
 		
 	elif new_state == State.SLEEP:
-		#$cat_animation.frame = 0
 		$cat_animation.play("sleep")
 	elif new_state == State.SCARED:
 		$cat_animation.play("scared")
@@ -184,18 +189,11 @@ func _physics_process(delta):
 			
 			if laststate == 2:
 				velocity.x = -walk_speed
-				#print("kjhghf")
 			elif laststate == 4:
 				velocity.x = -run_speed
-				#print("ghjrebksldaGDSJHK")
 			else:
 				velocity.x = -walk_speed
 
-#			if laststate == 3:
-#				velocity.x = -run_speed
-#			else:
-#				velocity.x = -walk_speed
-#				#velocity.x = -airjump_speed
 				
 		if Input.is_action_pressed("ui_right"):
 			$cat_animation.flip_h = false
@@ -205,7 +203,6 @@ func _physics_process(delta):
 				velocity.x = run_speed
 			else:
 				velocity.x = walk_speed
-				#velocity.x = airjump_speed
 			
 			
 	elif curstate == State.WALK_RIGHT:
@@ -220,7 +217,6 @@ func _physics_process(delta):
 		velocity.x = 0
 		
 	move_and_slide()
-	#print(curstate, ' ', state_time)
 
 	if is_on_floor():
 		jump_num = 0
@@ -251,7 +247,8 @@ func _physics_process(delta):
 	
 	if raycast.is_colliding():
 		if raycast.get_collider().name == "Player" and dangerzone == true:
-			get_tree().reload_current_scene()
+			position = reset_position
+			#get_tree().reload_current_scene()
 		else: 
 			pass
 			
@@ -260,12 +257,9 @@ func _physics_process(delta):
 		canpush = true
 	else:
 		canpush = false
+	
+	#print(reset_position)
 		
-	
-		
-	
-	
-
 
 func _on_animated_sprite_2d_animation_finished():
 	
@@ -276,11 +270,8 @@ func _on_animated_sprite_2d_animation_finished():
 		switch_to(State.IDLE)
 
 
-
-
 func _on_paw_area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 
-	
 	if curstate == State.PAW: # and body != self:
 
 		var struck_toright = false
@@ -340,6 +331,6 @@ func _on_exit_2_to_1_body_entered(body):
 
 func _on_exit_2_to_3_body_entered(body):
 	if body.get_name() == "Player":
-		get_tree().change_scene_to_file("res://scene_2.tscn")
+		#get_tree().change_scene_to_file("res://scene_3.tscn")
 		Global.entered_room_3_left = true
 	pass # Replace with function body.

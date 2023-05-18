@@ -6,10 +6,11 @@ signal on_doorknob
 signal off_doorknob
 
 func _ready():
-	print("ready")
 	switch_to(State.CLOSE)
-	print(get_parent().name)
+
 	if get_parent().name == "Scene_1" and Global.dooropen_1 == true:
+		switch_to(State.OPEN)
+	if get_parent().name == "Scene_2" and Global.dooropen_2 == true:
 		switch_to(State.OPEN)
 	
 func switch_to(new_state: State):
@@ -22,9 +23,11 @@ func switch_to(new_state: State):
 		$AnimatedSprite2D.play("open")
 		$doorshape.queue_free()
 		$doorknob2.queue_free()
-
+		
+		if get_parent().name == "Scene_2":
+			Global.dooropen_2 = true
+	
 func _physics_process(delta):
-	# Add the gravity.
 	pass
 
 func opendoor():
