@@ -1,6 +1,6 @@
-Node
 CollisionShape2D
 Area2D
+Node
 Node2D
 Timer
 TextureProgressBar
