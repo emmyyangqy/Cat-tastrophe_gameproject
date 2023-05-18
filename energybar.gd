@@ -8,10 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+#	$ProgressBar.value += .5
+#	$TextureProgressBar.value += .5
+#	print($TextureProgressBar.value)
 	pass
-
-
-func _on_timer_timeout():
-	$ProgressBar.value +=1
-	$TextureProgressBar.value +=1
-	pass # Replace with function body.

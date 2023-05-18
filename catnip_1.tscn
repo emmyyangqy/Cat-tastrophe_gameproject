@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8p5gy3u2i0by"]
+
+[ext_resource type="Texture2D" uid="uid://dn6koj3pqx58q" path="res://objects/pixil-frame-0 (15).png" id="1_jqe4s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5snna"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jqe4s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipm3u"]
+size = Vector2(42, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rg25"]
+size = Vector2(42, 48)
+
+[node name="Catnip" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_5snna")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 30)
+shape = SubResource("RectangleShape2D_ipm3u")
+
+[node name="catnip_entered" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="catnip_entered"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_0rg25")
