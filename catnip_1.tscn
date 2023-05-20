@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8p5gy3u2i0by"]
+[gd_scene load_steps=6 format=3 uid="uid://c8p5gy3u2i0by"]
 
 [ext_resource type="Texture2D" uid="uid://dn6koj3pqx58q" path="res://objects/pixil-frame-0 (15).png" id="1_jqe4s"]
+[ext_resource type="Script" path="res://catnip_1.gd" id="1_sune5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5snna"]
 animations = [{
@@ -20,6 +21,7 @@ size = Vector2(42, 30)
 size = Vector2(42, 48)
 
 [node name="Catnip" type="CharacterBody2D"]
+script = ExtResource("1_sune5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -35,3 +37,6 @@ shape = SubResource("RectangleShape2D_ipm3u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="catnip_entered"]
 position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_0rg25")
+
+[connection signal="body_entered" from="catnip_entered" to="." method="_on_catnip_entered_body_entered"]
+[connection signal="body_exited" from="catnip_entered" to="." method="_on_catnip_entered_body_exited"]

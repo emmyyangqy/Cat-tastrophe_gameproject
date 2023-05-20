@@ -9,3 +9,9 @@ res://door_side.gd
 res://Cup_1.gd
 res://energybar.gd
 res://scene_3.tscn
+res://catnip_1.tscn
+res://Camera.gd
+res://LightArea.gd
+res://catnip_1.gd
+res://cup_2.tscn
+res://Cup_1.tscn

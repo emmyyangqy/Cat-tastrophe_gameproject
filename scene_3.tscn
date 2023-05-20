@@ -1,10 +1,9 @@
-[gd_scene load_steps=54 format=3 uid="uid://bpwhcrn07vkhs"]
+[gd_scene load_steps=55 format=3 uid="uid://bpwhcrn07vkhs"]
 
 [ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_rq7l7"]
 [ext_resource type="Texture2D" uid="uid://bcnmxylav2f2t" path="res://objects/window_1.png" id="2_26pjt"]
-[ext_resource type="Texture2D" uid="uid://teuhpwgy4rgx" path="res://objects/pixil-frame-0 (1).png" id="3_e8jds"]
-[ext_resource type="Texture2D" uid="uid://d1h1e2omkbas1" path="res://objects/pixil-frame-0 (2) copy.png" id="4_72qtu"]
 [ext_resource type="Texture2D" uid="uid://drikeq6u6aj8h" path="res://objects/book/pixil-frame-0 (7).png" id="5_7c2o6"]
+[ext_resource type="Texture2D" uid="uid://d4f7oggdxhvhp" path="res://objects/pixil-frame-0 (3).png" id="6_mray7"]
 [ext_resource type="Texture2D" uid="uid://0w647wwbtdfd" path="res://objects/book/pixil-frame-0 (6).png" id="6_pxe8s"]
 [ext_resource type="Texture2D" uid="uid://ft03sbddhdt7" path="res://objects/book/pixil-frame-0 (8).png" id="7_p0uub"]
 [ext_resource type="Texture2D" uid="uid://qeycmfeaim3y" path="res://objects/book/pixil-frame-0 (9).png" id="8_81i2y"]
@@ -22,42 +21,12 @@
 [ext_resource type="PackedScene" uid="uid://dfcxuh1rjly3u" path="res://door_side.tscn" id="20_hpfra"]
 [ext_resource type="PackedScene" uid="uid://cppy8umk55imv" path="res://scorecounter.tscn" id="21_i6v6w"]
 [ext_resource type="PackedScene" uid="uid://dqt7ncin7cqe6" path="res://Player.tscn" id="22_0c42v"]
+[ext_resource type="PackedScene" uid="uid://c3ujgtpf518w7" path="res://Cup_1.tscn" id="24_kjxtn"]
+[ext_resource type="PackedScene" uid="uid://d286afde7fok0" path="res://vase.tscn" id="25_wxkyi"]
+[ext_resource type="PackedScene" uid="uid://c8p5gy3u2i0by" path="res://catnip_1.tscn" id="26_0oynt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvayd"]
-size = Vector2(2217.52, 83.8451)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_kfhna"]
-radius = 2.7
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ad3m7"]
-radius = 2.7
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqsrn"]
-size = Vector2(56, 8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nxr4"]
-size = Vector2(8, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_38tg3"]
-size = Vector2(8, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdqwv"]
-size = Vector2(8, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_anwsu"]
-size = Vector2(8, 36)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4y1x0"]
-size = Vector2(12, 28)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qoi0g"]
-size = Vector2(4, 36)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_icnfk"]
-size = Vector2(176, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgov4"]
-size = Vector2(240, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ey1im"]
+size = Vector2(120, 24)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w6pdo"]
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, -6, -10, -6)
@@ -172,6 +141,36 @@ size = Vector2(24, 272)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6etvl"]
 size = Vector2(31, 284)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_o0v0r"]
+polygon = PackedVector2Array(197, 513, 373, 513, 373, 529, 197, 529)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sqvuv"]
+polygon = PackedVector2Array(474, 409, 474, 433, 594, 433, 594, 409)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icnfk"]
+size = Vector2(176, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgov4"]
+size = Vector2(240, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nxr4"]
+size = Vector2(8, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38tg3"]
+size = Vector2(8, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdqwv"]
+size = Vector2(8, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anwsu"]
+size = Vector2(8, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4y1x0"]
+size = Vector2(12, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qoi0g"]
+size = Vector2(4, 36)
+
 [node name="Scene_3" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -179,227 +178,79 @@ position = Vector2(610, 303)
 
 [node name="Wallpaper" type="Sprite2D" parent="Node2D"]
 modulate = Color(0.870588, 0.756863, 0.831373, 0.827451)
+position = Vector2(109, 0)
 texture = ExtResource("1_rq7l7")
 
 [node name="floortrimshadow" type="Sprite2D" parent="Node2D"]
 modulate = Color(0.4, 0.360784, 0.439216, 1)
-position = Vector2(312, 227)
+position = Vector2(421, 227)
 scale = Vector2(1, 0.0296296)
 texture = ExtResource("1_rq7l7")
 
 [node name="floortrim" type="Sprite2D" parent="Node2D"]
-position = Vector2(314, 231)
+position = Vector2(423, 231)
 scale = Vector2(1, 0.0296296)
 texture = ExtResource("1_rq7l7")
 
 [node name="outsidewindow" type="Sprite2D" parent="Node2D"]
-position = Vector2(-152.5, -56)
+position = Vector2(34, -56)
 scale = Vector2(0.0880209, 0.216667)
 texture = ExtResource("1_rq7l7")
 
 [node name="window" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
-position = Vector2(-158, -70)
+position = Vector2(28.5, -70)
 scale = Vector2(9.3, 9.3)
 texture = ExtResource("2_26pjt")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D/window"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/window/StaticBody2D"]
-position = Vector2(0.473751, 13.9695)
-scale = Vector2(0.00946461, 0.0232975)
-shape = SubResource("RectangleShape2D_bvayd")
-one_way_collision = true
-
-[node name="sofa" type="StaticBody2D" parent="Node2D"]
-position = Vector2(62, 200)
-scale = Vector2(10, 10)
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/sofa"]
-modulate = Color(0.941176, 0.717647, 0.882353, 1)
-texture_filter = 1
-texture = ExtResource("3_e8jds")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/sofa"]
-polygon = PackedVector2Array(-21, -5.9, -20, -7, -16, -7, -14, -4.9, -14, -4, 5, -4, 5, -5, 7, -7, 11, -7, 12.1, -5.9, 11.2, -4.8, 7.6, -4.5, 1, -2.4, -11.4, -2.4, -15.3, -3.9, -19.3, -5.2)
-one_way_collision = true
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Node2D/sofa"]
-polygon = PackedVector2Array(-17, -9.9, -16, -10.9, 6.9, -10.9, 8, -9.9, -4.3, -9.1)
-one_way_collision = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/sofa"]
-position = Vector2(-16.7, -4.3)
-rotation = 0.825541
-shape = SubResource("CircleShape2D_kfhna")
-one_way_collision = true
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/sofa"]
-position = Vector2(7.7, -4.3)
-rotation = -0.888373
-shape = SubResource("CircleShape2D_ad3m7")
-one_way_collision = true
-
-[node name="lamp" type="RigidBody2D" parent="Node2D"]
-visible = false
-position = Vector2(218, 207)
-collision_layer = 0
-mass = 2.0
-center_of_mass_mode = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/lamp"]
-modulate = Color(1, 0.929412, 0.972549, 1)
-texture_filter = 1
-position = Vector2(44, -49)
-scale = Vector2(8, 8)
-texture = ExtResource("4_72qtu")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/lamp"]
-position = Vector2(44, -49)
-scale = Vector2(8, 8)
-polygon = PackedVector2Array(-9, -13, -2, -13, -1, -12, -1, -6, -10, -6, -10, -12)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/lamp"]
-position = Vector2(0, 27)
-shape = SubResource("RectangleShape2D_bqsrn")
-
-[node name="books" type="Node2D" parent="Node2D"]
-
-[node name="RigidBody2D2" type="RigidBody2D" parent="Node2D/books"]
-position = Vector2(333, -127)
-collision_layer = 30
-collision_mask = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/books/RigidBody2D2"]
-texture_filter = 1
-scale = Vector2(4, 4)
-texture = ExtResource("5_7c2o6")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/books/RigidBody2D2"]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_5nxr4")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="Node2D/books"]
-position = Vector2(301, -127)
-collision_layer = 30
-collision_mask = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/books/RigidBody2D"]
-texture_filter = 1
-scale = Vector2(4, 4)
-texture = ExtResource("6_pxe8s")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/books/RigidBody2D"]
-shape = SubResource("RectangleShape2D_38tg3")
-
-[node name="RigidBody2D3" type="RigidBody2D" parent="Node2D/books"]
-position = Vector2(310, -127)
-collision_layer = 30
-collision_mask = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/books/RigidBody2D3"]
-texture_filter = 1
-scale = Vector2(4, 4)
-texture = ExtResource("7_p0uub")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/books/RigidBody2D3"]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_vdqwv")
-
-[node name="RigidBody2D4" type="RigidBody2D" parent="Node2D/books"]
-position = Vector2(319, -127)
-collision_layer = 30
-collision_mask = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/books/RigidBody2D4"]
-texture_filter = 1
-scale = Vector2(4, 4)
-texture = ExtResource("8_81i2y")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/books/RigidBody2D4"]
-position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_anwsu")
-
-[node name="RigidBody2D5" type="RigidBody2D" parent="Node2D/books"]
-position = Vector2(288, -127)
-collision_layer = 30
-collision_mask = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/books/RigidBody2D5"]
-texture_filter = 1
-scale = Vector2(4, 4)
-texture = ExtResource("9_r8t8t")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/books/RigidBody2D5"]
-position = Vector2(2, 6)
-shape = SubResource("RectangleShape2D_4y1x0")
-
-[node name="RigidBody2D6" type="RigidBody2D" parent="Node2D/books"]
-position = Vector2(328, -127)
-collision_layer = 62
-collision_mask = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/books/RigidBody2D6"]
-texture_filter = 1
-scale = Vector2(4, 4)
-texture = ExtResource("10_g28bl")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/books/RigidBody2D6"]
-position = Vector2(-2, 2)
-shape = SubResource("RectangleShape2D_qoi0g")
 
 [node name="door" type="Sprite2D" parent="Node2D"]
 modulate = Color(0.709804, 0.584314, 0.505882, 1)
 texture_filter = 1
-position = Vector2(-427, 109)
+position = Vector2(-413, 109)
 scale = Vector2(12.2, 12.2)
 texture = ExtResource("11_8h8h1")
 flip_h = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+[node name="table" type="StaticBody2D" parent="Node2D"]
+position = Vector2(185, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/table"]
+modulate = Color(0.721569, 0.694118, 0.745098, 1)
 texture_filter = 1
-position = Vector2(62, 42)
+position = Vector2(-84, 146)
 scale = Vector2(8, 8)
-texture = ExtResource("12_2xfmq")
+texture = ExtResource("6_mray7")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
-position = Vector2(62, 218)
-shape = SubResource("RectangleShape2D_icnfk")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/table"]
+position = Vector2(-152, 118)
+shape = SubResource("RectangleShape2D_ey1im")
+one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
-position = Vector2(62, 146)
-shape = SubResource("RectangleShape2D_icnfk")
+[node name="table2" type="StaticBody2D" parent="Node2D"]
+position = Vector2(-311, 2)
+scale = Vector2(0.4, 1)
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
-position = Vector2(62, 74)
-shape = SubResource("RectangleShape2D_icnfk")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/table2"]
+modulate = Color(0.721569, 0.694118, 0.745098, 1)
+texture_filter = 1
+position = Vector2(-84, 146)
+scale = Vector2(8, 8)
+texture = ExtResource("6_mray7")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
-position = Vector2(62, 2)
-shape = SubResource("RectangleShape2D_icnfk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
-position = Vector2(62, -70)
-shape = SubResource("RectangleShape2D_icnfk")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
-position = Vector2(62, -150)
-shape = SubResource("RectangleShape2D_jgov4")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/table2"]
+position = Vector2(-152, 118)
+shape = SubResource("RectangleShape2D_ey1im")
+one_way_collision = true
 
 [node name="floor and cattree2" type="TileMap" parent="."]
 texture_filter = 1
-position = Vector2(0, -1)
+position = Vector2(14, -1)
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_3xyp2")
 cell_quadrant_size = 20
 format = 2
 layer_0/name = "floor"
 layer_0/tile_data = PackedInt32Array(393216, 5, 0, 393217, 5, 0, 393218, 5, 0, 393219, 5, 0, 393220, 5, 0, 393221, 5, 0, 393222, 5, 0, 393223, 5, 0, 393224, 5, 0, 393225, 5, 0, 393226, 5, 0, 393227, 5, 0, 393228, 5, 0, 393229, 5, 0, 393230, 5, 0)
-
-[node name="Camera" parent="." instance=ExtResource("19_vmaf7")]
-position = Vector2(700, 292)
 
 [node name="door_side_1" parent="." instance=ExtResource("20_hpfra")]
 position = Vector2(971, 412)
@@ -408,6 +259,7 @@ position = Vector2(971, 412)
 position = Vector2(20, 11)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(14, 0)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(601, 615)
@@ -429,12 +281,9 @@ shape = SubResource("RectangleShape2D_pdeo3")
 position = Vector2(1200, 412)
 shape = SubResource("RectangleShape2D_muysn")
 
-[node name="Player" parent="." instance=ExtResource("22_0c42v")]
-position = Vector2(33, 518)
+[node name="exit 3to2" type="Area2D" parent="."]
 
-[node name="exit 2to1" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="exit 2to1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit 3to2"]
 position = Vector2(-14, 406)
 shape = SubResource("RectangleShape2D_wb5qj")
 debug_color = Color(0, 0.290196, 0.701961, 0.419608)
@@ -445,3 +294,2415 @@ debug_color = Color(0, 0.290196, 0.701961, 0.419608)
 position = Vector2(1171.5, 399)
 shape = SubResource("RectangleShape2D_6etvl")
 debug_color = Color(0, 0.270588, 0.701961, 0.419608)
+
+[node name="bookshelf shadows" type="Node2D" parent="."]
+position = Vector2(109, 0)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="bookshelf shadows"]
+occluder = SubResource("OccluderPolygon2D_o0v0r")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="bookshelf shadows"]
+position = Vector2(0, -72)
+occluder = SubResource("OccluderPolygon2D_o0v0r")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="bookshelf shadows"]
+position = Vector2(0, -144)
+occluder = SubResource("OccluderPolygon2D_o0v0r")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="bookshelf shadows"]
+position = Vector2(0, -216)
+occluder = SubResource("OccluderPolygon2D_o0v0r")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="bookshelf shadows"]
+position = Vector2(0, -288)
+occluder = SubResource("OccluderPolygon2D_o0v0r")
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="bookshelf shadows"]
+position = Vector2(486, 0)
+occluder = SubResource("OccluderPolygon2D_o0v0r")
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="bookshelf shadows"]
+position = Vector2(486, -72)
+occluder = SubResource("OccluderPolygon2D_o0v0r")
+
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="bookshelf shadows"]
+position = Vector2(486, -144)
+occluder = SubResource("OccluderPolygon2D_o0v0r")
+
+[node name="LightOccluder2D9" type="LightOccluder2D" parent="bookshelf shadows"]
+position = Vector2(486, -216)
+occluder = SubResource("OccluderPolygon2D_o0v0r")
+
+[node name="LightOccluder2D10" type="LightOccluder2D" parent="bookshelf shadows"]
+position = Vector2(486, -288)
+occluder = SubResource("OccluderPolygon2D_o0v0r")
+
+[node name="LightOccluder2D11" type="LightOccluder2D" parent="bookshelf shadows"]
+occluder = SubResource("OccluderPolygon2D_sqvuv")
+
+[node name="bookshelves" type="Node2D" parent="."]
+position = Vector2(109, 0)
+
+[node name="bookshelf" type="StaticBody2D" parent="bookshelves"]
+modulate = Color(0.768627, 0.717647, 0.768627, 1)
+position = Vector2(709, 303)
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/bookshelf"]
+texture_filter = 1
+position = Vector2(62, 42)
+scale = Vector2(8, 8)
+texture = ExtResource("12_2xfmq")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="bookshelves/bookshelf"]
+position = Vector2(62, 218)
+shape = SubResource("RectangleShape2D_icnfk")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="bookshelves/bookshelf"]
+position = Vector2(62, 146)
+shape = SubResource("RectangleShape2D_icnfk")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="bookshelves/bookshelf"]
+position = Vector2(62, 74)
+shape = SubResource("RectangleShape2D_icnfk")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/bookshelf"]
+position = Vector2(62, 2)
+shape = SubResource("RectangleShape2D_icnfk")
+one_way_collision = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bookshelves/bookshelf"]
+position = Vector2(62, -70)
+shape = SubResource("RectangleShape2D_icnfk")
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="bookshelves/bookshelf"]
+position = Vector2(62, -150)
+shape = SubResource("RectangleShape2D_jgov4")
+one_way_collision = true
+
+[node name="books" type="Node2D" parent="bookshelves"]
+position = Vector2(512, 331)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/books"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/books/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/books/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/books"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/books/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/books/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/books"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/books/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/books/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/books"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/books/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/books/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/books"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/books/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/books/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/books"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/books/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/books/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="booklayer" type="Node2D" parent="bookshelves"]
+position = Vector2(103, 0)
+
+[node name="books2" type="Node2D" parent="bookshelves/booklayer"]
+position = Vector2(304, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer/books2"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books2/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books2/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer/books2"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books2/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books2/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer/books2"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books2/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books2/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer/books2"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books2/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books2/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer/books2"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books2/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books2/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer/books2"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books2/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books2/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="books3" type="Node2D" parent="bookshelves/booklayer"]
+position = Vector2(358, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer/books3"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books3/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books3/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer/books3"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books3/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books3/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer/books3"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books3/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books3/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer/books3"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books3/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books3/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer/books3"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books3/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books3/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer/books3"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books3/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books3/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="books4" type="Node2D" parent="bookshelves/booklayer"]
+position = Vector2(412, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer/books4"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books4/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books4/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer/books4"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books4/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books4/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer/books4"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books4/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books4/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer/books4"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books4/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books4/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer/books4"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books4/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books4/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer/books4"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer/books4/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer/books4/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="booklayer2" type="Node2D" parent="bookshelves"]
+position = Vector2(103, 72)
+
+[node name="books2" type="Node2D" parent="bookshelves/booklayer2"]
+position = Vector2(304, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer2/books2"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books2/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books2/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer2/books2"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books2/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books2/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer2/books2"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books2/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books2/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer2/books2"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books2/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books2/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer2/books2"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books2/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books2/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer2/books2"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books2/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books2/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="books3" type="Node2D" parent="bookshelves/booklayer2"]
+position = Vector2(358, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer2/books3"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books3/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books3/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer2/books3"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books3/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books3/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer2/books3"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books3/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books3/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer2/books3"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books3/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books3/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer2/books3"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books3/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books3/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer2/books3"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books3/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books3/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="books4" type="Node2D" parent="bookshelves/booklayer2"]
+position = Vector2(412, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer2/books4"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books4/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books4/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer2/books4"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books4/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books4/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer2/books4"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books4/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books4/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer2/books4"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books4/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books4/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer2/books4"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books4/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books4/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer2/books4"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer2/books4/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer2/books4/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="booklayer3" type="Node2D" parent="bookshelves"]
+position = Vector2(104, -72)
+
+[node name="books2" type="Node2D" parent="bookshelves/booklayer3"]
+position = Vector2(304, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer3/books2"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books2/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books2/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer3/books2"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books2/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books2/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer3/books2"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books2/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books2/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer3/books2"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books2/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books2/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer3/books2"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books2/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books2/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer3/books2"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books2/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books2/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="books3" type="Node2D" parent="bookshelves/booklayer3"]
+position = Vector2(358, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer3/books3"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books3/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books3/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer3/books3"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books3/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books3/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer3/books3"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books3/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books3/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer3/books3"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books3/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books3/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer3/books3"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books3/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books3/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer3/books3"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books3/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books3/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="books4" type="Node2D" parent="bookshelves/booklayer3"]
+position = Vector2(412, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer3/books4"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books4/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books4/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer3/books4"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books4/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books4/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer3/books4"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books4/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books4/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer3/books4"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books4/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books4/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer3/books4"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books4/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books4/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer3/books4"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer3/books4/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer3/books4/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="booklayer4" type="Node2D" parent="bookshelves"]
+position = Vector2(104, -144)
+
+[node name="books2" type="Node2D" parent="bookshelves/booklayer4"]
+position = Vector2(304, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer4/books2"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books2/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books2/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer4/books2"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books2/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books2/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer4/books2"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books2/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books2/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer4/books2"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books2/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books2/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer4/books2"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books2/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books2/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer4/books2"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books2/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books2/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="books3" type="Node2D" parent="bookshelves/booklayer4"]
+position = Vector2(358, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer4/books3"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books3/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books3/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer4/books3"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books3/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books3/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer4/books3"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books3/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books3/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer4/books3"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books3/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books3/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer4/books3"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books3/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books3/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer4/books3"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books3/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books3/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="books4" type="Node2D" parent="bookshelves/booklayer4"]
+position = Vector2(412, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer4/books4"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books4/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books4/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer4/books4"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books4/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books4/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer4/books4"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books4/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books4/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer4/books4"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books4/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books4/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer4/books4"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books4/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books4/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer4/books4"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer4/books4/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer4/books4/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="bookshelf2" type="StaticBody2D" parent="bookshelves"]
+modulate = Color(0.768627, 0.717647, 0.768627, 1)
+position = Vector2(223, 303)
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/bookshelf2"]
+texture_filter = 1
+position = Vector2(62, 42)
+scale = Vector2(8, 8)
+texture = ExtResource("12_2xfmq")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="bookshelves/bookshelf2"]
+position = Vector2(62, 218)
+shape = SubResource("RectangleShape2D_icnfk")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="bookshelves/bookshelf2"]
+position = Vector2(62, 146)
+shape = SubResource("RectangleShape2D_icnfk")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="bookshelves/bookshelf2"]
+position = Vector2(62, 74)
+shape = SubResource("RectangleShape2D_icnfk")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/bookshelf2"]
+position = Vector2(62, 2)
+shape = SubResource("RectangleShape2D_icnfk")
+one_way_collision = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bookshelves/bookshelf2"]
+position = Vector2(62, -70)
+shape = SubResource("RectangleShape2D_icnfk")
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="bookshelves/bookshelf2"]
+position = Vector2(62, -150)
+shape = SubResource("RectangleShape2D_jgov4")
+one_way_collision = true
+
+[node name="books2" type="Node2D" parent="bookshelves"]
+position = Vector2(26, 331)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/books2"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/books2/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/books2/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/books2"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/books2/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/books2/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/books2"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/books2/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/books2/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/books2"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/books2/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/books2/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/books2"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/books2/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/books2/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/books2"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/books2/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/books2/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="booklayer5" type="Node2D" parent="bookshelves"]
+position = Vector2(-383, 0)
+
+[node name="books2" type="Node2D" parent="bookshelves/booklayer5"]
+position = Vector2(304, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer5/books2"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books2/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books2/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer5/books2"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books2/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books2/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer5/books2"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books2/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books2/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer5/books2"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books2/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books2/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer5/books2"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books2/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books2/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer5/books2"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books2/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books2/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="books3" type="Node2D" parent="bookshelves/booklayer5"]
+position = Vector2(358, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer5/books3"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books3/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books3/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer5/books3"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books3/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books3/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer5/books3"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books3/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books3/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer5/books3"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books3/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books3/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer5/books3"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books3/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books3/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer5/books3"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books3/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books3/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="books4" type="Node2D" parent="bookshelves/booklayer5"]
+position = Vector2(412, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer5/books4"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books4/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books4/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer5/books4"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books4/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books4/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer5/books4"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books4/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books4/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer5/books4"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books4/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books4/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer5/books4"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books4/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books4/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer5/books4"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer5/books4/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer5/books4/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="booklayer6" type="Node2D" parent="bookshelves"]
+position = Vector2(-383, 72)
+
+[node name="books2" type="Node2D" parent="bookshelves/booklayer6"]
+position = Vector2(304, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer6/books2"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books2/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books2/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer6/books2"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books2/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books2/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer6/books2"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books2/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books2/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer6/books2"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books2/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books2/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer6/books2"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books2/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books2/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer6/books2"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books2/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books2/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="books3" type="Node2D" parent="bookshelves/booklayer6"]
+position = Vector2(358, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer6/books3"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books3/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books3/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer6/books3"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books3/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books3/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer6/books3"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books3/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books3/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer6/books3"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books3/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books3/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer6/books3"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books3/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books3/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer6/books3"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books3/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books3/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="books4" type="Node2D" parent="bookshelves/booklayer6"]
+position = Vector2(412, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer6/books4"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books4/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books4/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer6/books4"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books4/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books4/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer6/books4"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books4/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books4/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer6/books4"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books4/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books4/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer6/books4"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books4/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books4/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer6/books4"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer6/books4/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer6/books4/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="booklayer7" type="Node2D" parent="bookshelves"]
+position = Vector2(-382, -72)
+
+[node name="books2" type="Node2D" parent="bookshelves/booklayer7"]
+position = Vector2(304, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer7/books2"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books2/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books2/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer7/books2"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books2/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books2/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer7/books2"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books2/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books2/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer7/books2"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books2/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books2/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer7/books2"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books2/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books2/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer7/books2"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books2/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books2/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="books3" type="Node2D" parent="bookshelves/booklayer7"]
+position = Vector2(358, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer7/books3"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books3/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books3/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer7/books3"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books3/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books3/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer7/books3"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books3/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books3/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer7/books3"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books3/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books3/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer7/books3"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books3/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books3/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer7/books3"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books3/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books3/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="books4" type="Node2D" parent="bookshelves/booklayer7"]
+position = Vector2(412, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer7/books4"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books4/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books4/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer7/books4"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books4/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books4/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer7/books4"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books4/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books4/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer7/books4"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books4/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books4/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer7/books4"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books4/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books4/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer7/books4"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer7/books4/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer7/books4/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="booklayer8" type="Node2D" parent="bookshelves"]
+position = Vector2(-382, -144)
+
+[node name="books2" type="Node2D" parent="bookshelves/booklayer8"]
+position = Vector2(304, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer8/books2"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books2/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books2/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer8/books2"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books2/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books2/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer8/books2"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books2/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books2/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer8/books2"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books2/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books2/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer8/books2"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books2/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books2/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer8/books2"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books2/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books2/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="books3" type="Node2D" parent="bookshelves/booklayer8"]
+position = Vector2(358, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer8/books3"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books3/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books3/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer8/books3"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books3/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books3/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer8/books3"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books3/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books3/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer8/books3"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books3/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books3/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer8/books3"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books3/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books3/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer8/books3"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books3/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books3/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="books4" type="Node2D" parent="bookshelves/booklayer8"]
+position = Vector2(412, 546)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="bookshelves/booklayer8/books4"]
+position = Vector2(333, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books4/RigidBody2D2"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_7c2o6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books4/RigidBody2D2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5nxr4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bookshelves/booklayer8/books4"]
+position = Vector2(301, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books4/RigidBody2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_pxe8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books4/RigidBody2D"]
+shape = SubResource("RectangleShape2D_38tg3")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="bookshelves/booklayer8/books4"]
+position = Vector2(310, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books4/RigidBody2D3"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("7_p0uub")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books4/RigidBody2D3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vdqwv")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="bookshelves/booklayer8/books4"]
+position = Vector2(319, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books4/RigidBody2D4"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("8_81i2y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books4/RigidBody2D4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_anwsu")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="bookshelves/booklayer8/books4"]
+position = Vector2(288, -127)
+collision_layer = 30
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books4/RigidBody2D5"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_r8t8t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books4/RigidBody2D5"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_4y1x0")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="bookshelves/booklayer8/books4"]
+position = Vector2(328, -127)
+collision_layer = 62
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="bookshelves/booklayer8/books4/RigidBody2D6"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("10_g28bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bookshelves/booklayer8/books4/RigidBody2D6"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_qoi0g")
+
+[node name="Camera" parent="." instance=ExtResource("19_vmaf7")]
+position = Vector2(559, 204)
+
+[node name="Player" parent="." instance=ExtResource("22_0c42v")]
+position = Vector2(33, 518)
+
+[node name="Cup_4" parent="." instance=ExtResource("25_wxkyi")]
+position = Vector2(958, 113)
+
+[node name="Catnip" parent="." instance=ExtResource("26_0oynt")]
+position = Vector2(238, 387)
+
+[node name="Cup_3" parent="." instance=ExtResource("24_kjxtn")]
+position = Vector2(298, 60)
+
+[connection signal="off_doorknob" from="door_side_1" to="Player" method="_on_door_side_1_off_doorknob"]
+[connection signal="on_doorknob" from="door_side_1" to="Player" method="_on_door_side_1_on_doorknob"]
+[connection signal="body_entered" from="exit 3to2" to="Player" method="_on_exit_3_to_2_body_entered"]
+[connection signal="body_entered" from="exit 2to3" to="Player" method="_on_exit_2_to_3_body_entered"]
+[connection signal="playerinLightArea" from="Camera" to="Player" method="_on_camera_playerin_light_area"]
+[connection signal="playeroutLightArea" from="Camera" to="Player" method="_on_camera_playerout_light_area"]
+[connection signal="incatnip" from="Catnip" to="Player" method="_on_catnip_incatnip"]
+[connection signal="outcatnip" from="Catnip" to="Player" method="_on_catnip_outcatnip"]

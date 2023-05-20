@@ -1,11 +1,14 @@
+CollisionPolygon2D
+LightOccluder2D
+Node2D
 CollisionShape2D
 Sprite2D
 StaticBody2D
+RigidBody2D
 Area2D
 AnimatedSprite2D
 CharacterBody2D
 Node
-Node2D
 Timer
 TextureProgressBar
 ProgressBar
@@ -15,9 +18,6 @@ NinePatchRect
 MarginContainer
 VBoxContainer
 HBoxContainer
-LightOccluder2D
-RigidBody2D
-CollisionPolygon2D
 Camera2D
 AnimatableBody2D
 TileMap

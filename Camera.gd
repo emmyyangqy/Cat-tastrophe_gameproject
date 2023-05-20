@@ -6,6 +6,13 @@ var rotationSpeed = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	if get_parent().name == "Scene_3":
+		print("3333333")
+		$LightArea.rotation = -9.5
+		$RayCast2D.rotation = -.09
+		#$LightArea.rotation = -4
+		
 	pass # Replace with function body.
 
 

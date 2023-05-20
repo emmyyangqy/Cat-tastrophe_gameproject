@@ -18,6 +18,13 @@ func _ready():
 	if Global.cupbroken_2 == true and get_node(".").name == "Cup_2":
 			position = Global.cupposition_2
 			switch_to(State.ALRBROKE)
+			
+	if Global.cupbroken_3 == true and get_node(".").name == "Cup_3":
+			position = Global.cupposition_3
+			switch_to(State.ALRBROKE)
+	if Global.cupbroken_4 == true and get_node(".").name == "Cup_4":
+			position = Global.cupposition_4
+			switch_to(State.ALRBROKE)
 
 		
 	
@@ -41,16 +48,19 @@ func switch_to(new_state: State):
 			Global.cupbroken_2 = true
 			Global.cupposition_2 = position
 			
-			
-			
-			
+		if get_node(".").name == "Cup_3":
+			Global.cupbroken_3 = true
+			Global.cupposition_3 = position
+		
+		if get_node(".").name == "Cup_4":
+			Global.cupbroken_4 = true
+			Global.cupposition_4 = position
 			
 	elif new_state == State.ALRBROKE:
 		$AnimatedSprite2D.play("broken")
 		$CollisionPolygon2D.queue_free()
 
 func _physics_process(delta):
-	
 	
 	if !is_on_floor() and curstate != State.BROKEN and curstate != State. ALRBROKE:
 		velocity.y += gravity
@@ -75,7 +85,6 @@ func pushrightkinematic():
 
 func pushleftkinematic():
 	velocity.x += -80
-
 
 func _on_animated_sprite_2d_animation_finished():
 	if curstate == State.BREAK:
