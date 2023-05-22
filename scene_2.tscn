@@ -414,7 +414,7 @@ layer_0/name = "floor"
 layer_0/tile_data = PackedInt32Array(393216, 5, 0, 393217, 5, 0, 393218, 5, 0, 393219, 5, 0, 393220, 5, 0, 393221, 5, 0, 393222, 5, 0, 393223, 5, 0, 393224, 5, 0, 393225, 5, 0, 393226, 5, 0, 393227, 5, 0, 393228, 5, 0, 393229, 5, 0, 393230, 5, 0)
 
 [node name="Camera" parent="." instance=ExtResource("12_yomg4")]
-position = Vector2(700, 292)
+position = Vector2(781, 203)
 
 [node name="Cup_2" parent="." instance=ExtResource("21_otjh8")]
 position = Vector2(991, 166)

@@ -183,12 +183,12 @@ texture = ExtResource("1_rq7l7")
 
 [node name="floortrimshadow" type="Sprite2D" parent="Node2D"]
 modulate = Color(0.4, 0.360784, 0.439216, 1)
-position = Vector2(421, 227)
+position = Vector2(320, 227)
 scale = Vector2(1, 0.0296296)
 texture = ExtResource("1_rq7l7")
 
 [node name="floortrim" type="Sprite2D" parent="Node2D"]
-position = Vector2(423, 231)
+position = Vector2(322, 231)
 scale = Vector2(1, 0.0296296)
 texture = ExtResource("1_rq7l7")
 
@@ -206,7 +206,7 @@ texture = ExtResource("2_26pjt")
 [node name="door" type="Sprite2D" parent="Node2D"]
 modulate = Color(0.709804, 0.584314, 0.505882, 1)
 texture_filter = 1
-position = Vector2(-413, 109)
+position = Vector2(-427, 109)
 scale = Vector2(12.2, 12.2)
 texture = ExtResource("11_8h8h1")
 flip_h = true
@@ -244,7 +244,7 @@ one_way_collision = true
 
 [node name="floor and cattree2" type="TileMap" parent="."]
 texture_filter = 1
-position = Vector2(14, -1)
+position = Vector2(0, -1)
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_3xyp2")
 cell_quadrant_size = 20
@@ -259,7 +259,6 @@ position = Vector2(971, 412)
 position = Vector2(20, 11)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(14, 0)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(601, 615)

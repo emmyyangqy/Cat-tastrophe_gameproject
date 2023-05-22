@@ -15,6 +15,7 @@ var jump_force = 650
 var run_speed = 400
 var walk_speed = 150
 
+var jump_force_c = 650
 var run_speed_c = 400
 var walk_speed_c = 150
 
@@ -269,11 +270,13 @@ func _physics_process(delta):
 	
 	if catnipeffect and catnipeffect_timer < 10:
 		catnipeffect_timer += delta
+		jump_force = jump_force_c + 200
 		walk_speed = walk_speed_c + 300
 		run_speed = run_speed_c + 500
 	else:
 		catnipeffect = false
 		catnipeffect_timer = 0
+		jump_force = jump_force_c
 		walk_speed = walk_speed_c
 		run_speed = run_speed_c
 		

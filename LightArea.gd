@@ -16,8 +16,8 @@ func _process(delta):
 	var local_animation = local_time / camera_cycle_time
 
 	if local_animation < .5:
-		rotation = (local_animation)*1.1-4 #.55
+		rotation = (local_animation)*1.1+4 + Global.addedarearoation#.55
 	else:
-		rotation = (-local_animation)*1.1+.85
+		rotation = (-local_animation)*1.1-1.18 + Global.addedarearoation
 
 

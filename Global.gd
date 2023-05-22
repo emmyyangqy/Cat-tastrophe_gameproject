@@ -1,7 +1,12 @@
 extends Node
 
+
 var score = 0
 var energy = 100
+
+#for camera
+var addedarearoation
+
 var entered_room_1_right = false
 var entered_room_2_left = false
 var entered_room_3_left = false
