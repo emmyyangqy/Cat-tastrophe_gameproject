@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cppy8umk55imv"]
+[gd_scene load_steps=6 format=3 uid="uid://cppy8umk55imv"]
 
 [ext_resource type="Script" path="res://Label.gd" id="1_gjsfb"]
+[ext_resource type="PackedScene" uid="uid://c0y1s61rdqwjf" path="res://energybar.tscn" id="2_bigou"]
+[ext_resource type="PackedScene" uid="uid://df281pxl6f2tt" path="res://physicalstats.tscn" id="3_mmck5"]
+[ext_resource type="Script" path="res://statpoints.gd" id="4_1lfof"]
+[ext_resource type="Script" path="res://statpointlable.gd" id="4_b25mj"]
 
 [node name="UI" type="Node2D"]
 
@@ -16,22 +20,115 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.86875
+anchor_left = 2.01875
 anchor_top = 0.89375
-anchor_right = 1.86875
+anchor_right = 2.01875
 anchor_bottom = 0.89375
-offset_left = -2.25
-offset_top = 5.75
-offset_right = 37.75
-offset_bottom = 28.75
+offset_left = 5.75
+offset_top = 14.75
+offset_right = 45.75
+offset_bottom = 37.75
 script = ExtResource("1_gjsfb")
-metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="Control"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 20.5
-offset_top = 41.5
-offset_right = 63.5
-offset_bottom = 67.5
-text = "Score: "
+offset_left = 28.5
+offset_top = 50.5
+offset_right = 84.5
+offset_bottom = 76.5
+text = "SCORE:"
+
+[node name="energybar" parent="." instance=ExtResource("2_bigou")]
+offset_left = 387.0
+offset_top = 7.0
+offset_right = 387.0
+offset_bottom = 7.0
+
+[node name="Label" type="Label" parent="energybar"]
+layout_mode = 0
+offset_left = -73.0
+offset_top = 8.0
+offset_right = -11.0
+offset_bottom = 34.0
+text = "ENERGY"
+
+[node name="physicalstats" parent="." instance=ExtResource("3_mmck5")]
+offset_left = 102.0
+offset_top = 75.0
+offset_right = 102.0
+offset_bottom = 75.0
+
+[node name="Label" type="Label" parent="physicalstats"]
+layout_mode = 0
+offset_left = -87.0
+offset_top = -1.0
+offset_right = 11.0
+offset_bottom = 77.0
+scale = Vector2(0.82, 0.82)
+text = "STRENGTH
+AGILITY
+ENDURANCE
+"
+horizontal_alignment = 2
+
+[node name="statpoints" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.5
+offset_top = -11.5
+offset_right = 24.5
+offset_bottom = 28.5
+script = ExtResource("4_1lfof")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="statpoints"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.01875
+anchor_top = 0.89375
+anchor_right = 2.01875
+anchor_bottom = 0.89375
+offset_left = 130.75
+offset_top = 14.75
+offset_right = 170.75
+offset_bottom = 37.75
+script = ExtResource("4_b25mj")
+
+[node name="Label2" type="Label" parent="statpoints"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 28.5
+offset_top = 50.5
+offset_right = 84.5
+offset_bottom = 76.5
+text = "AVALIBLE STAT POINTS:"
+
+[node name="Button1" type="Button" parent="statpoints"]
+layout_mode = 0
+offset_left = 271.5
+offset_top = 85.5
+offset_right = 306.5
+offset_bottom = 116.5
+scale = Vector2(0.5, 0.5)
+text = "+"
+
+[node name="Button2" type="Button" parent="statpoints"]
+offset_left = 271.5
+offset_top = 107.5
+offset_right = 306.5
+offset_bottom = 138.5
+scale = Vector2(0.5, 0.5)
+text = "+"
+
+[node name="Button3" type="Button" parent="statpoints"]
+offset_left = 271.5
+offset_top = 129.5
+offset_right = 306.5
+offset_bottom = 160.5
+scale = Vector2(0.5, 0.5)
+text = "+"
+
+[connection signal="pressed" from="statpoints/Button1" to="statpoints" method="_on_button_1_pressed"]
+[connection signal="pressed" from="statpoints/Button2" to="statpoints" method="_on_button_2_pressed"]
+[connection signal="pressed" from="statpoints/Button3" to="statpoints" method="_on_button_3_pressed"]

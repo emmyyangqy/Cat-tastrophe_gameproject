@@ -2,7 +2,11 @@ extends Node
 
 
 var score = 0
+var statpoints = 0
 var energy = 100
+var strength = 10
+var agility = 10
+var endurance = 10
 
 #for camera
 var addedarearoation

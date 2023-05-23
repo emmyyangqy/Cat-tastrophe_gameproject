@@ -1,3 +1,7 @@
+Button
+Label
+TextureProgressBar
+Camera2D
 CollisionPolygon2D
 LightOccluder2D
 Node2D
@@ -10,15 +14,12 @@ AnimatedSprite2D
 CharacterBody2D
 Node
 Timer
-TextureProgressBar
 ProgressBar
-Label
 TextureRect
 NinePatchRect
 MarginContainer
 VBoxContainer
 HBoxContainer
-Camera2D
 AnimatableBody2D
 TileMap
 Control

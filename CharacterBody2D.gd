@@ -9,6 +9,12 @@ const MOVE_STATES = [State.WALK_RIGHT, State.WALK_LEFT, State.RUN_RIGHT, State.R
 var lastvelocity = 0
 var curstate = State.IDLE
 
+var walkenergy = .05 
+var runenergy = .2 
+var sleepenergy = .1 
+var idleenergy = .04
+var jumpenergy = 5
+
 var jump_num = 0
 var gravity = 2000
 var jump_force = 650
@@ -37,8 +43,7 @@ var caught = false
 var dangerzone = false
 var camera
 var reset_position = Vector2(250,500) 
-@export
-var health = 3
+var no_energy = false
 	
 #
 func _ready():
@@ -46,7 +51,6 @@ func _ready():
 	if Global.entered_room_2_left == true and Global.entered_room_3_left == true:
 		position = Vector2(33,518)
 		reset_position = Vector2(33,518)
-		print(reset_position)
 		Global.entered_room_2_left = false
 	
 		
@@ -86,6 +90,10 @@ func switch_to(new_state: State):
 			return
 			
 
+	if curstate == State.SLEEP and no_energy == true and Global.energy < 90:
+		Global.energy += sleepenergy
+		return
+		
 	curstate = new_state
 
 
@@ -93,6 +101,7 @@ func switch_to(new_state: State):
 
 	if new_state == State.IDLE:
 		$paw_area.monitoring = false
+		Global.energy += idleenergy
 		#$cat_animation.play("idle_2")
 		
 		if lastvelocity < 0:
@@ -109,28 +118,34 @@ func switch_to(new_state: State):
 			$cat_animation.play("idle_1")
 			
 	elif new_state == State.WALK_RIGHT:
+		Global.energy -= walkenergy
 		#$cat_animation.frame = 0
 		$cat_animation.play("movement_1")
 		$cat_animation.flip_h = false
 
 			
 	elif new_state == State.WALK_LEFT:
+		Global.energy -= walkenergy
 		#$cat_animation.frame = 0
 		$cat_animation.play("movement_1")
 		$cat_animation.flip_h = true
 
 		
 	elif new_state == State.RUN_RIGHT:
+		Global.energy -= runenergy
 		#$cat_animation.frame = 0
 		$cat_animation.play("movement_2")
 		$cat_animation.flip_h = false
 		
 	elif new_state == State.RUN_LEFT:
+		Global.energy -= runenergy
 		$cat_animation.play("movement_2")
 		$cat_animation.flip_h = true
 		
 	elif new_state == State.JUMP:
+		
 		if is_on_floor() and jump_num < 1:
+			Global.energy -= jumpenergy
 			jump_num += 1
 			
 			$cat_animation.play("jump_beginning")
@@ -156,12 +171,23 @@ func switch_to(new_state: State):
 		
 	elif new_state == State.SLEEP:
 		$cat_animation.play("sleep")
+		Global.energy += sleepenergy
+		
 	elif new_state == State.SCARED:
 		$cat_animation.play("scared")
 		
 
 
+
 func _physics_process(delta):
+	
+	if catnipeffect == false:
+		run_speed = 400 + (Global.agility-10)*10
+		walk_speed = 150 + (Global.agility-10)*4
+		
+		walkenergy = .05 - .05*((Global.endurance-10)/90)
+		runenergy = .2 - .05*((Global.endurance-10)/90)
+		jumpenergy = 5 - 5*((Global.endurance-10)/90)
 
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -255,7 +281,6 @@ func _physics_process(delta):
 	raycast.target_position = position-LightArea.position-camera.position
 	
 	if raycast.is_colliding():
-		print(raycast.get_collider().name)
 		if raycast.get_collider().name == "Player" and dangerzone == true:
 			position = reset_position
 			#get_tree().reload_current_scene()
@@ -280,7 +305,11 @@ func _physics_process(delta):
 		walk_speed = walk_speed_c
 		run_speed = run_speed_c
 		
-	
+	if Global.energy < 1:
+		no_energy = true
+		switch_to(State.SLEEP)
+		
+
 	#print(reset_position)
 		
 
@@ -296,7 +325,6 @@ func _on_animated_sprite_2d_animation_finished():
 func _on_paw_area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 
 	if curstate == State.PAW: # and body != self:
-		print(body)
 
 		var struck_toright = false
 		var struck_toleft = false
@@ -327,8 +355,9 @@ func _on_paw_area_body_shape_entered(body_rid, body, body_shape_index, local_sha
 			body.opendoor()
 		
 		if hit_down and body is catnip:
-			print("hit")
 			catnipeffect = true
+			
+
 
 
 func _on_camera_playerin_light_area():

@@ -256,7 +256,7 @@ layer_0/tile_data = PackedInt32Array(393216, 5, 0, 393217, 5, 0, 393218, 5, 0, 3
 position = Vector2(971, 412)
 
 [node name="UI" parent="." instance=ExtResource("21_i6v6w")]
-position = Vector2(20, 11)
+position = Vector2(40, -40)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -2696,6 +2696,10 @@ position = Vector2(238, 387)
 
 [node name="Cup_3" parent="." instance=ExtResource("24_kjxtn")]
 position = Vector2(298, 60)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+offset = Vector2(2.08165e-12, -70)
 
 [connection signal="off_doorknob" from="door_side_1" to="Player" method="_on_door_side_1_off_doorknob"]
 [connection signal="on_doorknob" from="door_side_1" to="Player" method="_on_door_side_1_on_doorknob"]

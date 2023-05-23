@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://df281pxl6f2tt"]
+
+[ext_resource type="Script" path="res://physicalstats.gd" id="1_d8ev7"]
+[ext_resource type="Texture2D" uid="uid://c2yepmvd7ksk8" path="res://objects/pixil-frame-0 (19).png" id="1_k00ui"]
+[ext_resource type="Texture2D" uid="uid://sr5rhrlgsk6e" path="res://objects/pixil-frame-0 (20).png" id="2_pxhbr"]
+[ext_resource type="Texture2D" uid="uid://ckloosc3mibry" path="res://objects/pixil-frame-0 (22).png" id="3_7fphl"]
+[ext_resource type="Texture2D" uid="uid://et3r7hnbvnau" path="res://objects/pixil-frame-0 (23).png" id="4_gmodp"]
+[ext_resource type="Texture2D" uid="uid://p4utjxoiv1qr" path="res://objects/pixil-frame-0 (24).png" id="5_yipvv"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d8ev7")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="."]
+texture_filter = 1
+offset_right = 200.0
+offset_bottom = 200.0
+scale = Vector2(1.5, 1.5)
+texture_under = ExtResource("1_k00ui")
+texture_over = ExtResource("2_pxhbr")
+texture_progress = ExtResource("3_7fphl")
+
+[node name="TextureProgressBar3" type="TextureProgressBar" parent="."]
+texture_filter = 1
+offset_top = 22.0
+offset_right = 200.0
+offset_bottom = 222.0
+scale = Vector2(1.5, 1.5)
+texture_under = ExtResource("1_k00ui")
+texture_over = ExtResource("2_pxhbr")
+texture_progress = ExtResource("4_gmodp")
+
+[node name="TextureProgressBar4" type="TextureProgressBar" parent="."]
+texture_filter = 1
+offset_top = 43.0
+offset_right = 200.0
+offset_bottom = 243.0
+scale = Vector2(1.5, 1.5)
+texture_under = ExtResource("1_k00ui")
+texture_over = ExtResource("2_pxhbr")
+texture_progress = ExtResource("5_yipvv")

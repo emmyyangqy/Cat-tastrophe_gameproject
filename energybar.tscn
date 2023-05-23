@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0y1s61rdqwjf"]
+[gd_scene load_steps=5 format=3 uid="uid://c0y1s61rdqwjf"]
 
 [ext_resource type="Script" path="res://energybar.gd" id="1_gavvh"]
-[ext_resource type="Texture2D" uid="uid://br1wegcvl1cmy" path="res://objects/1600023-200.png" id="2_tqhyx"]
-[ext_resource type="Texture2D" uid="uid://cvomn2qu2iet4" path="res://objects/light-grey-background.png" id="3_637rq"]
+[ext_resource type="Texture2D" uid="uid://c2yepmvd7ksk8" path="res://objects/pixil-frame-0 (19).png" id="2_2evrb"]
+[ext_resource type="Texture2D" uid="uid://sr5rhrlgsk6e" path="res://objects/pixil-frame-0 (20).png" id="3_rybiw"]
+[ext_resource type="Texture2D" uid="uid://cqpwqygk4kr5f" path="res://objects/pixil-frame-0 (21).png" id="4_ncega"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -13,14 +14,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gavvh")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-layout_mode = 0
-offset_right = 4.0
-offset_bottom = 27.0
-
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 200.0
-texture_under = ExtResource("2_tqhyx")
-texture_progress = ExtResource("3_637rq")
+scale = Vector2(4, 4)
+texture_under = ExtResource("2_2evrb")
+texture_over = ExtResource("3_rybiw")
+texture_progress = ExtResource("4_ncega")

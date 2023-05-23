@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cic8odeshi1be"]
+[gd_scene load_steps=48 format=3 uid="uid://cic8odeshi1be"]
 
 [ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_pl27u"]
 [ext_resource type="PackedScene" uid="uid://ypjlv3imx5vc" path="res://catnipball_1.tscn" id="2_qq66r"]
@@ -197,9 +197,6 @@ sources/3 = SubResource("TileSetAtlasSource_mlb7n")
 sources/4 = SubResource("TileSetAtlasSource_4yvf8")
 sources/5 = SubResource("TileSetAtlasSource_ig5il")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qs305"]
-size = Vector2(1248, 18)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ryki"]
 size = Vector2(1178, 64)
 
@@ -269,6 +266,7 @@ texture = ExtResource("3_x0cmn")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(578, 324)
 scale = Vector2(5, 5)
+offset = Vector2(2.08165e-12, -70)
 
 [node name="catnipball" parent="." instance=ExtResource("2_qq66r")]
 position = Vector2(-114, 233)
@@ -301,10 +299,6 @@ layer_1/tile_data = PackedInt32Array(393216, 5, 0, 393217, 5, 0, 393218, 5, 0, 3
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(545, -10)
-shape = SubResource("RectangleShape2D_qs305")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(576, 624)
 shape = SubResource("RectangleShape2D_3ryki")
@@ -322,14 +316,14 @@ position = Vector2(1251, 397)
 shape = SubResource("RectangleShape2D_0v48d")
 
 [node name="Camera" parent="." instance=ExtResource("17_lgxw8")]
-position = Vector2(1146, 200)
+position = Vector2(1149, 200)
 
 [node name="Cup_1" parent="." instance=ExtResource("28_tjone")]
 position = Vector2(-67, -22)
 scale = Vector2(1.25, 1.25)
 
 [node name="UI" parent="." instance=ExtResource("15_de6q0")]
-position = Vector2(20, 11)
+position = Vector2(40, -40)
 
 [node name="door_side_1" parent="." instance=ExtResource("18_u5ihl")]
 position = Vector2(972, 410)

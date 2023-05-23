@@ -423,7 +423,7 @@ position = Vector2(991, 166)
 position = Vector2(971, 412)
 
 [node name="UI" parent="." instance=ExtResource("22_nvkth")]
-position = Vector2(20, 11)
+position = Vector2(40, -40)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -463,6 +463,10 @@ debug_color = Color(0, 0.290196, 0.701961, 0.419608)
 position = Vector2(1171.5, 399)
 shape = SubResource("RectangleShape2D_01jsm")
 debug_color = Color(0, 0.270588, 0.701961, 0.419608)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 323)
+offset = Vector2(2.08165e-12, -70)
 
 [connection signal="playerinLightArea" from="Camera" to="Player" method="_on_camera_playerin_light_area"]
 [connection signal="playeroutLightArea" from="Camera" to="Player" method="_on_camera_playerout_light_area"]
