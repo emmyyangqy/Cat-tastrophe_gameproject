@@ -12,6 +12,7 @@ var endurance = 10
 var scene_4_cameratime = 7
 var scene_4_cameraspeed = 6
 var isscene_4 = false
+var setup_done = false
 
 #for camera
 var addedarearoation

@@ -21,3 +21,12 @@ res://LightArea.gd
 res://vase.tscn
 res://door_side.gd
 res://startscreen.tscn
+res://startscreen.gd
+res://tutorial.tscn
+res://tutorialplayer.gd
+res://playertutorial.tscn
+res://tutorial.gd
+res://text1.gd
+res://text2.gd
+res://text3.gd
+res://text4.gd

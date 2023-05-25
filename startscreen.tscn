@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw04v44iktjvy"]
+[gd_scene load_steps=5 format=3 uid="uid://dw04v44iktjvy"]
 
 [ext_resource type="Texture2D" uid="uid://cvomn2qu2iet4" path="res://objects/light-grey-background.png" id="1_2vgy6"]
+[ext_resource type="Script" path="res://startscreen.gd" id="1_csr1e"]
+[ext_resource type="Texture2D" uid="uid://du56slrfw7fr7" path="res://Untitled_Artwork 13.png" id="2_pg65g"]
+[ext_resource type="Texture2D" uid="uid://iw0jm2v76jxh" path="res://objects/Untitled_Artwork 14.png" id="3_fq3ea"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_csr1e")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.596078, 0.690196, 0.780392, 1)
@@ -20,8 +24,26 @@ offset_bottom = 1922.0
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_2vgy6")
 
-[node name="Label" type="Label" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "CAT-TASTROPY"
+offset_left = 165.0
+offset_top = 88.0
+offset_right = 4713.0
+offset_bottom = 2136.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_pg65g")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 444.0
+offset_top = 289.0
+offset_right = 982.0
+offset_bottom = 574.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_fq3ea")
+texture_pressed = ExtResource("3_fq3ea")
+texture_hover = ExtResource("3_fq3ea")
+texture_disabled = ExtResource("3_fq3ea")
+texture_focused = ExtResource("3_fq3ea")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

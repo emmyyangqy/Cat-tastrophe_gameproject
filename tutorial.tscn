@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://3jxfrvgd4uwv"]
+
+[ext_resource type="PackedScene" uid="uid://dqt7ncin7cqe6" path="res://Player.tscn" id="1_e5vl7"]
+[ext_resource type="Script" path="res://tutorial.gd" id="1_w2ix4"]
+[ext_resource type="Texture2D" uid="uid://cvomn2qu2iet4" path="res://objects/light-grey-background.png" id="2_ih8tg"]
+[ext_resource type="PackedScene" uid="uid://cbr8rw5tjolhe" path="res://camera.tscn" id="3_mlcbj"]
+[ext_resource type="PackedScene" uid="uid://c3ujgtpf518w7" path="res://Cup_1.tscn" id="4_h02qb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v52b2"]
+size = Vector2(3088, 1620)
+
+[node name="tutorial" type="Node2D"]
+script = ExtResource("1_w2ix4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.596078, 0.690196, 0.780392, 1)
+position = Vector2(588, 332)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_ih8tg")
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(0, -41)
+
+[node name="Sprite2D2" type="Sprite2D" parent="floor"]
+modulate = Color(0.176471, 0.239216, 0.294118, 1)
+position = Vector2(561, 641)
+scale = Vector2(0.5, 0.1)
+texture = ExtResource("2_ih8tg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(493, 623)
+scale = Vector2(0.5, 0.1)
+shape = SubResource("RectangleShape2D_v52b2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="floor"]
+position = Vector2(-37, 513)
+rotation = 1.5708
+scale = Vector2(0.5, 0.1)
+shape = SubResource("RectangleShape2D_v52b2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="floor"]
+position = Vector2(1191, 523)
+rotation = 1.5708
+scale = Vector2(0.5, 0.1)
+shape = SubResource("RectangleShape2D_v52b2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+offset = Vector2(2.08165e-12, -70)
+
+[node name="Camera" parent="." instance=ExtResource("3_mlcbj")]
+position = Vector2(5318, -2377)
+scale = Vector2(4, 4)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 55.0
+offset_top = 35.0
+offset_right = 347.0
+offset_bottom = 243.0
+scale = Vector2(1.5, 1.5)
+text = "CONTROLS:
+
+Walk Left: [left arrowkey] or [A]
+Walk Right: [right arrowkey] or [D]
+Jump: [up arrowkey] or [W] or [SPACE]
+Paw/Object Interaction: [E]
+
+Hold [SHIFT] to move faster
+"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1026.0
+offset_top = 524.0
+offset_right = 1089.0
+offset_bottom = 555.0
+text = " DONE "
+
+[node name="Player" parent="." instance=ExtResource("1_e5vl7")]
+
+[node name="Cup_1" parent="." instance=ExtResource("4_h02qb")]
+position = Vector2(349, 146)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

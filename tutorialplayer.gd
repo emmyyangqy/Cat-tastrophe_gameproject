@@ -186,8 +186,6 @@ func switch_to(new_state: State):
 
 func _physics_process(delta):
 	
-	if get_parent().name == "tutorial":
-		Global.energy=100
 	#print(position)
 	
 	if catnipeffect == false:
@@ -279,163 +277,12 @@ func _physics_process(delta):
 		if curstate != State.JUMP:
 			
 			laststate = curstate
-			
-	#Global.state_num = curstate
-			
-	raycast = get_parent().get_node("Camera/RayCast2D")
-	LightArea = get_parent().get_node("Camera/LightArea")
-	camera = get_parent().get_node("Camera")
-	player = get_node(".")
-	
-	raycast.target_position = position-LightArea.position-camera.position
-	
-	if raycast.is_colliding():
-		print(raycast.get_collider().name, " ", dangerzone)
-		if raycast.get_collider().name == "Player" and dangerzone == true:
-			position = reset_position
-			#get_tree().reload_current_scene()
-		else: 
-			pass
-			
-	state_time += delta
-	if state_time > 0.2:
-		canpush = true
-	else:
-		canpush = false
-	
-	if catnipeffect and catnipeffect_timer < 10:
-		catnipeffect_timer += delta
-		jump_force = jump_force_c + 200
-		walk_speed = walk_speed_c + 300
-		run_speed = run_speed_c + 500
-	else:
-		catnipeffect = false
-		catnipeffect_timer = 0
-		jump_force = jump_force_c
-		walk_speed = walk_speed_c
-		run_speed = run_speed_c
-		
-	if Global.energy < 1:
-		no_energy = true
-		switch_to(State.SLEEP)
-		
 
-	#print(reset_position)
-		
 
-func _on_animated_sprite_2d_animation_finished():
-	
+
+func _on_cat_animation_animation_finished():
 	if curstate == State.PAW:
 		switch_to(State.IDLE)
 #
 	elif curstate == State.JUMP:  #switch to elif
 		switch_to(State.IDLE)
-
-
-func _on_paw_area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-
-	if curstate == State.PAW: # and body != self:
-
-		var struck_toright = false
-		var struck_toleft = false
-		var hit_down = false
-		
-		if lastvelocity > 0 and local_shape_index == 1:
-			struck_toright = true
-		elif lastvelocity < 0 and local_shape_index == 0:
-			struck_toleft = true
-		elif on_doorknob == true and local_shape_index == 2:
-			hit_down = true
-		elif incatnip == true and local_shape_index == 2:
-			hit_down = true
-			
-		if struck_toright and body is pushableobjectrigid:
-			body.pushright()
-			
-		if struck_toleft and body is pushableobjectrigid:
-			body.pushleft()
-
-		if struck_toright and body is pushableobject:
-			body.pushrightkinematic()
-			
-		if struck_toleft and body is pushableobject:
-			body.pushleftkinematic()
-			
-		if hit_down and body is doorknob:
-			body.opendoor()
-		
-		if hit_down and body is catnip:
-			catnipeffect = true
-			
-
-
-
-func _on_camera_playerin_light_area():
-	dangerzone = true
-func _on_camera_playerout_light_area():
-	dangerzone = false 
-
-func _on_door_side_1_off_doorknob():
-	on_doorknob = false
-func _on_door_side_1_on_doorknob():
-	on_doorknob = true
-
-
-
-
-func _on_exit_1_to_2_body_entered(body):
-	if body.get_name() == "Player":
-		get_tree().change_scene_to_file("res://scene_2.tscn")
-		Global.entered_room_2_left = true
-		Global.dooropen_1 = true
-
-
-
-func _on_exit_2_to_1_body_entered(body):
-	if body.get_name() == "Player":
-		get_tree().change_scene_to_file("res://scene_1.tscn")
-		Global.entered_room_1_right = true
-	#pass # Replace with function body.
-
-
-func _on_exit_2_to_3_body_entered(body):
-	if body.get_name() == "Player":
-		get_tree().change_scene_to_file("res://scene_3.tscn")
-		Global.entered_room_3_left = true
-	pass # Replace with function body.
-
-
-func _on_catnip_incatnip():
-	incatnip = true
-	pass # Replace with function body.
-func _on_catnip_outcatnip():
-	incatnip = false
-	pass # Replace with function body.
-
-
-func _on_exit_3_to_2_body_entered(body):
-	if body.get_name() == "Player":
-		get_tree().change_scene_to_file("res://scene_2.tscn")
-		Global.entered_room_2_right = true
-	pass # Replace with function body.
-
-
-func _on_exit_3_to_4_body_entered(body):
-	if body.get_name() == "Player":
-		get_tree().change_scene_to_file("res://scene_4.tscn")
-		Global.entered_room_4_left = true
-	pass # Replace with function body.
-
-
-func _on_exit_4_to_5_body_entered(body):
-	if body.get_name() == "Player":
-		#get_tree().change_scene_to_file("res://scene_5.tscn")
-		#Global.entered_room_2_right = true
-		pass # Replace with function body.
-
-
-func _on_exit_4_to_3_body_entered(body):
-	if body.get_name() == "Player":
-		get_tree().change_scene_to_file("res://scene_3.tscn")
-		Global.entered_room_3_right = true
-	pass # Replace with function body.

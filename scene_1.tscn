@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cic8odeshi1be"]
+[gd_scene load_steps=54 format=3 uid="uid://cic8odeshi1be"]
 
 [ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_pl27u"]
 [ext_resource type="PackedScene" uid="uid://ypjlv3imx5vc" path="res://catnipball_1.tscn" id="2_qq66r"]
@@ -16,7 +16,13 @@
 [ext_resource type="PackedScene" uid="uid://cppy8umk55imv" path="res://scorecounter.tscn" id="15_de6q0"]
 [ext_resource type="PackedScene" uid="uid://cbr8rw5tjolhe" path="res://camera.tscn" id="17_lgxw8"]
 [ext_resource type="PackedScene" uid="uid://dfcxuh1rjly3u" path="res://door_side.tscn" id="18_u5ihl"]
+[ext_resource type="Script" path="res://text3.gd" id="19_b00st"]
+[ext_resource type="Script" path="res://text4.gd" id="19_srj2a"]
+[ext_resource type="Texture2D" uid="uid://cvomn2qu2iet4" path="res://objects/light-grey-background.png" id="20_vbrvv"]
+[ext_resource type="Texture2D" uid="uid://ha8pfs0ri2qf" path="res://objects/Untitled_Artwork 15.png" id="21_1tqc6"]
 [ext_resource type="PackedScene" uid="uid://dqt7ncin7cqe6" path="res://Player.tscn" id="22_cuwlj"]
+[ext_resource type="Script" path="res://text2.gd" id="22_xd766"]
+[ext_resource type="Script" path="res://text1.gd" id="23_cxvlt"]
 [ext_resource type="PackedScene" uid="uid://c3ujgtpf518w7" path="res://Cup_1.tscn" id="28_tjone"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3favf"]
@@ -338,8 +344,149 @@ position = Vector2(1175, 390.5)
 shape = SubResource("RectangleShape2D_yng3e")
 debug_color = Color(0.25098, 0.494118, 0.737255, 1)
 
+[node name="INTRO" type="Node2D" parent="."]
+
+[node name="text4" type="Node2D" parent="INTRO"]
+script = ExtResource("19_srj2a")
+
+[node name="Sprite2D" type="Sprite2D" parent="INTRO/text4"]
+modulate = Color(0.580392, 0.788235, 0.886275, 1)
+position = Vector2(250, 304)
+scale = Vector2(0.09, 0.15)
+texture = ExtResource("20_vbrvv")
+
+[node name="Label" type="Label" parent="INTRO/text4"]
+offset_left = 111.0
+offset_top = 218.0
+offset_right = 388.0
+offset_bottom = 348.0
+scale = Vector2(1.4, 1.4)
+text = "For each knocked over,
+ you will get stat points 
+you can allocate to 
+physical abilities
+
+"
+
+[node name="TextureButton" type="TextureButton" parent="INTRO/text4"]
+offset_left = 384.0
+offset_top = 400.0
+offset_right = 527.0
+offset_bottom = 564.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("21_1tqc6")
+texture_pressed = ExtResource("21_1tqc6")
+texture_hover = ExtResource("21_1tqc6")
+texture_disabled = ExtResource("21_1tqc6")
+texture_focused = ExtResource("21_1tqc6")
+
+[node name="text3" type="Node2D" parent="INTRO"]
+visible = false
+script = ExtResource("19_b00st")
+
+[node name="Sprite2D" type="Sprite2D" parent="INTRO/text3"]
+modulate = Color(0.580392, 0.788235, 0.886275, 1)
+position = Vector2(250, 304)
+scale = Vector2(0.09, 0.15)
+texture = ExtResource("20_vbrvv")
+
+[node name="Label" type="Label" parent="INTRO/text3"]
+offset_left = 111.0
+offset_top = 218.0
+offset_right = 388.0
+offset_bottom = 348.0
+scale = Vector2(1.4, 1.4)
+text = "
+Knock over as many cups
+ and vases as you can 
+without getting caught!"
+
+[node name="TextureButton" type="TextureButton" parent="INTRO/text3"]
+offset_left = 384.0
+offset_top = 400.0
+offset_right = 527.0
+offset_bottom = 564.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("21_1tqc6")
+texture_pressed = ExtResource("21_1tqc6")
+texture_hover = ExtResource("21_1tqc6")
+texture_disabled = ExtResource("21_1tqc6")
+texture_focused = ExtResource("21_1tqc6")
+
+[node name="text2" type="Node2D" parent="INTRO"]
+visible = false
+script = ExtResource("22_xd766")
+
+[node name="Sprite2D" type="Sprite2D" parent="INTRO/text2"]
+modulate = Color(0.580392, 0.788235, 0.886275, 1)
+position = Vector2(250, 304)
+scale = Vector2(0.09, 0.15)
+texture = ExtResource("20_vbrvv")
+
+[node name="Label" type="Label" parent="INTRO/text2"]
+offset_left = 111.0
+offset_top = 218.0
+offset_right = 388.0
+offset_bottom = 348.0
+scale = Vector2(1.4, 1.4)
+text = "But watch out!
+Your owner set up security 
+cameras to caught you 
+red-pawed so you must 
+avoid their veiw"
+
+[node name="TextureButton" type="TextureButton" parent="INTRO/text2"]
+offset_left = 384.0
+offset_top = 400.0
+offset_right = 527.0
+offset_bottom = 564.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("21_1tqc6")
+texture_pressed = ExtResource("21_1tqc6")
+texture_hover = ExtResource("21_1tqc6")
+texture_disabled = ExtResource("21_1tqc6")
+texture_focused = ExtResource("21_1tqc6")
+
+[node name="text1" type="Node2D" parent="INTRO"]
+visible = false
+script = ExtResource("23_cxvlt")
+
+[node name="Sprite2D" type="Sprite2D" parent="INTRO/text1"]
+modulate = Color(0.580392, 0.788235, 0.886275, 1)
+position = Vector2(250, 304)
+scale = Vector2(0.09, 0.15)
+texture = ExtResource("20_vbrvv")
+
+[node name="Label" type="Label" parent="INTRO/text1"]
+offset_left = 111.0
+offset_top = 218.0
+offset_right = 388.0
+offset_bottom = 348.0
+scale = Vector2(1.4, 1.4)
+text = "Your owner just 
+left the house!
+
+It's the perfect 
+time to make a mess"
+
+[node name="TextureButton" type="TextureButton" parent="INTRO/text1"]
+offset_left = 384.0
+offset_top = 400.0
+offset_right = 527.0
+offset_bottom = 564.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("21_1tqc6")
+texture_pressed = ExtResource("21_1tqc6")
+texture_hover = ExtResource("21_1tqc6")
+texture_disabled = ExtResource("21_1tqc6")
+texture_focused = ExtResource("21_1tqc6")
+
 [connection signal="playerinLightArea" from="Camera" to="Player" method="_on_camera_playerin_light_area"]
 [connection signal="playeroutLightArea" from="Camera" to="Player" method="_on_camera_playerout_light_area"]
 [connection signal="off_doorknob" from="door_side_1" to="Player" method="_on_door_side_1_off_doorknob"]
 [connection signal="on_doorknob" from="door_side_1" to="Player" method="_on_door_side_1_on_doorknob"]
 [connection signal="body_entered" from="exit1to2" to="Player" method="_on_exit_1_to_2_body_entered"]
+[connection signal="pressed" from="INTRO/text4/TextureButton" to="INTRO/text4" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="INTRO/text3/TextureButton" to="INTRO/text3" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="INTRO/text2/TextureButton" to="INTRO/text2" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="INTRO/text1/TextureButton" to="INTRO/text1" method="_on_texture_button_pressed"]
