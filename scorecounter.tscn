@@ -12,10 +12,9 @@
 layout_mode = 3
 anchors_preset = 0
 offset_left = -15.5
-offset_top = -38.5
+offset_top = -48.5
 offset_right = 24.5
-offset_bottom = 1.5
-metadata/_edit_use_anchors_ = true
+offset_bottom = -8.5
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 1
@@ -41,9 +40,9 @@ text = "SCORE:"
 
 [node name="energybar" parent="." instance=ExtResource("2_bigou")]
 offset_left = 387.0
-offset_top = 7.0
+offset_top = -3.0
 offset_right = 387.0
-offset_bottom = 7.0
+offset_bottom = -3.0
 
 [node name="Label" type="Label" parent="energybar"]
 layout_mode = 0
@@ -55,9 +54,9 @@ text = "ENERGY"
 
 [node name="physicalstats" parent="." instance=ExtResource("3_mmck5")]
 offset_left = 102.0
-offset_top = 75.0
+offset_top = 65.0
 offset_right = 102.0
-offset_bottom = 75.0
+offset_bottom = 65.0
 
 [node name="Label" type="Label" parent="physicalstats"]
 layout_mode = 0
@@ -76,11 +75,10 @@ horizontal_alignment = 2
 layout_mode = 3
 anchors_preset = 0
 offset_left = -15.5
-offset_top = -11.5
+offset_top = -21.5
 offset_right = 24.5
-offset_bottom = 28.5
+offset_bottom = 18.5
 script = ExtResource("4_1lfof")
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="statpoints"]
 layout_mode = 1

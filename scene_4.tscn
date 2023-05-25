@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://b6gkykrrkmdsn"]
+[gd_scene load_steps=49 format=3 uid="uid://b6gkykrrkmdsn"]
 
 [ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_5bb5n"]
 [ext_resource type="Texture2D" uid="uid://bcnmxylav2f2t" path="res://objects/window_1.png" id="2_h6rdx"]
@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://b0oo736qi5j1x" path="res://objects/cattree_1.png" id="5_h1ok8"]
 [ext_resource type="Texture2D" uid="uid://crq8p05bqj6v6" path="res://objects/pixil-frame-0 (17).png" id="6_pv854"]
 [ext_resource type="Texture2D" uid="uid://duv35ayta52x" path="res://objects/cattree_2.png" id="6_yixnx"]
-[ext_resource type="Texture2D" uid="uid://p4utjxoiv1qr" path="res://objects/pixil-frame-0 (24).png" id="7_mlrpi"]
 [ext_resource type="Texture2D" uid="uid://o4l0pggppy5t" path="res://objects/cattree_3.png" id="7_mqrb0"]
 [ext_resource type="Texture2D" uid="uid://ykrtjjxrel2a" path="res://objects/pixil-frame-0 (25).png" id="7_tsq1l"]
+[ext_resource type="Texture2D" uid="uid://f10gdn7yao7t" path="res://objects/pixil-frame-0 (5).png" id="8_22vep"]
 [ext_resource type="Texture2D" uid="uid://ddse8jgwl6msq" path="res://objects/cattree_4.png" id="8_f01ee"]
 [ext_resource type="Texture2D" uid="uid://cgp8gv6qdb88f" path="res://objects/cattree_5.png" id="9_pwx8b"]
 [ext_resource type="Texture2D" uid="uid://cqjl0qm4aex3i" path="res://objects/floor_1.png" id="10_forp7"]
@@ -37,11 +37,14 @@ polygon = PackedVector2Array(-25.3333, -19, -22, -19, -22, -14.7778, -26, -14.66
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1ivvk"]
 polygon = PackedVector2Array(-40, -19, -23, -19, -23, -32.4444, 40, -32.4444, 40, -15.4444, 10, -15.4444, 10, -26.4444, -5, -26.4444, -5, -15.4444, -22, -15.4444, -22, 0, -6, 0, -6, 1, -5, 1, -5, 0, 10, 0, 10, 1, 11, 1, 11, 0, 40, 0, 40, 21, -40, 21)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6x063"]
-size = Vector2(9.77937, 0.691113)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rb0j7"]
 size = Vector2(100, 100)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0skh7"]
+polygon = PackedVector2Array(11, -28, 11, -24, 84.3333, -24, 84.3333, -28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0qyk"]
+size = Vector2(73.6667, 4)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w6pdo"]
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, -6, -10, -6)
@@ -162,7 +165,7 @@ size = Vector2(31, 284)
 position = Vector2(610, 303)
 
 [node name="Wallpaper" type="Sprite2D" parent="Node2D"]
-modulate = Color(0.870588, 0.756863, 0.831373, 0.827451)
+modulate = Color(0.976471, 0.862745, 0.839216, 1)
 position = Vector2(109, 0)
 texture = ExtResource("1_5bb5n")
 
@@ -254,21 +257,6 @@ one_way_collision = true
 texture_filter = 1
 texture = ExtResource("6_pv854")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D/kitchen"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/kitchen/StaticBody2D"]
-texture_filter = 1
-position = Vector2(13.3333, -19.7778)
-rotation = 2.18166
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("7_mlrpi")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/kitchen/StaticBody2D"]
-position = Vector2(13.3568, -19.7484)
-rotation = 2.18166
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_6x063")
-
 [node name="box" type="StaticBody2D" parent="Node2D"]
 position = Vector2(-363, 190)
 
@@ -279,6 +267,23 @@ texture = ExtResource("7_tsq1l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/box"]
 shape = SubResource("RectangleShape2D_rb0j7")
+
+[node name="shelf" type="StaticBody2D" parent="Node2D"]
+position = Vector2(178, 45)
+scale = Vector2(3, 3)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Node2D/shelf"]
+occluder = SubResource("OccluderPolygon2D_0skh7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/shelf"]
+texture_filter = 1
+position = Vector2(45.3333, -20)
+scale = Vector2(2.04667, 1)
+texture = ExtResource("8_22vep")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/shelf"]
+position = Vector2(47.5001, -26)
+shape = SubResource("RectangleShape2D_t0qyk")
 
 [node name="floor and cattree2" type="TileMap" parent="."]
 texture_filter = 1
@@ -318,16 +323,16 @@ shape = SubResource("RectangleShape2D_pdeo3")
 position = Vector2(1200, 412)
 shape = SubResource("RectangleShape2D_muysn")
 
-[node name="exit 3to2" type="Area2D" parent="."]
+[node name="exit 4to3" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="exit 3to2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit 4to3"]
 position = Vector2(-14, 406)
 shape = SubResource("RectangleShape2D_wb5qj")
 debug_color = Color(0, 0.290196, 0.701961, 0.419608)
 
-[node name="exit 2to3" type="Area2D" parent="."]
+[node name="exit 4to5" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="exit 2to3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit 4to5"]
 position = Vector2(1171.5, 399)
 shape = SubResource("RectangleShape2D_6etvl")
 debug_color = Color(0, 0.270588, 0.701961, 0.419608)
@@ -335,30 +340,40 @@ debug_color = Color(0, 0.270588, 0.701961, 0.419608)
 [node name="Camera" parent="." instance=ExtResource("20_f1c4h")]
 position = Vector2(766, 168)
 
-[node name="Cup_4" parent="." instance=ExtResource("22_pib0e")]
+[node name="Cup_7" parent="." instance=ExtResource("22_pib0e")]
 position = Vector2(109, 357)
 
 [node name="Catnip" parent="." instance=ExtResource("23_2i7q4")]
 position = Vector2(292, 383)
 
-[node name="Cup_3" parent="." instance=ExtResource("24_jyuyn")]
+[node name="Cup_8" parent="." instance=ExtResource("24_jyuyn")]
 position = Vector2(619, 5)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 offset = Vector2(2.08165e-12, -70)
 
-[node name="Cup_1" parent="." instance=ExtResource("24_jyuyn")]
+[node name="Cup_9" parent="." instance=ExtResource("24_jyuyn")]
 modulate = Color(0.498039, 0.792157, 0.533333, 1)
-position = Vector2(653, 5)
+position = Vector2(669, -85)
 
 [node name="Player" parent="." instance=ExtResource("21_fdtf2")]
 position = Vector2(33, 518)
 
+[node name="Cup_5" parent="." instance=ExtResource("24_jyuyn")]
+position = Vector2(610, -85)
+
+[node name="Cup_10" parent="." instance=ExtResource("24_jyuyn")]
+modulate = Color(0.207843, 0.243137, 0.407843, 1)
+position = Vector2(640, -85)
+
+[node name="Cup_6" parent="." instance=ExtResource("24_jyuyn")]
+position = Vector2(263, 5)
+
 [connection signal="off_doorknob" from="door_side_1" to="Player" method="_on_door_side_1_off_doorknob" flags=18]
 [connection signal="on_doorknob" from="door_side_1" to="Player" method="_on_door_side_1_on_doorknob" flags=18]
-[connection signal="body_entered" from="exit 3to2" to="Player" method="_on_exit_3_to_2_body_entered" flags=18]
-[connection signal="body_entered" from="exit 2to3" to="Player" method="_on_exit_2_to_3_body_entered" flags=18]
+[connection signal="body_entered" from="exit 4to3" to="Player" method="_on_exit_4_to_3_body_entered"]
+[connection signal="body_entered" from="exit 4to5" to="Player" method="_on_exit_4_to_5_body_entered"]
 [connection signal="playerinLightArea" from="Camera" to="Player" method="_on_camera_playerin_light_area" flags=18]
 [connection signal="playeroutLightArea" from="Camera" to="Player" method="_on_camera_playerout_light_area" flags=18]
 [connection signal="incatnip" from="Catnip" to="Player" method="_on_catnip_incatnip" flags=18]

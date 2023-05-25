@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw04v44iktjvy"]
+
+[ext_resource type="Texture2D" uid="uid://cvomn2qu2iet4" path="res://objects/light-grey-background.png" id="1_2vgy6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.596078, 0.690196, 0.780392, 1)
+layout_mode = 0
+offset_left = -242.0
+offset_top = -60.0
+offset_right = 3853.0
+offset_bottom = 1922.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_2vgy6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "CAT-TASTROPY"

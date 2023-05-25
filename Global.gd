@@ -22,6 +22,7 @@ var entered_room_2_left = false
 var entered_room_3_left = false
 var entered_room_2_right = false
 var entered_room_4_left = false
+var entered_room_3_right = false
 
 var dooropen_1 = false
 var dooropen_2 = false
@@ -37,3 +38,21 @@ var cupposition_3
 
 var cupbroken_4 = false
 var cupposition_4
+
+var cupbroken_5 = false 
+var cupposition_5
+
+var cupbroken_6 = false
+var cupposition_6
+
+var cupbroken_7 = false
+var cupposition_7
+
+var cupbroken_8 = false
+var cupposition_8
+
+var cupbroken_9 = false
+var cupposition_9
+
+var cupbroken_10 = false
+var cupposition_10

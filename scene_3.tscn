@@ -177,7 +177,7 @@ size = Vector2(4, 36)
 position = Vector2(610, 303)
 
 [node name="Wallpaper" type="Sprite2D" parent="Node2D"]
-modulate = Color(0.870588, 0.756863, 0.831373, 0.827451)
+modulate = Color(0.368627, 0.462745, 0.47451, 1)
 position = Vector2(109, 0)
 texture = ExtResource("1_rq7l7")
 

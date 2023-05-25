@@ -19,3 +19,5 @@ res://scene_4.tscn
 res://Camera.gd
 res://LightArea.gd
 res://vase.tscn
+res://door_side.gd
+res://startscreen.tscn

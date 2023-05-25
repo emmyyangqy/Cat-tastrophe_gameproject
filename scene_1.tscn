@@ -218,7 +218,7 @@ size = Vector2(34, 303)
 position = Vector2(610, 303)
 
 [node name="Wallpaper" type="Sprite2D" parent="Node2D"]
-modulate = Color(0.870588, 0.756863, 0.831373, 0.827451)
+modulate = Color(0.654902, 0.658824, 0.752941, 1)
 texture = ExtResource("1_pl27u")
 
 [node name="floortrimshadow" type="Sprite2D" parent="Node2D"]

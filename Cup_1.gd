@@ -56,6 +56,30 @@ func switch_to(new_state: State):
 			Global.cupbroken_4 = true
 			Global.cupposition_4 = position
 			
+		if get_node(".").name == "Cup_5":
+			Global.cupbroken_5 = true
+			Global.cupposition_5 = position
+		
+		if get_node(".").name == "Cup_6":
+			Global.cupbroken_6 = true
+			Global.cupposition_6 = position
+			
+		if get_node(".").name == "Cup_7":
+			Global.cupbroken_7 = true
+			Global.cupposition_7 = position
+			
+		if get_node(".").name == "Cup_8":
+			Global.cupbroken_8 = true
+			Global.cupposition_9 = position
+			
+		if get_node(".").name == "Cup_9":
+			Global.cupbroken_9 = true
+			Global.cupposition_9 = position
+		
+		if get_node(".").name == "Cup_10":
+			Global.cupbroken_10 = true
+			Global.cupposition_10 = position
+			
 	elif new_state == State.ALRBROKE:
 		$AnimatedSprite2D.play("broken")
 		$CollisionPolygon2D.queue_free()

@@ -59,7 +59,7 @@ func _ready():
 		Global.entered_room_4_left = false
 	
 		
-	if Global.entered_room_1_right == true or Global.entered_room_2_right == true:
+	if Global.entered_room_1_right == true or Global.entered_room_2_right == true or Global.entered_room_3_right == true:
 		position = Vector2(1128,524)
 		reset_position = Vector2(1128,524)
 		Global.entered_room_1_right=false
@@ -422,4 +422,18 @@ func _on_exit_3_to_4_body_entered(body):
 	if body.get_name() == "Player":
 		get_tree().change_scene_to_file("res://scene_4.tscn")
 		Global.entered_room_4_left = true
+	pass # Replace with function body.
+
+
+func _on_exit_4_to_5_body_entered(body):
+	if body.get_name() == "Player":
+		#get_tree().change_scene_to_file("res://scene_5.tscn")
+		#Global.entered_room_2_right = true
+		pass # Replace with function body.
+
+
+func _on_exit_4_to_3_body_entered(body):
+	if body.get_name() == "Player":
+		get_tree().change_scene_to_file("res://scene_3.tscn")
+		Global.entered_room_3_right = true
 	pass # Replace with function body.
