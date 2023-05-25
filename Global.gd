@@ -8,13 +8,20 @@ var strength = 10
 var agility = 10
 var endurance = 10
 
+
+var scene_4_cameratime = 7
+var scene_4_cameraspeed = 6
+var isscene_4 = false
+
 #for camera
 var addedarearoation
+var local_animation = 0
 
 var entered_room_1_right = false
 var entered_room_2_left = false
 var entered_room_3_left = false
 var entered_room_2_right = false
+var entered_room_4_left = false
 
 var dooropen_1 = false
 var dooropen_2 = false

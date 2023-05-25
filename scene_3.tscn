@@ -280,16 +280,16 @@ shape = SubResource("RectangleShape2D_pdeo3")
 position = Vector2(1200, 412)
 shape = SubResource("RectangleShape2D_muysn")
 
-[node name="exit 3to2" type="Area2D" parent="."]
+[node name="exit 2to3" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="exit 3to2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit 2to3"]
 position = Vector2(-14, 406)
 shape = SubResource("RectangleShape2D_wb5qj")
 debug_color = Color(0, 0.290196, 0.701961, 0.419608)
 
-[node name="exit 2to3" type="Area2D" parent="."]
+[node name="exit 3to4" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="exit 2to3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit 3to4"]
 position = Vector2(1171.5, 399)
 shape = SubResource("RectangleShape2D_6etvl")
 debug_color = Color(0, 0.270588, 0.701961, 0.419608)
@@ -2703,8 +2703,8 @@ offset = Vector2(2.08165e-12, -70)
 
 [connection signal="off_doorknob" from="door_side_1" to="Player" method="_on_door_side_1_off_doorknob"]
 [connection signal="on_doorknob" from="door_side_1" to="Player" method="_on_door_side_1_on_doorknob"]
-[connection signal="body_entered" from="exit 3to2" to="Player" method="_on_exit_3_to_2_body_entered"]
 [connection signal="body_entered" from="exit 2to3" to="Player" method="_on_exit_2_to_3_body_entered"]
+[connection signal="body_entered" from="exit 3to4" to="Player" method="_on_exit_3_to_4_body_entered"]
 [connection signal="playerinLightArea" from="Camera" to="Player" method="_on_camera_playerin_light_area"]
 [connection signal="playeroutLightArea" from="Camera" to="Player" method="_on_camera_playerout_light_area"]
 [connection signal="incatnip" from="Catnip" to="Player" method="_on_catnip_incatnip"]

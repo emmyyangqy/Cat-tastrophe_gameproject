@@ -46,5 +46,6 @@ polygon = PackedVector2Array(-7, 2, -7, 5, -6, 5, -6, 11, -5, 11, -5, 12, 3, 12,
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_nyf6i")
+animation = &"broken"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

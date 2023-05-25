@@ -42,16 +42,21 @@ var player
 var caught = false
 var dangerzone = false
 var camera
-var reset_position = Vector2(250,500) 
+#var reset_position = Vector2(250,500) 
+var reset_position = Vector2(33,518)
 var no_energy = false
 	
 #
 func _ready():
 	switch_to(State.IDLE)
-	if Global.entered_room_2_left == true and Global.entered_room_3_left == true:
+	if Global.entered_room_2_left == true and Global.entered_room_3_left == true or Global.entered_room_4_left == true:
+		print("yes")
 		position = Vector2(33,518)
+		
 		reset_position = Vector2(33,518)
 		Global.entered_room_2_left = false
+		Global.entered_room_3_left = false
+		Global.entered_room_4_left = false
 	
 		
 	if Global.entered_room_1_right == true or Global.entered_room_2_right == true:
@@ -181,6 +186,8 @@ func switch_to(new_state: State):
 
 func _physics_process(delta):
 	
+	#print(position)
+	
 	if catnipeffect == false:
 		run_speed = 400 + (Global.agility-10)*10
 		walk_speed = 150 + (Global.agility-10)*4
@@ -281,6 +288,7 @@ func _physics_process(delta):
 	raycast.target_position = position-LightArea.position-camera.position
 	
 	if raycast.is_colliding():
+		print(raycast.get_collider().name, " ", dangerzone)
 		if raycast.get_collider().name == "Player" and dangerzone == true:
 			position = reset_position
 			#get_tree().reload_current_scene()
@@ -407,4 +415,11 @@ func _on_exit_3_to_2_body_entered(body):
 	if body.get_name() == "Player":
 		get_tree().change_scene_to_file("res://scene_2.tscn")
 		Global.entered_room_2_right = true
+	pass # Replace with function body.
+
+
+func _on_exit_3_to_4_body_entered(body):
+	if body.get_name() == "Player":
+		get_tree().change_scene_to_file("res://scene_4.tscn")
+		Global.entered_room_4_left = true
 	pass # Replace with function body.

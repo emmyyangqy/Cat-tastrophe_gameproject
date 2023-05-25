@@ -15,3 +15,7 @@ res://physicalstats.gd
 res://Cup_1.gd
 res://statpointlable.gd
 res://statpoints.gd
+res://scene_4.tscn
+res://Camera.gd
+res://LightArea.gd
+res://vase.tscn

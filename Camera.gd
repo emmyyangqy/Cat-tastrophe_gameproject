@@ -6,10 +6,15 @@ var rotationSpeed = 2
 var addedarearoation_scene1 = .1
 var addedarearoation_scene2 = .1
 var addedarearoation_scene3 = .9
+var addedarearoation_scene4 = 2
+var x
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	if get_parent().name != "Scene_4":
+		Global.isscene_4 = false
 	
 	if get_parent().name == "Scene_1":
 		Global.addedarearoation = -addedarearoation_scene1
@@ -22,14 +27,30 @@ func _ready():
 	elif get_parent().name == "Scene_3":
 		Global.addedarearoation= -addedarearoation_scene3
 		$RayCast2D.rotation = -.09
+		
 		#$LightArea.rotation = -4
-	else: Global.addedarearoation = 0
+	elif get_parent().name == "Scene_4":
+		Global.addedarearoation= -addedarearoation_scene4
+		Global.isscene_4 = true
+		$RayCast2D.rotation = -0.0
+		$RayCast2D.position = Vector2(-20,0)
+		#$LightArea.rotation = -4
+	else: 
+		Global.addedarearoation = 0
+		Global.isscene_4 = false
 		
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	if get_parent().name == "Scene_4":
+		if Global.local_animation > 0.5:
+			x = Global.local_animation*100-100
+		elif Global.local_animation < 0.5:
+			x = -Global.local_animation*100
+		$RayCast2D.position = Vector2(x-10,0)
 	
 	#$Camera.rotate(rotationSpeed)
 	pass

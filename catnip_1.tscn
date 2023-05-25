@@ -31,6 +31,7 @@ sprite_frames = SubResource("SpriteFrames_5snna")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 30)
 shape = SubResource("RectangleShape2D_ipm3u")
+one_way_collision = true
 
 [node name="catnip_entered" type="Area2D" parent="."]
 
