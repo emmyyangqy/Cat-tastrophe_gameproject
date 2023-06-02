@@ -395,10 +395,11 @@ offset_top = 218.0
 offset_right = 388.0
 offset_bottom = 348.0
 scale = Vector2(1.4, 1.4)
-text = "
-Knock over as many cups
+text = "Knock over as many cups
  and vases as you can 
-without getting caught!"
+without getting caught!
+Your owner will return 
+in 10 minutes."
 
 [node name="TextureButton" type="TextureButton" parent="INTRO/text3"]
 offset_left = 384.0
