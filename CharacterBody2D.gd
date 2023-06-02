@@ -187,9 +187,9 @@ func switch_to(new_state: State):
 func _physics_process(delta):
 	
 	print(Global.countdownroom)
-	if Global.ownertimer < 600 and Global.ownertimer > 0:
+	if Global.ownertimer < 1200 and Global.ownertimer > 0:
 		Global.ownertimer += delta
-	if Global.ownertimer > 600:
+	if Global.ownertimer > 1200:
 		get_tree().change_scene_to_file("res://end.tscn")
 		Global.ownertimer = -100
 	

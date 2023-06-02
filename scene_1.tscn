@@ -399,7 +399,7 @@ text = "Knock over as many cups
  and vases as you can 
 without getting caught!
 Your owner will return 
-in 10 minutes."
+in 20 minutes."
 
 [node name="TextureButton" type="TextureButton" parent="INTRO/text3"]
 offset_left = 384.0
@@ -414,6 +414,7 @@ texture_disabled = ExtResource("21_1tqc6")
 texture_focused = ExtResource("21_1tqc6")
 
 [node name="text2" type="Node2D" parent="INTRO"]
+visible = false
 script = ExtResource("22_xd766")
 
 [node name="Sprite2D" type="Sprite2D" parent="INTRO/text2"]
@@ -447,6 +448,7 @@ texture_disabled = ExtResource("21_1tqc6")
 texture_focused = ExtResource("21_1tqc6")
 
 [node name="text1" type="Node2D" parent="INTRO"]
+visible = false
 script = ExtResource("23_cxvlt")
 
 [node name="Sprite2D" type="Sprite2D" parent="INTRO/text1"]
