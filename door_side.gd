@@ -12,6 +12,8 @@ func _ready():
 		switch_to(State.OPEN)
 	if get_parent().name == "Scene_2" and Global.dooropen_2 == true:
 		switch_to(State.OPEN)
+	if get_parent().name == "Scene_3" and Global.dooropen_3 == true:
+		switch_to(State.OPEN)
 	
 func switch_to(new_state: State):
 	curstate = new_state
@@ -36,7 +38,6 @@ func opendoor():
 
 func _on_doorknob_body_entered(body):
 	if body.get_name() == "Player":
-		print("doorknob")
 		emit_signal("on_doorknob")
 
 func _on_doorknob_body_exited(body):

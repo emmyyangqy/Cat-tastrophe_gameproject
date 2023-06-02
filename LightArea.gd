@@ -25,7 +25,6 @@ func _process(delta):
 	var local_animation = local_time / camera_cycle_time
 
 	if Global.isscene_4 == true:
-		print(Global.isscene_4)
 		camera_cycle_time = Global.scene_4_cameratime
 		rotationspeed = Global.scene_4_cameraspeed
 		

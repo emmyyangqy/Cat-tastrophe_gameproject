@@ -50,7 +50,6 @@ var no_energy = false
 func _ready():
 	switch_to(State.IDLE)
 	if Global.entered_room_2_left == true and Global.entered_room_3_left == true or Global.entered_room_4_left == true:
-		print("yes")
 		position = Vector2(33,518)
 		
 		reset_position = Vector2(33,518)
@@ -64,7 +63,10 @@ func _ready():
 		reset_position = Vector2(1128,524)
 		Global.entered_room_1_right=false
 		Global.entered_room_2_right=false
+		Global.entered_room_3_right=false
 #
+	if get_parent().name == "Scene_4":
+		reset_position = Vector2(346,513)
 #	Global.entered_room_3_left == true:
 #		osition = Vector2(1128,524)
 #		reset_position = Vector2(1128,524)
@@ -119,7 +121,6 @@ func switch_to(new_state: State):
 			$cat_animation.flip_h = false
 		else:
 			#$cat_animation.frame = 0
-			#print("error")
 			$cat_animation.play("idle_1")
 			
 	elif new_state == State.WALK_RIGHT:
@@ -172,7 +173,6 @@ func switch_to(new_state: State):
 	elif new_state == State.PAW:
 		$cat_animation.play("paw")
 		$paw_area.monitoring = true
-		#print("paw")
 		
 	elif new_state == State.SLEEP:
 		$cat_animation.play("sleep")
@@ -186,17 +186,29 @@ func switch_to(new_state: State):
 
 func _physics_process(delta):
 	
+	print(Global.countdownroom)
+	if Global.ownertimer < 600 and Global.ownertimer > 0:
+		Global.ownertimer += delta
+	if Global.ownertimer > 600:
+		get_tree().change_scene_to_file("res://end.tscn")
+		Global.ownertimer = -100
+	
+
+	
 	if get_parent().name == "tutorial":
 		Global.energy=100
-	#print(position)
+		
+	
 	
 	if catnipeffect == false:
 		run_speed = 400 + (Global.agility-10)*10
 		walk_speed = 150 + (Global.agility-10)*4
 		
-		walkenergy = .05 - .05*((Global.endurance-10)/90)
-		runenergy = .2 - .05*((Global.endurance-10)/90)
-		jumpenergy = 5 - 5*((Global.endurance-10)/90)
+	walkenergy = .05 - (0.00055*(Global.endurance-10))
+	runenergy = .2 -  (0.0022*(Global.endurance-10))
+	jumpenergy = 5 -  (0.055*(Global.endurance-10))
+	
+
 
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -290,10 +302,8 @@ func _physics_process(delta):
 	raycast.target_position = position-LightArea.position-camera.position
 	
 	if raycast.is_colliding():
-		print(raycast.get_collider().name, " ", dangerzone)
 		if raycast.get_collider().name == "Player" and dangerzone == true:
 			position = reset_position
-			#get_tree().reload_current_scene()
 		else: 
 			pass
 			
@@ -320,7 +330,6 @@ func _physics_process(delta):
 		switch_to(State.SLEEP)
 		
 
-	#print(reset_position)
 		
 
 func _on_animated_sprite_2d_animation_finished():
@@ -402,6 +411,7 @@ func _on_exit_2_to_3_body_entered(body):
 	if body.get_name() == "Player":
 		get_tree().change_scene_to_file("res://scene_3.tscn")
 		Global.entered_room_3_left = true
+		Global.dooropen_2=true
 	pass # Replace with function body.
 
 
@@ -424,6 +434,7 @@ func _on_exit_3_to_4_body_entered(body):
 	if body.get_name() == "Player":
 		get_tree().change_scene_to_file("res://scene_4.tscn")
 		Global.entered_room_4_left = true
+		Global.dooropen_3 = true
 	pass # Replace with function body.
 
 

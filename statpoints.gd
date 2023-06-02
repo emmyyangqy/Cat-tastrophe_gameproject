@@ -14,19 +14,19 @@ func _process(delta):
 func _on_button_1_pressed():
 	if Global.statpoints != 0 and Global.strength < 100:
 		Global.statpoints -= 1
-		Global.strength += 10
+		Global.strength += 15
 	pass # Replace with function body.
 
 
 func _on_button_2_pressed():
 	if Global.statpoints != 0 and Global.agility < 100:
 		Global.statpoints -= 1
-		Global.agility += 10
+		Global.agility += 15
 	pass # Replace with function body.
 
 
 func _on_button_3_pressed():
 	if Global.statpoints != 0 and Global.endurance < 100:
 		Global.statpoints -= 1
-		Global.endurance += 10
+		Global.endurance += 15
 	pass # Replace with function body.

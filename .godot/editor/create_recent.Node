@@ -1,9 +1,12 @@
+Label
+Sprite2D
+CanvasModulate
+TextEdit
+CanvasLayer
+CollisionShape2D
 TextureButton
 Button
 Node2D
-Label
-Sprite2D
-CollisionShape2D
 StaticBody2D
 TextureRect
 RigidBody2D
@@ -27,4 +30,3 @@ Control
 RayCast2D
 Marker2D
 PointLight2D
-DirectionalLight2D

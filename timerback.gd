@@ -1,4 +1,4 @@
-extends Control
+extends TextEdit
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,6 +8,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$TextureProgressBar3.value = Global.agility
-	$TextureProgressBar4.value = Global.endurance
-	pass
+	self.text = str(Global.mintimer)

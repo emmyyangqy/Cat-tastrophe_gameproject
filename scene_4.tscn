@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://b6gkykrrkmdsn"]
+[gd_scene load_steps=50 format=3 uid="uid://b6gkykrrkmdsn"]
 
 [ext_resource type="Texture2D" uid="uid://c20voyfweoask" path="res://light-gray-color-solid-background-1920x1080.png" id="1_5bb5n"]
 [ext_resource type="Texture2D" uid="uid://bcnmxylav2f2t" path="res://objects/window_1.png" id="2_h6rdx"]
@@ -153,6 +153,9 @@ size = Vector2(20, 334)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muysn"]
 size = Vector2(20, 334)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iims8"]
+size = Vector2(128, 313)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wb5qj"]
 size = Vector2(24, 272)
 
@@ -192,7 +195,6 @@ scale = Vector2(9.3, 9.3)
 texture = ExtResource("2_h6rdx")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Node2D/window"]
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/window/StaticBody2D"]
 position = Vector2(0.537632, 13.9785)
@@ -269,7 +271,7 @@ texture = ExtResource("7_tsq1l")
 shape = SubResource("RectangleShape2D_rb0j7")
 
 [node name="shelf" type="StaticBody2D" parent="Node2D"]
-position = Vector2(178, 45)
+position = Vector2(178, 58)
 scale = Vector2(3, 3)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Node2D/shelf"]
@@ -296,9 +298,10 @@ layer_0/name = "floor"
 layer_0/tile_data = PackedInt32Array(393216, 5, 0, 393217, 5, 0, 393218, 5, 0, 393219, 5, 0, 393220, 5, 0, 393221, 5, 0, 393222, 5, 0, 393223, 5, 0, 393224, 5, 0, 393225, 5, 0, 393226, 5, 0, 393227, 5, 0, 393228, 5, 0, 393229, 5, 0, 393230, 5, 0)
 
 [node name="door_side_1" parent="." instance=ExtResource("11_xyw87")]
-position = Vector2(971, 412)
+position = Vector2(1165, 412)
 
 [node name="UI" parent="." instance=ExtResource("12_72i48")]
+visible = false
 position = Vector2(40, -40)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -323,6 +326,10 @@ shape = SubResource("RectangleShape2D_pdeo3")
 position = Vector2(1200, 412)
 shape = SubResource("RectangleShape2D_muysn")
 
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1217, 404.5)
+shape = SubResource("RectangleShape2D_iims8")
+
 [node name="exit 4to3" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit 4to3"]
@@ -331,6 +338,7 @@ shape = SubResource("RectangleShape2D_wb5qj")
 debug_color = Color(0, 0.290196, 0.701961, 0.419608)
 
 [node name="exit 4to5" type="Area2D" parent="."]
+position = Vector2(77, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit 4to5"]
 position = Vector2(1171.5, 399)
@@ -355,17 +363,17 @@ offset = Vector2(2.08165e-12, -70)
 
 [node name="Cup_9" parent="." instance=ExtResource("24_jyuyn")]
 modulate = Color(0.498039, 0.792157, 0.533333, 1)
-position = Vector2(669, -85)
+position = Vector2(644, 4)
 
 [node name="Player" parent="." instance=ExtResource("21_fdtf2")]
 position = Vector2(33, 518)
 
 [node name="Cup_5" parent="." instance=ExtResource("24_jyuyn")]
-position = Vector2(610, -85)
+position = Vector2(609, -72)
 
 [node name="Cup_10" parent="." instance=ExtResource("24_jyuyn")]
 modulate = Color(0.207843, 0.243137, 0.407843, 1)
-position = Vector2(640, -85)
+position = Vector2(537, -72)
 
 [node name="Cup_6" parent="." instance=ExtResource("24_jyuyn")]
 position = Vector2(263, 5)

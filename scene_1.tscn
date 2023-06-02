@@ -381,7 +381,6 @@ texture_disabled = ExtResource("21_1tqc6")
 texture_focused = ExtResource("21_1tqc6")
 
 [node name="text3" type="Node2D" parent="INTRO"]
-visible = false
 script = ExtResource("19_b00st")
 
 [node name="Sprite2D" type="Sprite2D" parent="INTRO/text3"]
@@ -414,7 +413,6 @@ texture_disabled = ExtResource("21_1tqc6")
 texture_focused = ExtResource("21_1tqc6")
 
 [node name="text2" type="Node2D" parent="INTRO"]
-visible = false
 script = ExtResource("22_xd766")
 
 [node name="Sprite2D" type="Sprite2D" parent="INTRO/text2"]
@@ -448,7 +446,6 @@ texture_disabled = ExtResource("21_1tqc6")
 texture_focused = ExtResource("21_1tqc6")
 
 [node name="text1" type="Node2D" parent="INTRO"]
-visible = false
 script = ExtResource("23_cxvlt")
 
 [node name="Sprite2D" type="Sprite2D" parent="INTRO/text1"]

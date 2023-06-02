@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4tywdh2f5p18"]
+
+[ext_resource type="Script" path="res://almosthome.gd" id="1_03ny6"]
+[ext_resource type="Script" path="res://Label2.gd" id="1_agi4p"]
+
+[node name="CanvasLayer" type="Sprite2D"]
+script = ExtResource("1_03ny6")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 370.0
+offset_top = 39.0
+offset_right = 859.0
+offset_bottom = 91.0
+scale = Vector2(1.5, 1.5)
+text = "Your owner is almost home! 
+You have 60 seconds to get back to the first room you began in."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 988.0
+offset_top = -18.0
+offset_right = 1028.0
+offset_bottom = 5.0
+scale = Vector2(2, 2)
+script = ExtResource("1_agi4p")

@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://baaqcdkwbr8a7"]
+
+[ext_resource type="Texture2D" uid="uid://cvomn2qu2iet4" path="res://objects/light-grey-background.png" id="1_cup1y"]
+[ext_resource type="PackedScene" uid="uid://cbr8rw5tjolhe" path="res://camera.tscn" id="2_w4cq2"]
+[ext_resource type="Script" path="res://endscore.gd" id="3_6ka4q"]
+[ext_resource type="PackedScene" uid="uid://dqt7ncin7cqe6" path="res://Player.tscn" id="3_eapuu"]
+[ext_resource type="PackedScene" uid="uid://c3ujgtpf518w7" path="res://Cup_1.tscn" id="4_1d4jb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h488o"]
+size = Vector2(3088, 1620)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.596078, 0.690196, 0.780392, 1)
+position = Vector2(588, 326)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_cup1y")
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(0, -41)
+
+[node name="Sprite2D2" type="Sprite2D" parent="floor"]
+modulate = Color(0.176471, 0.239216, 0.294118, 1)
+position = Vector2(561, 641)
+scale = Vector2(0.5, 0.1)
+texture = ExtResource("1_cup1y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(493, 623)
+scale = Vector2(0.5, 0.1)
+shape = SubResource("RectangleShape2D_h488o")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="floor"]
+position = Vector2(-37, 513)
+rotation = 1.5708
+scale = Vector2(0.5, 0.1)
+shape = SubResource("RectangleShape2D_h488o")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="floor"]
+position = Vector2(1191, 523)
+rotation = 1.5708
+scale = Vector2(0.5, 0.1)
+shape = SubResource("RectangleShape2D_h488o")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+offset = Vector2(2.08165e-12, -70)
+
+[node name="Camera" parent="." instance=ExtResource("2_w4cq2")]
+position = Vector2(5318, -2377)
+scale = Vector2(4, 4)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 55.0
+offset_top = 35.0
+offset_right = 347.0
+offset_bottom = 243.0
+scale = Vector2(1.5, 1.5)
+text = "Your owner returned!
+
+"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 53.0
+offset_top = 86.0
+offset_right = 93.0
+offset_bottom = 109.0
+scale = Vector2(1.5, 1.5)
+script = ExtResource("3_6ka4q")
+
+[node name="Player" parent="." instance=ExtResource("3_eapuu")]
+
+[node name="Cup_1" parent="." instance=ExtResource("4_1d4jb")]
+position = Vector2(1058, 120)

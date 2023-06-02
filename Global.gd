@@ -8,6 +8,11 @@ var strength = 10
 var agility = 10
 var endurance = 10
 
+var ownertimer = 1
+var mintimer = 20
+var startcountdown = false
+var countdownposition
+var countdownroom
 
 var scene_4_cameratime = 7
 var scene_4_cameraspeed = 6
@@ -27,6 +32,7 @@ var entered_room_3_right = false
 
 var dooropen_1 = false
 var dooropen_2 = false
+var dooropen_3=false
 
 var cupbroken_1 = false
 var cupposition_1

@@ -54,19 +54,18 @@ text = "ENERGY"
 
 [node name="physicalstats" parent="." instance=ExtResource("3_mmck5")]
 offset_left = 102.0
-offset_top = 65.0
+offset_top = 44.0
 offset_right = 102.0
-offset_bottom = 65.0
+offset_bottom = 44.0
 
 [node name="Label" type="Label" parent="physicalstats"]
 layout_mode = 0
-offset_left = -87.0
-offset_top = -1.0
-offset_right = 11.0
-offset_bottom = 77.0
+offset_left = -86.0
+offset_top = 19.0
+offset_right = 12.0
+offset_bottom = 97.0
 scale = Vector2(0.82, 0.82)
-text = "STRENGTH
-AGILITY
+text = "AGILITY
 ENDURANCE
 "
 horizontal_alignment = 2
@@ -102,33 +101,23 @@ offset_right = 84.5
 offset_bottom = 76.5
 text = "AVALIBLE STAT POINTS:"
 
-[node name="Button1" type="Button" parent="statpoints"]
-layout_mode = 0
-offset_left = 271.5
-offset_top = 85.5
-offset_right = 306.5
-offset_bottom = 116.5
-scale = Vector2(0.5, 0.5)
-text = "+"
-
 [node name="Button2" type="Button" parent="statpoints"]
 layout_mode = 0
 offset_left = 271.5
-offset_top = 107.5
+offset_top = 86.5
 offset_right = 306.5
-offset_bottom = 138.5
+offset_bottom = 117.5
 scale = Vector2(0.5, 0.5)
 text = "+"
 
 [node name="Button3" type="Button" parent="statpoints"]
 layout_mode = 0
 offset_left = 271.5
-offset_top = 129.5
+offset_top = 108.5
 offset_right = 306.5
-offset_bottom = 160.5
+offset_bottom = 139.5
 scale = Vector2(0.5, 0.5)
 text = "+"
 
-[connection signal="pressed" from="statpoints/Button1" to="statpoints" method="_on_button_1_pressed"]
 [connection signal="pressed" from="statpoints/Button2" to="statpoints" method="_on_button_2_pressed"]
 [connection signal="pressed" from="statpoints/Button3" to="statpoints" method="_on_button_3_pressed"]

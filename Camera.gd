@@ -33,7 +33,7 @@ func _ready():
 		Global.addedarearoation= -addedarearoation_scene4
 		Global.isscene_4 = true
 		$RayCast2D.rotation = -0.0
-		$RayCast2D.position = Vector2(-20,0)
+		$RayCast2D.position = Vector2(-10,0)
 		#$LightArea.rotation = -4
 	else: 
 		Global.addedarearoation = 0
