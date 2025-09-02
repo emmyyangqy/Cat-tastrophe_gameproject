@@ -8,7 +8,7 @@ Cat-tasrophy is a small 2D platformer where you play as a mischievous cat hoppin
 
 Hand-drawn pixel art and animations
 
-Scene-based levels with TileMaps and modular hazards/breakables
+Scene-based levels with TileMaps, modular hazards/breakables, and collision physics
 
 
 | Action      | Keyboard         | 
